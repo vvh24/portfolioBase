@@ -4,6 +4,32 @@
 
 Our component system is built on principles of cognitive psychology, interaction design research, and behavioral science. Each component is designed to optimize both conscious and unconscious user interactions.
 
+## shadcn/ui Integration
+
+This project uses [shadcn/ui](https://ui.shadcn.com/) as its component library foundation. shadcn/ui provides a collection of beautifully designed, accessible components built with Radix UI and Tailwind CSS.
+
+### Key Benefits of shadcn/ui
+
+- **Not a Component Library**: shadcn/ui components are added directly to your project, allowing for full customization
+- **Built with Radix UI**: Components are built on top of Radix UI primitives for robust accessibility
+- **Styled with Tailwind CSS**: Easy customization using Tailwind's utility classes
+- **Customizable**: Each component can be modified to match your exact design requirements
+- **Versioned Components**: Add and update components individually as needed
+
+### Adding New shadcn/ui Components
+
+You can add new shadcn/ui components using the CLI:
+
+```bash
+npx shadcn@latest add [component-name]
+```
+
+For example, to add the dropdown menu component:
+
+```bash
+npx shadcn@latest add dropdown-menu
+```
+
 ### Base Components (shadcn/ui)
 
 #### Button Psychology
@@ -21,6 +47,43 @@ Our component system is built on principles of cognitive psychology, interaction
 - Size optimized for Fitts's Law
 - Loading states reduce cognitive uncertainty
 - Hover states provide interaction confidence
+
+#### Dropdown Menu Component
+
+```tsx
+// Example implementation with shadcn/ui's dropdown menu
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline" size="sm">
+      <span>Options</span>
+      <ChevronDown className="ml-2 h-4 w-4" />
+    </Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent className="w-56">
+    <DropdownMenuLabel>Menu Actions</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>
+      <User className="mr-2 h-4 w-4" />
+      <span>Profile</span>
+    </DropdownMenuItem>
+    <DropdownMenuItem>
+      <Settings className="mr-2 h-4 w-4" />
+      <span>Settings</span>
+    </DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem className="text-red-500">
+      <LogOut className="mr-2 h-4 w-4" />
+      <span>Log out</span>
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+**Psychological Properties:**
+- Hierarchical organization reduces cognitive load
+- Progressive disclosure minimizes decision fatigue
+- Spatial organization creates mental mapping
+- Visual separation enhances decision clarity
 
 #### Input Fields
 ```tsx
@@ -76,6 +139,54 @@ Our component system is built on principles of cognitive psychology, interaction
 - Escape mechanisms for user control
 
 #### Navigation Components
+
+##### Main Navigation Example
+
+The project includes a responsive navigation component (`MainNav`) that uses the dropdown menu for mobile devices:
+
+```tsx
+// In src/components/main-nav.tsx
+<nav className="flex items-center justify-between w-full py-4">
+  {/* Desktop navigation */}
+  <div className="hidden md:flex items-center gap-6">
+    {routes.map((route) => (
+      <Link 
+        key={route.href} 
+        href={route.href}
+        className="text-sm font-medium transition-colors hover:text-primary"
+      >
+        {route.label}
+      </Link>
+    ))}
+  </div>
+  
+  {/* Mobile navigation with dropdown */}
+  <div className="md:hidden">
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button aria-label="Open menu" className="p-2">
+          <Menu className="h-5 w-5" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuLabel>Navigation</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {routes.map((route) => (
+          <DropdownMenuItem key={route.href} asChild>
+            <Link href={route.href}>{route.label}</Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  </div>
+</nav>
+```
+
+**Psychological Benefits:**
+- Context-appropriate interactions for device size
+- Consistent mental model between device sizes
+- Minimized cognitive load through familiar patterns
+- Reduced visual complexity for small screens
 
 ##### Tabs
 ```tsx

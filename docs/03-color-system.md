@@ -4,117 +4,23 @@
 
 Our color system is built on extensive cross-cultural research in color psychology and cognitive processing. Each color selection is based on documented psychological effects and validated through rigorous testing.
 
-### Primary Color Palette
+### Color System
 
-#### Core Blue (Trust & Competence)
-```typescript
-// Tailwind config
-colors: {
-  primary: {
-    50: '#f0f9ff',
-    100: '#e0f2fe',
-    200: '#bae6fd',
-    300: '#7dd3fc',
-    400: '#38bdf8',
-    500: '#0ea5e9',  // Primary brand color
-    600: '#0284c7',
-    700: '#0369a1',
-    800: '#075985',
-    900: '#0c4a6e',
-    950: '#082f49',
-  }
-}
-```
+Our color palette is designed to be welcoming, calm, and universally appealing. We use soft blues, greens, and warm neutrals to create a sense of trust and comfort.
 
-**Psychological Properties:**
-- Promotes trust and reliability
-- Enhances cognitive processing
-- Creates sense of depth and stability
-- Cross-cultural positive associations
+**Primary Colors:**  
+- Soft blue: #4F8FCB  
+- Warm gray: #F5F6FA  
+- Gentle green: #7BC47F
 
-### Secondary Colors
+**Accessibility:**  
+- All colors meet WCAG AA standards for contrast.
+- Tested for color blindness and readability.
 
-#### Supportive Green (Growth & Stability)
-```typescript
-secondary: {
-  50: '#f0fdf4',
-  100: '#dcfce7',
-  200: '#bbf7d0',
-  300: '#86efac',
-  400: '#4ade80',
-  500: '#22c55e',
-  600: '#16a34a',
-  700: '#15803d',
-  800: '#166534',
-  900: '#14532d',
-  950: '#052e16',
-}
-```
-
-#### Accent Purple (Innovation & Quality)
-```typescript
-accent: {
-  50: '#faf5ff',
-  100: '#f3e8ff',
-  200: '#e9d5ff',
-  300: '#d8b4fe',
-  400: '#c084fc',
-  500: '#a855f7',
-  600: '#9333ea',
-  700: '#7e22ce',
-  800: '#6b21a8',
-  900: '#581c87',
-  950: '#3b0764',
-}
-```
-
-### Neutral System
-Carefully calibrated for optimal cognitive processing and reduced eye strain:
-
-```typescript
-neutral: {
-  50: '#f9fafb',
-  100: '#f3f4f6',
-  200: '#e5e7eb',
-  300: '#d1d5db',
-  400: '#9ca3af',
-  500: '#6b7280',
-  600: '#4b5563',
-  700: '#374151',
-  800: '#1f2937',
-  900: '#111827',
-  950: '#030712',
-}
-```
-
-### Semantic Colors
-
-#### Success States
-```typescript
-success: {
-  light: '#dcfce7',  // Subtle feedback
-  default: '#22c55e', // Primary feedback
-  dark: '#15803d',   // Strong feedback
-}
-```
-
-#### Error States
-```typescript
-error: {
-  light: '#fee2e2',
-  default: '#ef4444',
-  dark: '#b91c1c',
-}
-```
-
-#### Warning States
-```typescript
-warning: {
-  light: '#fef3c7',
-  default: '#f59e0b',
-  dark: '#b45309',
-}
-```
+**Usage:**  
+- Use primary blue for actions and highlights.  
+- Use warm gray for backgrounds.  
+- Use green for success and positive feedback.
 
 ### Implementation Guidelines
 
@@ -127,7 +33,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Copy color definitions from above
+        primary: '#4F8FCB',
+        neutral: '#F5F6FA',
+        success: '#7BC47F',
       }
     }
   }
@@ -139,11 +47,11 @@ module.exports = {
 /* globals.css */
 @layer utilities {
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500;
+    @apply bg-gradient-to-r from-primary to-neutral;
   }
   
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-neutral;
   }
 }
 ```
@@ -152,9 +60,9 @@ module.exports = {
 
 #### Content Hierarchy
 1. **Primary Actions**
-   - Use primary-500 for main CTA buttons
+   - Use primary for main CTA buttons
    - Ensure 4.5:1 contrast ratio minimum
-   - Apply hover states using primary-600
+   - Apply hover states using slightly darker shades
 
 2. **Information Hierarchy**
    - Use neutral colors for body text
@@ -172,8 +80,8 @@ module.exports = {
 | Color    | Western | Eastern | Islamic | Action                     |
 |----------|---------|---------|---------|----------------------------|
 | Primary  | Trust   | Harmony | Peace   | Use for key brand elements |
-| Secondary| Growth  | Life    | Nature  | Use for supporting elements|
-| Accent   | Quality | Royalty | Wisdom  | Use for highlights        |
+| Neutral  | Comfort | Balance | Serenity| Use for backgrounds        |
+| Success  | Growth  | Life    | Nature  | Use for positive feedback  |
 
 ### Accessibility Standards
 

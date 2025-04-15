@@ -1,5 +1,7 @@
 # Implementation Guide
 
+Welcome! This guide is designed for everyone—whether you’re new to web development or a seasoned pro. Our goal is to make building beautiful, accessible apps simple and approachable for all.
+
 ## Project Setup
 
 ### Next.js 14 Setup
@@ -231,6 +233,8 @@ const inter = Inter({
 
 ### 2. Color System Implementation
 
+We’ve chosen colors that are easy on the eyes and work well for everyone. Our palette is designed to feel welcoming and familiar.
+
 1. Define color variables:
 ```css
 /* globals.css */
@@ -254,6 +258,8 @@ const inter = Inter({
 ```
 
 ### 3. Component Implementation
+
+All our components are built to be intuitive and easy to use, with clear documentation and plenty of examples.
 
 #### Example Button Component
 ```typescript
@@ -283,6 +289,56 @@ const buttonVariants = cva(
 )
 ```
 
+### 4. Navigation Drawer (Sheet) Implementation
+
+#### Mobile Navigation Drawer (Sheet)
+
+A mobile navigation drawer (hamburger menu) is implemented using a custom shadcn/ui Sheet component, which is built on top of @radix-ui/react-dialog. This provides a familiar, accessible, and animated drawer experience for mobile users.
+
+- The Sheet component is located at `src/components/ui/sheet.tsx` and exposes `Sheet`, `SheetTrigger`, `SheetContent`, `SheetHeader`, and `SheetTitle`.
+- The main navigation (`src/components/main-nav.tsx`) uses Sheet for mobile navigation, providing a left-side sliding drawer with large, touch-friendly links.
+- The Sheet is fully accessible, supports keyboard navigation, and uses a backdrop overlay for focus management.
+
+#### Example Usage
+```tsx
+<Sheet>
+  <SheetTrigger asChild>
+    <button aria-label="Open menu">
+      <Menu />
+    </button>
+  </SheetTrigger>
+  <SheetContent side="left">
+    <SheetHeader>
+      <SheetTitle>Menu</SheetTitle>
+    </SheetHeader>
+    <nav>
+      {/* Navigation links */}
+    </nav>
+  </SheetContent>
+</Sheet>
+```
+
+#### Main Navigation Component
+
+- Desktop navigation uses a horizontal flex layout with clear, accessible links.
+- Mobile navigation uses the Sheet navdrawer for a standard hamburger menu interaction.
+- All navigation is mobile-first and fully responsive.
+
+#### Example (from `src/components/main-nav.tsx`):
+```tsx
+<nav className="flex items-center justify-between w-full py-4 px-2 md:px-8">
+  <Link href="/" className="text-xl font-semibold text-primary-700">Welcome</Link>
+  <div className="hidden md:flex items-center gap-6">{/* Desktop links */}</div>
+  <div className="md:hidden">{/* Mobile Sheet navdrawer */}</div>
+</nav>
+```
+
+### Summary of Recent Changes
+- Added a shadcn/ui Sheet (drawer) component for mobile navigation.
+- Updated MainNav to use Sheet for a beautiful, accessible navdrawer on mobile.
+- Ensured all navigation is mobile-first, touch-friendly, and visually consistent.
+- Installed and documented all required dependencies (`@radix-ui/react-dialog`, `critters`).
+
 ## Testing Protocol
 
 ### 1. Visual Regression Testing
@@ -310,6 +366,8 @@ const buttonVariants = cva(
 - A/B testing key components
 
 ## Quality Assurance Checklist
+
+We believe everyone deserves a great experience. That’s why we test for accessibility, responsiveness, and ease of use on all devices.
 
 ### Typography
 - [ ] Font loading optimization
@@ -404,6 +462,7 @@ This comprehensive index documents all key files in the project, their purpose, 
 |------|---------|-------------|
 | **src/components/ui/button.tsx** | Button component | Variants: default, destructive, outline, ghost, link; Sizes: default, sm, lg, icon |
 | **src/components/ui/card.tsx** | Card component | Subcomponents: CardHeader, CardTitle, CardDescription, CardContent, CardFooter |
+| **src/components/ui/sheet.tsx** | Sheet (drawer) component | Variants: side (left, right, top, bottom), accessibility features |
 | **[Additional UI components]** | Various UI elements | Follow similar patterns to Button and Card components |
 
 ### Utility Files

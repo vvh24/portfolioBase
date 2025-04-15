@@ -1,5 +1,26 @@
 # Component Psychology System
 
+## Components
+
+Our components are designed to be intuitive, approachable, and accessible for everyone. Each component is built with usability and inclusivity in mind, following best practices for accessibility and clear, friendly microcopy.
+
+**Component Principles:**
+- Simple, familiar patterns
+- Clear labels and instructions
+- Generous touch targets and spacing
+- Consistent interaction states
+
+**Accessibility:**
+- All components meet WCAG AA standards
+- Keyboard and screen reader support by default
+
+**Examples:**
+- Buttons: Rounded corners, clear text, friendly colors
+- Cards: Soft shadows, ample padding, clear hierarchy
+
+**Contribution:**
+- Community feedback is welcome—everyone’s input helps us improve!
+
 ## Psychological Foundation
 
 Our component system is built on principles of cognitive psychology, interaction design research, and behavioral science. Each component is designed to optimize both conscious and unconscious user interactions.
@@ -187,6 +208,49 @@ The project includes a responsive navigation component (`MainNav`) that uses the
 - Consistent mental model between device sizes
 - Minimized cognitive load through familiar patterns
 - Reduced visual complexity for small screens
+
+##### Sheet (Drawer) Component
+
+A new Sheet (drawer) component has been added to the UI library at `src/components/ui/sheet.tsx`. This component is based on shadcn/ui and built on top of @radix-ui/react-dialog. It provides a mobile navigation drawer (hamburger menu) for a familiar, accessible, and animated mobile experience.
+
+### Features
+- **Side-drawer navigation**: Supports left, right, top, and bottom slide-in drawers.
+- **Accessibility**: Keyboard navigation, focus management, and backdrop overlay.
+- **Composition**: Includes `Sheet`, `SheetTrigger`, `SheetContent`, `SheetHeader`, and `SheetTitle` for flexible usage.
+
+### Example Usage
+```tsx
+<Sheet>
+  <SheetTrigger asChild>
+    <button aria-label="Open menu">
+      <Menu />
+    </button>
+  </SheetTrigger>
+  <SheetContent side="left">
+    <SheetHeader>
+      <SheetTitle>Menu</SheetTitle>
+    </SheetHeader>
+    <nav>
+      {/* Navigation links */}
+    </nav>
+  </SheetContent>
+</Sheet>
+```
+
+##### MainNav Component (Updated)
+
+- The `MainNav` component now uses the Sheet drawer for mobile navigation, providing a standard hamburger menu interaction.
+- Desktop navigation remains a horizontal flex layout.
+- All navigation is mobile-first, touch-friendly, and visually consistent.
+
+### Example (from `src/components/main-nav.tsx`):
+```tsx
+<nav className="flex items-center justify-between w-full py-4 px-2 md:px-8">
+  <Link href="/" className="text-xl font-semibold text-primary-700">Welcome</Link>
+  <div className="hidden md:flex items-center gap-6">{/* Desktop links */}</div>
+  <div className="md:hidden">{/* Mobile Sheet navdrawer */}</div>
+</nav>
+```
 
 ##### Tabs
 ```tsx

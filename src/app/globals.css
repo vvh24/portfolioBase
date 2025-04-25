@@ -141,4 +141,8 @@
   .bg-background {
     @apply bg-background-light;
   }
+
+  .text-neutral {
+    @apply text-neutral-700 dark:text-neutral-300;
+  }
 }

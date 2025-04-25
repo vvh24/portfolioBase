@@ -43,6 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
+        <nav className="flex justify-between items-center py-4 px-6 bg-background-light shadow-md">
+          <ul className="flex space-x-6">
+            <li><a href="/" className="text-primary-500 hover:text-primary-600">Home</a></li>
+            <li><a href="/about" className="text-primary-500 hover:text-primary-600">My Story</a></li>
+            <li><a href="/projects" className="text-primary-500 hover:text-primary-600">Projects</a></li>
+            <li><a href="/process" className="text-primary-500 hover:text-primary-600">Process</a></li>
+            <li><a href="/contact" className="text-primary-500 hover:text-primary-600">Contact</a></li>
+          </ul>
+        </nav>
         <MainNav />
         {children}
       </body>

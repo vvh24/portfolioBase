@@ -11,6 +11,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'Open Sans', 'Nunito', 'system-ui', 'sans-serif'],
+        heading: ['"Playfair Display"', 'serif'],
+        body: ['"Roboto"', 'sans-serif'],
       },
       colors: {
         // Everyman Brand Colors
@@ -20,8 +22,8 @@ export default {
           200: '#c7dff0',
           300: '#a3cbe4',
           400: '#7eb6d8',
-          500: '#4f8fcb', // Soft blue
-          600: '#3973a6',
+          500: '#8a65dd',
+          600: '#6b46c1',
           700: '#2b567a',
           800: '#1d384e',
           900: '#0f1b23',
@@ -31,9 +33,9 @@ export default {
           100: '#e6f6ec',
           200: '#c3ebd6',
           300: '#a0e0c0',
-          400: '#7bc47f', // Gentle green
-          500: '#5ea06a',
-          600: '#4a7e54',
+          400: '#7bc47f',
+          500: '#4361ee',
+          600: '#3a0ca3',
           700: '#355c3e',
           800: '#213a28',
           900: '#0c1812',
@@ -44,14 +46,14 @@ export default {
           200: '#ede3d1',
           300: '#e3d3b8',
           400: '#d9c39f',
-          500: '#c2a97e', // Warm neutral
-          600: '#9b865f',
+          500: '#f72585',
+          600: '#7209b7',
           700: '#746340',
           800: '#4d4021',
           900: '#261d02',
         },
         neutral: {
-          50: '#f9fafb',
+          50: '#f8f9fa',
           100: '#f3f4f6',
           200: '#e5e7eb',
           300: '#d1d5db',
@@ -60,7 +62,7 @@ export default {
           600: '#4b5563',
           700: '#374151',
           800: '#1f2937',
-          900: '#111827',
+          900: '#343a40',
         },
         // Semantic Colors
         success: {
@@ -82,7 +84,10 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: {
+          light: '#ffffff',
+          gray: '#f1f3f5',
+        },
         foreground: "hsl(var(--foreground))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

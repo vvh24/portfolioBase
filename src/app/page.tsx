@@ -62,6 +62,22 @@ export default function Home() {
           </Card>
         </div>
 
+        {/* Artistic Divider */}
+        <div className="h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-secondary-500 rounded-full my-8"></div>
+
+        {/* Process Section */}
+        <div className="text-center space-y-8 py-16">
+          <h2 className="text-gradient-brand max-w-3xl mx-auto font-heading">
+            Our Creative Process
+          </h2>
+          <p className="text-lg text-medium-contrast max-w-2xl mx-auto font-body">
+            From concept to creation, we bring imagination and craftsmanship to every project. Explore our unique approach to design and innovation.
+          </p>
+          <Button size="lg" className="text-base bg-gradient-innovation hover:opacity-90">
+            Learn More
+          </Button>
+        </div>
+
         {/* Invitation Section - Friendly Call to Action */}
         <div className="text-center space-y-8 py-16">
           <h2 className="text-gradient-brand max-w-3xl mx-auto">

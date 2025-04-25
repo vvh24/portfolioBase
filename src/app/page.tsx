@@ -5,20 +5,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <main className="container mx-auto space-y-16 pt-20 px-4">
-        {/* Hero Section - Everyman Brand */}
+        {/* Hero Section */}
         <div className="text-center space-y-6 max-w-[800px] mx-auto">
-          <h1 className="text-gradient-brand">
-            AI Solutions for Everyone
+          <h1 className="text-gradient-brand font-heading text-5xl md:text-6xl">
+            Unleash Your Creativity
           </h1>
-          <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            We make AI approachable, practical, and accessible—helping people and organizations of all backgrounds solve real problems with confidence and clarity.
+          <p className="text-lg text-medium-contrast max-w-2xl mx-auto font-body">
+            Explore the journey from concept to creation with innovative and artistic solutions.
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" className="text-base bg-gradient-brand hover:opacity-90">
+            <Button size="lg" className="text-base bg-gradient-to-r from-primary-500 to-accent-500 hover:opacity-90">
               Get Started
             </Button>
             <Button variant="outline" size="lg" className="text-base border-primary-600 text-primary-700 hover:bg-primary-50">
-              See How We Can Help
+              Learn More
             </Button>
           </div>
         </div>

@@ -43,17 +43,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
-        <nav className="flex justify-between items-center py-4 px-6 bg-background-light shadow-md">
-          <ul className="flex space-x-6">
-            <li><a href="/" className="text-primary-500 hover:text-primary-600">Home</a></li>
-            <li><a href="/about" className="text-primary-500 hover:text-primary-600">My Story</a></li>
-            <li><a href="/projects" className="text-primary-500 hover:text-primary-600">Projects</a></li>
-            <li><a href="/process" className="text-primary-500 hover:text-primary-600">Process</a></li>
-            <li><a href="/contact" className="text-primary-500 hover:text-primary-600">Contact</a></li>
+        <nav className="flex justify-between items-center py-6 px-8 bg-gradient-to-r from-primary-500 to-secondary-500 shadow-lg">
+          <ul className="flex space-x-8">
+            <li><a href="/" className="text-white font-heading hover:underline">Home</a></li>
+            <li><a href="/about" className="text-white font-heading hover:underline">My Story</a></li>
+            <li><a href="/projects" className="text-white font-heading hover:underline">Projects</a></li>
+            <li><a href="/process" className="text-white font-heading hover:underline">Process</a></li>
+            <li><a href="/contact" className="text-white font-heading hover:underline">Contact</a></li>
           </ul>
         </nav>
         <MainNav />
         {children}
+        <footer className="bg-neutral-900 text-white py-8 px-6 text-center">
+          <p className="font-body text-sm">&copy; 2025 Your Portfolio. All rights reserved.</p>
+        </footer>
       </body>
     </html>
   );

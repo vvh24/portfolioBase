@@ -1,5 +1,21 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { cva } from "class-variance-authority"
+
+const cardVariants = cva(
+  'rounded-xl shadow-lg bg-card text-card-foreground p-6 border border-neutral-200',
+  {
+    variants: {
+      variant: {
+        default: 'bg-neutral-50',
+        accent: 'bg-accent-500 text-white',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string

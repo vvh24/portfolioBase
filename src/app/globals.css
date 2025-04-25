@@ -133,4 +133,8 @@
   .text-medium-contrast {
     @apply text-neutral-700 dark:text-neutral-300;
   }
+
+  .bg-background {
+    @apply bg-background-light;
+  }
 }

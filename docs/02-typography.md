@@ -1,67 +1,66 @@
-Typography System: The Everyman AI Consultancy
-(Dr. Evelyn Reed's Strategic Recommendations)
+Typography System: The Creator Personal Portfolio
+(Portfolio Website Implementation Guide)
 
 Psychological Foundation
-Our typography system is engineered for clarity, warmth, and approachability. It leverages reading behavior patterns to deliver unfiltered clarity while embodying the approachable energy of the Everyman archetype. Each choice optimizes processing while reinforcing our core identity.
-(Dr. Reed's Note: Clarity and warmth are the Everyman's tools – they invite connection and understanding.)
+Our typography system embodies the Creator archetype—innovative, expressive, and visionary. It balances artistic distinctiveness with professional clarity to showcase technical skills while inspiring creativity. Each typographic choice reinforces the portfolio's focus on transformation and originality.
 
-Primary Typeface (Body & UI): Inter (or Open Sans, Nunito)
-Chosen for its exceptional clarity and neutral baseline, Inter serves as the vehicle for approachable truth in body copy and functional UI elements. Its neutrality allows the message to resonate universally.
-- Low cognitive load: Ensures ideas are easily processed.
-- High recognition speed: Directness and efficiency.
-- Cultural adaptability: Approachability is universal.
-- Strong cross-device rendering: Consistency across platforms.
+Primary Typeface (Body & UI): Outfit (or Work Sans, Monserrat)
+Chosen for its modern character with creative flair while maintaining excellent readability across devices and contexts.
+
+- Balance of creativity and professionalism
+- Clear legibility for technical content
+- Distinctive character that stands out from standard portfolios
+- Consistent rendering across all platforms
 
 ```css
 body {
-  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+  font-family: 'Outfit', 'Work Sans', 'Montserrat', system-ui, sans-serif;
 }
 ```
 
-Secondary / Display Typeface (Headlines & Accent): Rounded, friendly sans-serif
-To inject the Everyman personality. Rounded sans-serif fonts evoke warmth, familiarity, and a rejection of overly stylized or aggressive typefaces. This font provides:
-- Friendly Contrast: Breaks from the expected corporate sharpness.
-- Approachability: Signals inclusivity without pretense.
-- Familiar Edge: Visually represents the 'common path'.
+Secondary / Display Typeface (Headlines & Accent): Manrope, (or Space Grotesk)
+To inject creative personality and distinction without sacrificing professionalism:
+
+- Creative distinction: Sets apart from typical developer portfolios
+- Innovation signaling: Contemporary feel aligned with tech innovation
+- Visual impact: Creates memorable impressions for portfolio visitors
 
 Type Scale
-The scale provides structure, but its application creates the Everyman dynamic. We retain a functional scale but encourage comfortable contrast between levels.
+A balanced scale that allows for creative expression while maintaining clear hierarchy for portfolio navigation and content comprehension:
 
 ```css
 fontSize: {
-  'xs': ['0.75rem', { lineHeight: '1rem' }],      // Utility, fine print
-  'sm': ['0.875rem', { lineHeight: '1.25rem' }], // Supporting context
-  'base': ['1rem', { lineHeight: '1.625' }],     // BODY - Slightly looser leading for readability
-  'lg': ['1.125rem', { lineHeight: '1.75rem' }], // Sub-headings
-  'xl': ['1.25rem', { lineHeight: '1.75rem' }],  // Sub-headings
-  '2xl': ['1.5rem', { lineHeight: '2rem' }],     // Key statements, minor headlines
-  '3xl': ['1.875rem', { lineHeight: '2.25rem' }], // Headlines
-  '4xl': ['2.5rem', { lineHeight: '2.75rem' }],  // IMPACT Headlines - Increased jump
-  '5xl': ['3.25rem', { lineHeight: '1' }],       // MAJOR Impact
-  '6xl': ['4rem', { lineHeight: '1' }],          // Statements
-  '7xl': ['5rem', { lineHeight: '1' }],
-  '8xl': ['6rem', { lineHeight: '1' }],
-  '9xl': ['8rem', { lineHeight: '1' }],
+  'xs': ['0.75rem', { lineHeight: '1rem' }],      // UI elements, metadata
+  'sm': ['0.875rem', { lineHeight: '1.25rem' }],  // Supporting text, captions
+  'base': ['1rem', { lineHeight: '1.6' }],        // BODY - Primary content
+  'lg': ['1.125rem', { lineHeight: '1.75rem' }],  // Featured content, project descriptions
+  'xl': ['1.375rem', { lineHeight: '1.75rem' }],  // Section introductions
+  '2xl': ['1.625rem', { lineHeight: '2rem' }],    // Page titles, section headers
+  '3xl': ['2rem', { lineHeight: '2.25rem' }],     // Project titles, major section headers
+  '4xl': ['2.75rem', { lineHeight: '1.2' }],      // Landing page statements
+  '5xl': ['3.25rem', { lineHeight: '1.1' }],      // Hero headlines
+  '6xl': ['4rem', { lineHeight: '1.1' }],         // Primary hero statement
+  '7xl': ['5rem', { lineHeight: '1' }],           // Major impact headlines
 }
 ```
 
-Psychological Hierarchy (Everyman Application)
-Structured for clarity and connection.
+Typographic Hierarchy (Creator Implementation)
+Headlines (Inspiration Layer)
 
-Headlines (Connection Layer)
-- Font: Rounded, friendly sans-serif
-- Weight: 500 (Medium) to 700 (Bold) - Strong, not overly heavy unless intentional.
-- Sizes: 3xl-7xl+ (Use larger sizes for stronger statements)
-- Tracking: Normal (tracking-normal) - Creates comfort and readability.
-- Case: Sentence case primarily; Uppercase for highly intentional, short, impactful statements ONLY.
-- Purpose: Invite understanding, set a relatable context.
+- Font: Manrope (or Space Grotesk)
+- Weight: 500 (Medium) to 700 (Bold) - Creative without being excessive
+- Sizes: 3xl-7xl (larger sizes for landing page impact)
+- Tracking: Slightly tighter (tracking-tight) for headlines - Creates distinctive character
+- Case: Mixed approach; primarily sentence case with strategic use of ALL CAPS for emphasis
+- Purpose: Capture attention, inspire creative interest, establish portfolio identity
 
-Body Text (Clarity Layer)
-- Font: Inter (or Open Sans, Nunito)
-- Weight: 400 (Regular); 500 (Medium) for emphasis within text.
-- Size: base (1rem/16px)
-- Line Height: 1.625 (leading-relaxed) - Slightly more open than default for better processing of ideas.
-- Purpose: Deliver clear and relatable information with maximum readability and credibility.
+Body Text (Expression Layer)
+
+- Font: Outfit (or Work Sans, Montserrat)
+- Weight: 400 (Regular); 600 (SemiBold) for emphasis within project descriptions
+- Size: base (1rem/16px) for general content, lg (1.125rem) for featured project descriptions
+- Line Height: 1.6 (leading-relaxed) - Balanced for technical readability and creative breathing room
+- Purpose: Communicate technical capabilities and creative approach with clarity and personality
 
 Supporting Text (Detail Layer)
 - Font: Inter (or Open Sans, Nunito)
@@ -70,34 +69,53 @@ Supporting Text (Detail Layer)
 - Color: Use muted colors (text-muted-foreground or similar)
 - Purpose: Provide essential context, citations, or secondary information without distracting from the core message.
 
-Responsive Behavior
-Ensure clarity and connection are maintained across all devices. Scale headline impact appropriately for smaller screens while preserving body text legibility.
+Portfolio-Specific Applications
+Landing Page
+
+- Hero Headline: 6xl/7xl, high-impact statement of creative positioning
+- Subheading: 3xl/4xl, clear articulation of technical specialization
+- Navigation: lg/xl, distinctive treatment with creative hover states
+
+Projects Section
+
+- Project Titles: 3xl, emphasize
+creative nature of each project
+- Project Descriptions: base/lg, balance technical detail with creative narrative
+- Technical Stack Labels: sm, clean presentation of technologies used
+
+About Section
+
+- Section Header: 4xl, creative presentation of your identity
+- Personal Story: base/lg, engaging narrative of your creative journey
+- Skills/Capabilities: Visually interesting presentation using typographic hierarchy
 
 Implementation Guidelines
 Next.js / Tailwind / Shadcn Setup
 Install Fonts:
 ```bash
-npm install @fontsource/inter @fontsource/open-sans @fontsource/nunito
+npm install @fontsource/outfit @fontsource/manrope
 ```
 
 Import in app/layout.tsx:
 ```typescript
-import '@fontsource/inter/variable.css'
-import '@fontsource/open-sans'
-import '@fontsource/nunito'
+import '@fontsource/outfit/variable.css'
+import '@fontsource/manrope/variable.css'
 ```
 
 Configure tailwind.config.js:
 ```javascript
-const defaultTheme = require('tailwindcss/defaultTheme')
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
 module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter var"', '"Open Sans"', '"Nunito"', ...fontFamily.sans],
+        sans: ['"Outfit Variable"', ...fontFamily.sans],
+        display: ['"Manrope Variable"', ...fontFamily.sans],
       },
+      fontSize: {
+        // Copy the fontSize configuration from above
+      }
     },
   },
 }
@@ -107,33 +125,63 @@ CSS Custom Properties
 Define core typography variables reflecting the Everyman system:
 ```css
 :root {
-  --font-sans: 'Inter var', 'Open Sans', 'Nunito', system-ui, sans-serif;
-  --line-height-body: 1.625;
+  --font-sans: 'Outfit Variable', system-ui, sans-serif;
+  --font-display: 'Manrope Variable', system-ui, sans-serif;
+  --line-height-body: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 body {
-  @apply font-sans; /* Apply base font to body */
+  font-family: var(--font-sans);
+  line-height: var(--line-height-body);
 }
 ```
 
-Psychological Testing Protocol (Everyman Focus)
-Validate against:
-- Clarity & Comprehension: Can the message be understood?
-- Perceived Warmth/Connection: Does it feel approachable and inclusive?
-- Authenticity/Honesty Rating: Does it seem relatable and trustworthy?
-- Brand Archetype Alignment: Does the typography feel like an Everyman?
-- Memorability & Impact: Does it invite connection and understanding?
+Component Examples
+Hero Section (Landing Page)
+```tsx
+<section className="min-h-screen flex flex-col justify-center">
+  <h1 className="font-display font-bold text-6xl md:text-7xl tracking-tight leading-tight mb-6">
+    Transforming ideas into digital experiences
+  </h1>
+  <p className="text-xl md:text-2xl max-w-2xl">
+    I build innovative AI solutions and data visualizations that bring creative visions to life.
+  </p>
+  <div className="mt-12">
+    <Button size="lg" className="mr-4">View My Work</Button>
+    <Button variant="outline" size="lg">Contact Me</Button>
+  </div>
+</section>
+```
+Project Card
+```tsx
+<Card className="overflow-hidden">
+  <CardHeader>
+    <CardTitle className="font-display text-3xl tracking-tight">Project Title</CardTitle>
+    <CardDescription className="text-lg">Brief project description highlighting creative approach</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <div className="mb-4">
+      <img src="/project-image.jpg" alt="Project preview" className="rounded-lg" />
+    </div>
+    <p className="mb-4">Detailed description of the project showcasing both technical skills and creative thinking.</p>
+    <div className="flex flex-wrap gap-2">
+      <Badge>React</Badge>
+      <Badge>Next.js</Badge>
+      <Badge>AI Integration</Badge>
+    </div>
+  </CardContent>
+  <CardFooter>
+    <Button>View Project</Button>
+  </CardFooter>
+</Card>
+```
+Responsive Considerations
 
-Accessibility Considerations (Everyman Framing)
-Accessibility as Connection: Ensure WCAG 2.1 AAA compliance not just as a requirement, but as an act of democratizing access to information, challenging exclusionary design norms.
-- Clarity for All: Ideas must be accessible; ensure contrast ratios (minimum 4.5:1 for body) and scalability (200%+) are rigorously met.
-
-Research References
-(Dr. Reed's Note: While standard cognitive research supports clarity, the application for Everyman effect draws from archetypal theory and analysis of inclusive brand aesthetics.)
-- "Typography and Cognitive Load" - Journal of Digital Psychology, 2024 (Supports baseline clarity)
-- "Cross-Cultural Typography Perception" - International Design Research Quarterly (Informs adaptability)
-- "Reading Patterns in Digital Interfaces" - Human-Computer Interaction Studies (Supports hierarchy/layout)
-- Mark, M. & Pearson, C.S. (2001). The Hero and the Outlaw. (Archetypal framework)
-- Analysis of Inclusive Brand Visual Languages (Internal or Cited Research)
-
-This revised system maintains the crucial foundation of legibility while deliberately infusing the typography with the warmth, clarity, and approachable nature of the Everyman. It uses type not just to inform, but to connect and invite understanding. Remember, the Everyman leads by fostering connection, and your typography must reflect that inclusive stance.
+- Maintain creative impact while ensuring legibility across all devices
+- Reduce headline sizes proportionally on smaller screens while preserving style
+- Increase touch targets for mobile navigation
+- Preserve distinctive typographic character at all breakpoints

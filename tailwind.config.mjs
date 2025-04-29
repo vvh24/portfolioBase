@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 export default {
   darkMode: "class",
   content: [
@@ -8,9 +10,23 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Open Sans', 'Nunito', 'system-ui', 'sans-serif'],
+        sans: ['"Outfit Variable"', ...fontFamily.sans],
+        display: ['"Manrope Variable"', ...fontFamily.sans],
         heading: ['"Playfair Display"', 'serif'],
         body: ['"Roboto"', 'sans-serif'],
+      },
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.6' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.375rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.625rem', { lineHeight: '2rem' }],
+        '3xl': ['2rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.75rem', { lineHeight: '1.2' }],
+        '5xl': ['3.25rem', { lineHeight: '1.1' }],
+        '6xl': ['4rem', { lineHeight: '1.1' }],
+        '7xl': ['5rem', { lineHeight: '1' }],
       },
       colors: {
         // Everyman Brand Colors
@@ -20,9 +36,9 @@ export default {
           200: '#c7dff0',
           300: '#a3cbe4',
           400: '#7eb6d8',
-          500: '#8a65dd',
+          500: '#7B5FFF', // Added primary-500
           600: '#6b46c1',
-          700: '#2b567a',
+          700: '#2b567a', // Explicitly defined
           800: '#1d384e',
           900: '#0f1b23',
         },
@@ -103,6 +119,31 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Primary palette
+        creative: '#7B5FFF',
+        electric: '#3A86FF',
+        innovative: '#FF5E5B',
+        
+        // Supporting neutrals
+        slate: '#2B2D42',
+        canvas: '#F8F9FA',
+        
+        // Semantic variants
+        primary: {
+          DEFAULT: '#7B5FFF',
+          light: '#9D87FF',
+          dark: '#6144E0'
+        },
+        secondary: {
+          DEFAULT: '#3A86FF',
+          light: '#5E9CFF',
+          dark: '#2970E2'
+        },
+        accent: {
+          DEFAULT: '#FF5E5B',
+          light: '#FF7F7D',
+          dark: '#E54542'
+        }
       },
       borderRadius: {
         lg: '0.75rem',

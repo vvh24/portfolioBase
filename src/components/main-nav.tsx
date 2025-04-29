@@ -18,53 +18,70 @@ export function MainNav() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
-  ]
+  ];
 
   return (
-    <nav className="flex items-center justify-between w-full py-4 px-2 md:px-8">
-      <Link href="/" className="text-xl font-semibold text-primary-700">
-        Welcome
-      </Link>
-      
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-6">
-        {routes.map((route) => (
-          <Link 
-            key={route.href} 
-            href={route.href}
-            className="text-base font-medium transition-colors hover:text-primary capitalize"
+    <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-200 shadow-md z-50">
+      <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+        <Link href="/" className="text-2xl font-serif text-gray-900 tracking-wide no-underline">
+          Valeria Heredia
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {routes.map((route) => (
+            <Link
+              key={route.href}
+              href={route.href}
+              className="text-base font-medium text-gray-700 hover:text-gray-900 transition-all no-underline"
+            >
+              {route.label}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all"
           >
-            {route.label}
+            Let&apos;s Connect
           </Link>
-        ))}
-      </div>
-      
-      {/* Mobile Navigation - NavDrawer */}
-      <div className="md:hidden">
-        <Sheet>
-          <SheetTrigger asChild>
-            <button aria-label="Open menu" className="p-2 rounded-lg border border-border bg-background shadow-sm">
-              <Menu className="h-6 w-6" />
-            </button>
-          </SheetTrigger>
-          <SheetContent side="left" className="p-0 w-72 max-w-[90vw]">
-            <SheetHeader className="border-b px-6 py-4">
-              <SheetTitle className="text-lg font-semibold">Menu</SheetTitle>
-            </SheetHeader>
-            <nav className="flex flex-col gap-2 py-6 px-6">
-              {routes.map((route) => (
+        </div>
+
+        {/* Mobile Navigation - NavDrawer */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                aria-label="Open menu"
+                className="p-2 rounded-lg border border-gray-300 bg-white shadow-sm"
+              >
+                <Menu className="h-6 w-6 text-gray-700" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0 w-72 max-w-[90vw] bg-white">
+              <SheetHeader className="border-b border-gray-200 px-6 py-4">
+                <SheetTitle className="text-lg font-semibold text-gray-900">Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-4 py-6 px-6">
+                {routes.map((route) => (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    className="block w-full rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors no-underline"
+                  >
+                    {route.label}
+                  </Link>
+                ))}
                 <Link
-                  key={route.href}
-                  href={route.href}
-                  className="block w-full rounded-lg px-4 py-3 text-base font-medium text-left hover:bg-muted focus:bg-muted transition-colors"
+                  href="/contact"
+                  className="block w-full rounded-lg px-4 py-3 text-base font-medium text-white bg-purple-600 hover:bg-purple-700 transition-colors"
                 >
-                  {route.label}
+                  Let&apos;s Connect
                 </Link>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
-  )
+  );
 }

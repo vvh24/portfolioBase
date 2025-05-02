@@ -42,6 +42,24 @@
 
     --radius: 0.75rem;
     --neutral: 220 15% 20%;
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Lato", sans-serif;
+    --font-size-title: 42px;
+    --font-size-section: 36px;
+    --font-size-subsection: 28px;
+    --font-size-body: 16px;
+    --font-size-small: 14px;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --font-serif: 'Fraunces', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    --font-logo: 'Hammersmith One', sans-serif;
+    --font-nav: 'Old Standard TT', serif;
   }
 
   .dark {
@@ -87,13 +105,37 @@
     letter-spacing: -0.02em;
   }
 
-  h1 { @apply text-4xl md:text-5xl lg:text-6xl mb-4; }
-  h2 { @apply text-3xl md:text-4xl lg:text-5xl mb-3; }
-  h3 { @apply text-2xl md:text-3xl mb-2; }
-  h4 { @apply text-xl md:text-2xl mb-2; }
+  h1, h2 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl mb-4;
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl mb-3;
+    font-size: var(--font-size-section);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl mb-2;
+  }
 
   p {
     @apply text-base leading-relaxed mb-4;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
   }
 
   .supporting-text {
@@ -108,10 +150,28 @@
 
   a {
     @apply text-primary-600 custom-hover-primary underline;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
   }
 
   button {
     @apply rounded-lg shadow-md transition-all;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+  }
+
+  input, textarea {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+  }
+
+  small {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
   }
 }
 

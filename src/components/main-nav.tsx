@@ -1,87 +1,118 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
-import { Menu, X } from "lucide-react"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
-export function MainNav() {
-  const routes = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-  ];
+export default function MainNav() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-200 shadow-md z-50">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <Link href="/" className="text-2xl font-serif text-gray-900 tracking-wide no-underline">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-md shadow-md" : ""
+      } bg-white/80`}
+    >
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className="text-[1.5rem] font-hammersmith-one font-semibold text-purple-600 tracking-[-0.01em]">
           Valeria Heredia
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {routes.map((route) => (
-            <Link
-              key={route.href}
-              href={route.href}
-              className="text-base font-medium text-gray-700 hover:text-gray-900 transition-all no-underline"
-            >
-              {route.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex space-x-6 items-center">
+          <Link
+            href="/about"
+            className="text-gray-700 font-old-standard-tt font-bold text-[1rem] tracking-[0.01em] hover:text-purple-600 transition-colors no-underline"
+          >
+            About
+          </Link>
+          <Link
+            href="/projects"
+            className="text-gray-700 font-old-standard-tt font-bold text-[1rem] tracking-[0.01em] hover:text-purple-600 transition-colors no-underline"
+          >
+            Projects
+          </Link>
           <Link
             href="/contact"
-            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all"
+            className="text-gray-700 font-old-standard-tt font-bold text-[1rem] tracking-[0.01em] hover:text-purple-600 transition-colors no-underline"
           >
-            Let&apos;s Connect
+            Contact
           </Link>
-        </div>
+          <Link
+            href="/contact"
+            className="px-4 py-2 bg-purple-600 text-white font-sans font-medium text-[1rem] tracking-[0.01em] rounded-lg hover:brightness-110 hover:scale-105 transition-all no-underline"
+          >
+            Let's Connect
+          </Link>
+        </nav>
 
-        {/* Mobile Navigation - NavDrawer */}
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <button
-                aria-label="Open menu"
-                className="p-2 rounded-lg border border-gray-300 bg-white shadow-sm"
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-gray-800 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden">
+            <nav className="flex flex-col space-y-4 p-4">
+              <Link
+                href="/about"
+                className="text-gray-800 hover:text-purple-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
               >
-                <Menu className="h-6 w-6 text-gray-700" />
-              </button>
-            </SheetTrigger>
-            <SheetContent side="left" className="p-0 w-72 max-w-[90vw] bg-white">
-              <SheetHeader className="border-b border-gray-200 px-6 py-4">
-                <SheetTitle className="text-lg font-semibold text-gray-900">Menu</SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col gap-4 py-6 px-6">
-                {routes.map((route) => (
-                  <Link
-                    key={route.href}
-                    href={route.href}
-                    className="block w-full rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors no-underline"
-                  >
-                    {route.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/contact"
-                  className="block w-full rounded-lg px-4 py-3 text-base font-medium text-white bg-purple-600 hover:bg-purple-700 transition-colors"
-                >
-                  Let&apos;s Connect
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
+                About
+              </Link>
+              <Link
+                href="/projects"
+                className="text-gray-800 hover:text-purple-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-800 hover:text-purple-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link
+                href="/contact"
+                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Let's Connect
+              </Link>
+            </nav>
+          </div>
+        )}
       </div>
-    </nav>
+    </header>
   );
 }

@@ -1,9 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
-import { MainNav } from "@/components/main-nav";
+import MainNav from "@/components/main-nav";
 import "@fontsource/outfit";
 import "@fontsource/manrope";
+import "@fontsource/playfair-display/400.css";
+import "@fontsource/playfair-display/500.css";
+import "@fontsource/playfair-display/600.css";
+import "@fontsource/playfair-display/700.css";
+import "@fontsource/lato/300.css";
+import "@fontsource/lato/400.css";
+import "@fontsource/lato/700.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,7 +51,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet" precedence="default" />
+      </head>
+      <body className="font-sans antialiased">
         <MainNav />
         {children}
         <footer className="bg-neutral-900 text-white py-8 px-6 text-center">

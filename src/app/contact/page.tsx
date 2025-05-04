@@ -1,6 +1,9 @@
-export default function Contact() {
+import MainNav from "@/components/main-nav";
+
+export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
+      <MainNav />
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title and Introduction */}
         <h1 className="text-4xl font-serif text-center bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">

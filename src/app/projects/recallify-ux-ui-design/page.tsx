@@ -1,8 +1,10 @@
 import Link from "next/link";
+import MainNav from "@/components/main-nav";
 
-export default function RecallifyUXUIDesign() {
+export default function RecallifyUXUIDesignPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <MainNav />
       {/* Navigation Bar */}
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">

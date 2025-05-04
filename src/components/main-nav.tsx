@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+// Simplified font-related class names to use basic system fonts.
 export default function MainNav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,35 +24,29 @@ export default function MainNav() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-[1.5rem] font-hammersmith-one font-semibold text-purple-600 tracking-[-0.01em]">
-          Valeria Heredia
+        <Link href="/" className="text-lg font-bold text-purple-600">
+          My Portfolio
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 items-center">
+        <nav className="hidden md:flex space-x-4 items-center">
           <Link
             href="/about"
-            className="text-gray-700 font-old-standard-tt font-bold text-[1rem] tracking-[0.01em] hover:text-purple-600 transition-colors no-underline"
+            className="text-gray-700 hover:text-purple-600"
           >
             About
           </Link>
           <Link
             href="/projects"
-            className="text-gray-700 font-old-standard-tt font-bold text-[1rem] tracking-[0.01em] hover:text-purple-600 transition-colors no-underline"
+            className="text-gray-700 hover:text-purple-600"
           >
             Projects
           </Link>
           <Link
             href="/contact"
-            className="text-gray-700 font-old-standard-tt font-bold text-[1rem] tracking-[0.01em] hover:text-purple-600 transition-colors no-underline"
+            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
           >
             Contact
-          </Link>
-          <Link
-            href="/contact"
-            className="px-4 py-2 bg-purple-600 text-white font-sans font-medium text-[1rem] tracking-[0.01em] rounded-lg hover:brightness-110 hover:scale-105 transition-all no-underline"
-          >
-            Let's Connect
           </Link>
         </nav>
 
@@ -107,7 +102,7 @@ export default function MainNav() {
                 className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Let's Connect
+                Contact
               </Link>
             </nav>
           </div>

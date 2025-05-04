@@ -1,8 +1,10 @@
 import Link from "next/link";
+import MainNav from "@/components/main-nav";
 
-export default function Projects() {
+export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-white">
+      <MainNav />
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title Section */}
         <h1 className="text-4xl font-serif text-center text-purple-600">

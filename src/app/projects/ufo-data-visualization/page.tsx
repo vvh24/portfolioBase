@@ -1,8 +1,10 @@
 import Link from "next/link";
+import MainNav from "@/components/main-nav";
 
-export default function UFODataVisualization() {
+export default function UFODataVisualizationPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <MainNav />
       {/* Navigation Bar */}
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -19,7 +21,7 @@ export default function UFODataVisualization() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Project Title Section */}
-        <h1 className="text-4xl font-serif text-center text-purple-600">UFO Data Visualization Project</h1>
+        <h1 className="text-4xl text-center text-purple-600">UFO Data Visualization Project</h1>
 
         {/* Project Preview Image */}
         <div className="flex justify-center">
@@ -28,7 +30,7 @@ export default function UFODataVisualization() {
 
         {/* Brief Description */}
         <p className="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
-          An interactive visualization using React, D3.js, and TopoJSON that displays UFO sightings across the US, military base locations, and supporting visualizations like timeline charts.
+          A project focused on visualizing UFO sighting data using modern web technologies.
         </p>
 
         {/* What was the assignment about? */}

@@ -2,10 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
+import MainNav from "@/components/main-nav";
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <>
+    <div className="min-h-screen">
+      <MainNav />
       <div className="bg-white py-20 relative overflow-hidden">
         {/* Decorative Bubbles */}
         <div className="absolute inset-0 opacity-10">
@@ -125,6 +127,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

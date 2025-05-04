@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import MainNav from "@/components/main-nav";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <MainNav />
       <div className="bg-gradient-to-r from-purple-500 to-teal-500 min-h-[60vh] flex items-center justify-center">
         <section className="text-center space-y-12">
           <h1 className="text-5xl md:text-6xl font-heading text-white tracking-wide font-semibold">

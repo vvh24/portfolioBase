@@ -1,45 +1,68 @@
-import type { Metadata, Viewport } from "next";
+"use client";
+
 import "./globals.css";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
-
-export const metadata: Metadata = {
-  title: {
-    default: "Outlaw AI Consultancy",
-    template: "%s | Outlaw AI Consultancy",
-  },
-  description: "Challenging the AI status quo with radical honesty and evidence-based disruption",
-  authors: [{ name: "Outlaw AI Consultancy" }],
-  keywords: ["AI consultancy", "digital transformation", "disruptive innovation"],
-};
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#111827" },
-  ],
-  width: "device-width",
-  initialScale: 1,
-};
+import RoundedButton from "@/components/ui/rounded-button";
+import Head from "next/head";
+import { useState } from "react";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <html lang="en">
-      <head>
-        <style>
-          {`
-            body {
-              font-family: Arial, sans-serif;
-            }
-          `}
-        </style>
-      </head>
+      <Head>
+        <title>My Portfolio</title>
+        <meta name="description" content="Valeria Heredia Crespo's Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body>
-        {children}
+        <header className="bg-white shadow-md w-full fixed top-0 z-10">
+          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-purple-600 focus:outline-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+            <nav className="hidden md:flex items-center space-x-16">
+              <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
+              <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
+              <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
+              <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
+                Let's Connect
+              </RoundedButton>
+            </nav>
+          </div>
+          {isMenuOpen && (
+            <div className="md:hidden bg-white shadow-md">
+              <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
+              <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
+              <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>
+              <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700">
+                Let's Connect
+              </RoundedButton>
+            </div>
+          )}
+        </header>
+
+        <main className="pt-16">{children}</main>
+
         <footer className="bg-gray-100 text-gray-800 py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* About Section */}

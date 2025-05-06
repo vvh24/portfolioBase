@@ -21,7 +21,7 @@ export default function Home() {
       </header>
 
       <main className="flex-grow w-full">
-        <div className="bg-gradient-purple-teal flex items-center justify-center min-h-[55vh] py-20">
+        <div className="bg-gradient-purple-teal flex items-center justify-center min-h-[50vh] py-20">
           <section className="text-center space-y-5 px-10">
             <h1 className="text-5xl md:text-6xl font-heading text-white tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Creating Innovative Digital Experiences

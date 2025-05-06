@@ -214,3 +214,38 @@
     background: linear-gradient(to right, #9D87FF, #FF7F7D); /* Custom gradient from primary-400 to accent-200 */
   }
 }
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  button, a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

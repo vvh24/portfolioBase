@@ -1,9 +1,20 @@
 import MainNav from "@/components/main-nav";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
-      <MainNav />
+      <header className="bg-white shadow-md">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold text-purple-600">My Portfolio</h1>
+          <nav className="flex items-center space-x-4">
+            <Link href="/" className="text-gray-700 hover:text-purple-600">Home</Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600">About</Link>
+            <Link href="/projects" className="text-gray-700 hover:text-purple-600">Projects</Link>
+            <Link href="/contact" className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all">Let's Connect</Link>
+          </nav>
+        </div>
+      </header>
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title and Introduction */}
         <h1 className="text-4xl font-serif text-center bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">

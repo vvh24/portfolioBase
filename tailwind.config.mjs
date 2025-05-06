@@ -41,6 +41,11 @@ export default {
           700: '#2b567a', // Explicitly defined
           800: '#1d384e',
           900: '#0f1b23',
+          DEFAULT: '#8A2BE2',
+          dark: '#5A189A',
+          darker: '#4C1D95',
+          light: '#EADCF8',
+          lighter: '#F3E8FF',
         },
         secondary: {
           50: '#f6fbf8',
@@ -65,6 +70,9 @@ export default {
           700: '#746340',
           800: '#4d4021',
           900: '#261d02',
+          coral: '#FF6F61',
+          aqua: '#4FD1C5',
+          gold: '#FFD700',
         },
         neutral: {
           50: '#f8f9fa',
@@ -168,6 +176,17 @@ export default {
         screens: {
           "2xl": "1400px",
         },
+      },
+      backgroundImage: {
+        'gradient-purple-teal': 'linear-gradient(to right, #8A2BE2, #4FD1C5)',
+        'gradient-coral-gold': 'linear-gradient(to bottom right, #FF6F61, #FFD700)',
+        'gradient-deepviolet-aqua': 'linear-gradient(to top, #5A189A, #4FD1C5)',
+        'gradient-softlavender-pale': 'linear-gradient(to right, #EADCF8, #F3E8FF)',
+        'diagonal-lines': 'repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 10px, transparent 10px, transparent 20px)',
+        'subtle-dots': 'radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'dot-pattern': '20px 20px',
       },
     },
   },

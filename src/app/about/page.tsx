@@ -30,7 +30,7 @@ export default function AboutPage() {
             {/* Profile Section */}
             <div className="bg-white rounded-lg shadow-lg p-8 text-center relative">
               <div className="w-32 h-32 rounded-full border-4 border-purple-400 mx-auto mb-4"></div>
-              <h1 className="text-5xl font-playfair text-purple-600">About Me</h1>
+              <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>About Me</h1>
               <p className="text-lg font-lato text-gray-700">Web and Information System Student</p>
               <div className="bg-purple-100 rounded-lg p-4 mt-4">
                 <p className="text-sm font-lato text-gray-600">As a UI/UX designer and NJIT senior, I embody the Creator archetype. I believe in the power of self-expression and authenticity to create meaningful digital experiences.</p>

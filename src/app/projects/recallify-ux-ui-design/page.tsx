@@ -19,7 +19,9 @@ export default function RecallifyUXUIDesignPage() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Project Title Section */}
-        <h1 className="text-4xl font-serif text-center text-purple-600">Recallify UX/UI Design</h1>
+        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          Recallify UX/UI Design
+        </h1>
 
         {/* Project Preview Image */}
         <div className="flex justify-center">
@@ -27,7 +29,7 @@ export default function RecallifyUXUIDesignPage() {
         </div>
 
         {/* Brief Description */}
-        <p className="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+        <p className="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
           A UX/UI design project focused on enhancing user experience and interface design for a web application, utilizing Figma and Adobe XD.
         </p>
 
@@ -35,12 +37,12 @@ export default function RecallifyUXUIDesignPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">What was the assignment about?</h2>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>What was the assignment about?</h2>
+            <p className="text-gray-700 leading-relaxed mt-4" style={{ fontFamily: 'Lato, sans-serif' }}>
               The assignment involved designing an intuitive and visually appealing interface for a web application. The focus was on user research, wireframing, and prototyping.
             </p>
             <div className="bg-purple-100 p-4 rounded-lg mt-4">
-              <ul className="list-disc list-inside text-purple-700">
+              <ul className="list-disc list-inside text-purple-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                 <li>Conduct user research</li>
                 <li>Create wireframes and prototypes</li>
                 <li>Iterate based on user feedback</li>
@@ -53,8 +55,8 @@ export default function RecallifyUXUIDesignPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Thought Process</h2>
-            <ol className="mt-4 space-y-4">
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Thought Process</h2>
+            <ol className="mt-4 space-y-4" style={{ fontFamily: 'Lato, sans-serif' }}>
               {["Conducting user interviews", "Sketching initial wireframes", "Creating high-fidelity prototypes", "Testing and iterating designs"].map((step, index) => (
                 <li key={index} className="flex items-start space-x-2">
                   <div className="w-6 h-6 flex items-center justify-center bg-purple-100 text-purple-700 rounded-full font-bold">
@@ -71,14 +73,14 @@ export default function RecallifyUXUIDesignPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Implementation</h2>
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Implementation</h2>
             <div className="mt-4">
-              <h3 className="text-lg font-semibold text-purple-600">User Research</h3>
-              <p className="text-gray-700 leading-relaxed mt-2">
+              <h3 className="text-lg font-semibold text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>User Research</h3>
+              <p className="text-gray-700 leading-relaxed mt-2" style={{ fontFamily: 'Lato, sans-serif' }}>
                 Conducted interviews and surveys to understand user needs and pain points.
               </p>
-              <h3 className="text-lg font-semibold text-purple-600 mt-4">Prototyping</h3>
-              <p className="text-gray-700 leading-relaxed mt-2">
+              <h3 className="text-lg font-semibold text-purple-600 mt-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Prototyping</h3>
+              <p className="text-gray-700 leading-relaxed mt-2" style={{ fontFamily: 'Lato, sans-serif' }}>
                 Created wireframes and high-fidelity prototypes using Figma and Adobe XD.
               </p>
             </div>
@@ -89,11 +91,11 @@ export default function RecallifyUXUIDesignPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Technologies Used</h2>
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Technologies Used</h2>
             <div className="flex flex-wrap gap-2 mt-4">
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Figma</span>
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Adobe XD</span>
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Miro</span>
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium" style={{ fontFamily: 'Lato, sans-serif' }}>Figma</span>
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium" style={{ fontFamily: 'Lato, sans-serif' }}>Adobe XD</span>
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium" style={{ fontFamily: 'Lato, sans-serif' }}>Miro</span>
             </div>
           </div>
         </div>

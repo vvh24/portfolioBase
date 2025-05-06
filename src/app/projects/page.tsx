@@ -6,7 +6,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-white">
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">My Portfolio</h1>
+          <h1 className="text-xl font-bold text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>My Portfolio</h1>
           <nav className="flex items-center space-x-4">
             <Link href="/" className="text-gray-700 hover:text-purple-600">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600">About</Link>
@@ -17,10 +17,10 @@ export default function ProjectsPage() {
       </header>
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title Section */}
-        <h1 className="text-4xl font-serif text-center text-purple-600">
+        <h1 className="text-4xl font-serif text-center text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Playground
         </h1>
-        <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto">
+        <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
           Each project I undertake is a testament to my dedication to innovation, craftsmanship, and self-expression. Explore my work and see how I bring ideas to life through thoughtful design and creative problem-solving.
         </p>
 
@@ -46,8 +46,8 @@ export default function ProjectsPage() {
             link: "/projects/recallify-ux-ui-design",
           }].map((project, index) => (
             <div key={index} className="bg-gray-100 rounded-lg p-8 shadow-md space-y-4">
-              <h2 className={`text-2xl font-heading ${project.color}`}>{project.title}</h2>
-              <p className="text-gray-700 leading-relaxed">{project.description}</p>
+              <h2 className={`text-2xl font-heading ${project.color}`} style={{ fontFamily: 'Poppins, sans-serif' }}>{project.title}</h2>
+              <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, i) => (
                   <span key={i} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">

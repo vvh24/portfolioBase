@@ -8,12 +8,12 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">My Portfolio</h1>
-          <nav className="flex items-center space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-purple-600">Home</Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600">About</Link>
-            <Link href="/projects" className="text-gray-700 hover:text-purple-600">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700">
+          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+          <nav className="flex items-center space-x-16">
+            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
+            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
+            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -21,16 +21,16 @@ export default function Home() {
       </header>
 
       <main className="flex-grow w-full">
-        <div className="bg-gradient-to-r from-purple-500 to-teal-500 flex items-center justify-center min-h-[50vh]">
-          <section className="text-center space-y-12 px-4">
-            <h1 className="text-5xl md:text-6xl font-heading text-white tracking-wide font-semibold">
+        <div className="bg-gradient-purple-teal flex items-center justify-center min-h-[55vh] py-20">
+          <section className="text-center space-y-5 px-10">
+            <h1 className="text-5xl md:text-6xl font-heading text-white tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Creating Innovative Digital Experiences
             </h1>
             <p className="text-lg md:text-xl text-white max-w-2xl mx-auto">
               Transforming ideas into elegant digital solutions.
             </p>
             <div>
-              <RoundedButton href="/projects" className="bg-white text-purple-600 hover:bg-gray-100">
+              <RoundedButton href="/projects" className="bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-full hover:bg-gray-100 no-underline">
                 View My Work
               </RoundedButton>
             </div>
@@ -86,21 +86,21 @@ export default function Home() {
                 },
                 {
                   title: "Craftsmanship",
-                  description: "I believe in meticulous attention to detail, from clean code structure to pixel-perfect designs. My dedication to quality means carefully refining each element until the technical foundation and visual presentation work seamlessly together to create polished, professional experiences.",
+                  description: "I believe in meticulous attention to detail, from clean code structure to pixel-perfect designs. My dedication to quality means carefully refining each element until the technical and visual presentation work seamlessly together to create polished, professional experiences.",
                   imgSrc: "/images/craftsmanship2.0_philosophy.png"
                 },
                 {
                   title: "Impact",
-                  description: "My ultimate goal is creating digital solutions that meaningfully improve how people interact with information. I measure success by how effectively my work simplifies complexity, enhances understanding, and makes technology more accessible to the people who use it.",
+                  description: "My ultimate goal is creating digital solutions that improve how people interact with information. I measure success by how effectively my work simplifies complexity, enhances understanding, and makes technology more accessible to the people who use it.",
                   imgSrc: "/images/impact3.0_philosophy.png"
                 }
               ].map((philosophy, index) => (
-                <div key={index} className="text-center space-y-4 text-gray-900">
+                <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center space-y-4">
                   <div className="w-16 h-16 mx-auto">
                     <img src={philosophy.imgSrc} alt={philosophy.title} className="w-full h-full object-cover rounded-full" />
                   </div>
-                  <h3 className="text-xl font-heading">{philosophy.title}</h3>
-                  <p>{philosophy.description}</p>
+                  <h3 className="text-xl font-heading text-gray-900 font-bold">{philosophy.title}</h3>
+                  <p className="text-gray-700">{philosophy.description}</p>
                 </div>
               ))}
             </div>
@@ -110,9 +110,12 @@ export default function Home() {
         {/* Featured Projects Section */}
         <section className="bg-gray-100 py-12 md:py-24">
           <div className="container mx-auto px-4 space-y-8">
-            <h2 className="text-3xl md:text-4xl font-heading text-center text-gray-900">
-              Featured Creations
+            <h2 className="text-3xl md:text-4xl font-heading text-center font-bold text-black-800">
+              From the Creative Lab
             </h2>
+            <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto">
+              Welcome to my Creative Lab, where I experiment with emerging technologies and design concepts. These projects represent my curiosity and continuous learning journey as I explore new tools and approaches in web development and information visualization.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
@@ -136,12 +139,12 @@ export default function Home() {
                   description: "Recallify is the planning of an intelligent note-taking app designed for life science students struggling with information retention. It automates lecture summarization, provides timestamped highlights, and features 'Rico', an AI study buddy that helps students quiz themselves on complex concepts, ultimately streamlining the study process and improving academic performance.",
                   link: "/projects/recallify-ux-ui-design",
                   imgSrc: "/images/recallify_visualization.png",
-                  tags: ["UX/UI Design", "AI", "Education"],
+                  tags: ["Figma", "Miro", "Data Analysis"],
                   githubLink: "https://github.com/yourusername/recallify-ux-ui-design"
                 },
               ].map((project, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 space-y-4 transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
-                  <div className="w-full aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg">
+                  <div className="w-full aspect-w-5 aspect-h-3 bg-gray-200 rounded-lg">
                     {project.imgSrc ? (
                       <img src={project.imgSrc} alt={project.title} className="w-full h-full object-cover rounded-lg" />
                     ) : (
@@ -162,19 +165,58 @@ export default function Home() {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
                     >
                       GitHub
                     </a>
                     <Link
                       href={project.link}
-                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
                     >
                       Explore Project
                     </Link>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative bg-gradient-to-b from-[#8A2BE2] to-[#5727A3] py-24">
+          {/* Decorative Circles */}
+          <div
+            className="absolute top-[-30px] left-[-30px] w-[160px] h-[160px] bg-gradient-radial from-white/15 to-transparent rounded-full"
+            style={{ top: "50px", left: "150px" }}
+          ></div>
+          <div
+            className="absolute bottom-[-50px] right-[-50px] w-[200px] h-[200px] bg-gradient-radial from-white/15 to-transparent rounded-full"
+            style={{ bottom: "250px", right: "650px" }}
+          ></div>
+          <div
+            className="absolute top-[-20px] left-[50%] transform -translate-x-1/2 w-[80px] h-[80px] bg-gradient-radial from-white/15 to-transparent rounded-full"
+            style={{ top: "50px", left: "400px" }}
+          ></div>
+
+          {/* Main Text */}
+          <div className="container mx-auto text-center text-white px-4">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+              Ready to Collaborate on Your Next <br />
+              <span className="text-[#E6C4FF]">Digital Project?</span>
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed max-w-3xl mx-auto">
+              As a Web & Information Systems student passionate about creating intuitive
+              digital experiences, I'm looking for opportunities to apply my design and
+              development skills to real-world challenges.
+            </p>
+
+            {/* CTA Button */}
+            <div className="mt-8">
+              <a
+                href="/contact"
+                className="inline-block bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-full hover:bg-gray-100 no-underline"
+              >
+                Let's Connect
+              </a>
             </div>
           </div>
         </section>

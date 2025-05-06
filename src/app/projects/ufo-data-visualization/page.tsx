@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function UFODataVisualizationPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Lato, sans-serif' }}>
       {/* Navigation Bar */}
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">My Portfolio</h1>
+          <h1 className="text-xl font-bold text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>My Portfolio</h1>
           <nav className="flex items-center space-x-4">
             <Link href="/about" className="text-gray-700 hover:text-purple-600">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600">Projects</Link>
@@ -19,7 +19,7 @@ export default function UFODataVisualizationPage() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Project Title Section */}
-        <h1 className="text-4xl text-center text-purple-600">UFO Data Visualization Project</h1>
+        <h1 className="text-4xl text-center text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>UFO Data Visualization Project</h1>
 
         {/* Project Preview Image */}
         <div className="flex justify-center">
@@ -35,7 +35,7 @@ export default function UFODataVisualizationPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">What was the assignment about?</h2>
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>What was the assignment about?</h2>
             <p className="text-gray-700 leading-relaxed mt-4">
               The assignment involved creating an interactive visualization to explore UFO sightings data. The goal was to provide insights into patterns and correlations using modern data visualization techniques.
             </p>
@@ -53,7 +53,7 @@ export default function UFODataVisualizationPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Thought Process</h2>
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Thought Process</h2>
             <ol className="mt-4 space-y-4">
               {["Brainstorming ideas", "Wireframing the design", "Iterating based on feedback", "Finalizing the implementation"].map((step, index) => (
                 <li key={index} className="flex items-start space-x-2">
@@ -71,13 +71,13 @@ export default function UFODataVisualizationPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Implementation</h2>
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Implementation</h2>
             <div className="mt-4">
-              <h3 className="text-lg font-semibold text-purple-600">Data Processing</h3>
+              <h3 className="text-lg font-semibold text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>Data Processing</h3>
               <p className="text-gray-700 leading-relaxed mt-2">
                 The data was cleaned and processed to ensure accuracy and consistency before visualization.
               </p>
-              <h3 className="text-lg font-semibold text-purple-600 mt-4">Visualization Components</h3>
+              <h3 className="text-lg font-semibold text-purple-600 mt-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Visualization Components</h3>
               <p className="text-gray-700 leading-relaxed mt-2">
                 Interactive charts and maps were created using D3.js and TopoJSON to provide an engaging user experience.
               </p>
@@ -89,7 +89,7 @@ export default function UFODataVisualizationPage() {
         <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
           <div className="w-2 bg-purple-600"></div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Technologies Used</h2>
+            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Technologies Used</h2>
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">React</span>
               <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">D3.js</span>

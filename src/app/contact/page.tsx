@@ -17,7 +17,7 @@ export default function ContactPage() {
       </header>
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title and Introduction */}
-        <h1 className="text-4xl font-serif text-center bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Contact Me
         </h1>
         <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto">

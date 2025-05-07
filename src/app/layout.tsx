@@ -67,7 +67,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* About Section */}
             <div>
-              <h3 className="text-lg font-bold mb-4">About Me</h3>
+              <h3 className="text-lg font-bold mb-4">Hey there! About Me</h3>
               <p className="text-sm leading-relaxed">
                 I'm a Web & Information Systems student passionate about creating intuitive digital experiences. Let's build something amazing together!
               </p>
@@ -77,10 +77,10 @@ export default function RootLayout({
             <div>
               <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><Link href="/" className="hover:underline no-underline">Home</Link></li>
-                <li><Link href="/about" className="hover:underline no-underline">About</Link></li>
-                <li><Link href="/projects" className="hover:underline no-underline">Projects</Link></li>
-                <li><Link href="/contact" className="hover:underline no-underline">Contact</Link></li>
+                <li><Link href="/" className="hover:no-underline no-underline">Home</Link></li>
+                <li><Link href="/about" className="hover:no-underline no-underline">About</Link></li>
+                <li><Link href="/projects" className="hover:no-underline no-underline">Projects</Link></li>
+                <li><Link href="/contact" className="hover:no-underline no-underline">Contact</Link></li>
               </ul>
             </div>
 
@@ -105,7 +105,7 @@ export default function RootLayout({
           </div>
 
           <div className="mt-8 text-center text-sm text-gray-500">
-            © {new Date().getFullYear()} My Portfolio. All rights reserved.
+            © {new Date().getFullYear()} Valeria Heredia Crespo. All rights reserved.
           </div>
         </footer>
       </body>

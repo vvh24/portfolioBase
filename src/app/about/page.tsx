@@ -50,125 +50,121 @@ export default function AboutPage() {
       </header>
 
       <main className="container mx-auto px-4 py-24 space-y-16">
-        <div className="bg-white py-20 relative overflow-hidden">
-          {/* Decorative Bubbles */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="w-40 h-40 bg-purple-300 rounded-full absolute top-10 left-10 animate-pulse"></div>
-            <div className="w-32 h-32 bg-teal-300 rounded-full absolute bottom-20 right-20 animate-pulse"></div>
+        {/* Page Title */}
+        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative">
+          About Me
+          <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
+        </h1>
+
+        {/* Introduction Section */}
+        <section className="bg-purple-100 rounded-lg p-8 shadow-md flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
+          <img src="/images/valeria_cartoon.png" alt="Your Profile" className="w-32 h-32 rounded-full object-cover" />
+          <div className="flex-1">
+            <h2 className="text-3xl font-heading text-gray-900">Blending Technology & Creativity</h2>
+            <p className="text-gray-700 mt-4">I'm Valeria, a Web & Information Systems student at NJIT with a passion for creating intuitive digital solutions. I approach each project with both analytical precision and creative vision, seeking to transform complex information into accessible, engaging experiences.</p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium">Bilingual Communicator</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium">Detail-oriented</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium">Creative Thinker</span>
+            </div>
           </div>
-          <div className="container mx-auto px-4 space-y-16">
-            {/* Profile Section */}
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center relative">
-              <div className="w-32 h-32 rounded-full border-4 border-purple-400 mx-auto mb-4"></div>
-              <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>About Me</h1>
-              <p className="text-lg font-lato text-gray-700">Web and Information System Student</p>
-              <div className="bg-purple-100 rounded-lg p-4 mt-4">
-                <p className="text-sm font-lato text-gray-600">As a UI/UX designer and NJIT senior, I embody the Creator archetype. I believe in the power of self-expression and authenticity to create meaningful digital experiences.</p>
+        </section>
+
+        {/* My Journey Section */}
+        <section>
+          <h2 className="text-4xl font-heading text-gray-900 text-center relative">
+            My Journey
+            <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
+          </h2>
+          <div className="bg-white border border-purple-200 rounded-lg p-8 shadow-md mt-8">
+            <p className="text-gray-700 mb-4">Web and Information Systems emerged as the perfect intersection of these interests, allowing me to combine technical problem-solving with creative design. I discovered that my analytical mindset, attention to detail, and organizational skills complemented my creative side perfectly when building digital experiences.</p>
+            <p className="text-gray-700">What excites me most about this field is the opportunity to create and improve digital solutions that make a real difference in how people interact with information. My journey has evolved from exploration to a focused pursuit of creating technology that's both functional and beautiful.</p>
+          </div>
+        </section>
+
+        {/* Skills & Expertise Section */}
+        <section>
+          <h2 className="text-4xl font-heading text-gray-900 text-center relative">
+            Skills & Expertise
+            <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            {/* Technical Skills */}
+            <div className="bg-purple-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-2xl font-heading text-gray-900 mb-4">Technical</h3>
+              <ul className="space-y-2">
+                {['HTML/CSS', 'Python', 'C++', 'Swift', 'MySQL', 'Git/GitHub'].map(skill => (
+                  <li key={skill} className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+                    <span className="text-gray-700 hover:scale-105 transition-transform">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Design & UX Skills */}
+            <div className="bg-purple-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-2xl font-heading text-gray-900 mb-4">Design & UX</h3>
+              <ul className="space-y-2">
+                {['User Experience', 'Wireframing', 'Figma', 'DreamWeaver', 'Information Architecture'].map(skill => (
+                  <li key={skill} className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+                    <span className="text-gray-700 hover:scale-105 transition-transform">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Soft Skills */}
+            <div className="bg-purple-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-2xl font-heading text-gray-900 mb-4">Soft Skills</h3>
+              <ul className="space-y-2">
+                {['Bilingual (Eng/Spa)', 'Problem-Solving', 'Attention to Detail', 'Time Management', 'Works Well Under Pressure'].map(skill => (
+                  <li key={skill} className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+                    <span className="text-gray-700 hover:scale-105 transition-transform">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Education & Certifications Section */}
+        <section>
+          <h2 className="text-4xl font-heading text-gray-900 text-center relative">
+            Education & Certifications
+            <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
+          </h2>
+          <div className="bg-white border border-purple-200 rounded-lg p-8 shadow-md mt-8 space-y-6">
+            <div className="flex items-center space-x-4">
+              <img src="/images/njit_logo.png" alt="NJIT Logo" className="w-12 h-12 object-contain rounded-full" />
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">NJIT</h3>
+                <p className="text-gray-700">Bachelor of Science in Web & Information Systems (2024-26), GPA: 3.6/4.0</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <img src="/images/pccc_logo.gif" alt="PCCC Logo" className="w-12 h-12 object-contain rounded-full" />
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">Passaic County Community College</h3>
+                <p className="text-gray-700">Associate of Applied Science in CIS Web Technology (2021-23), GPA: 3.5/4.0</p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="container mx-auto px-4 py-10 space-y-12">
-          {/* Background */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-playfair text-center text-purple-600">Background</h2>
-            <p className="text-sm font-lato text-gray-600 mt-4">Motivated Computing School undergraduate student with a strong desire to learn and improve my skills in pursuit of a career as a Web Developer, UX Researcher, or Information Systems Analyst. With a foundation in web formatting, programming languages, database management, communication and service delivery. Organized, hardworking, and creative, with a willingness to take on added responsibilities to achieve team goals.</p>
+        {/* My Approach & Values Section */}
+        <section>
+          <h2 className="text-4xl font-heading text-gray-900 text-center relative">
+            My Approach & Values
+            <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
+          </h2>
+          <div className="bg-purple-50 rounded-lg p-8 shadow-md mt-8">
+            <p className="text-gray-700 mb-4">My work style combines methodical planning with creative problem-solving, and I thrive under pressure. I'm open to new challenges and willing to take calculated risks to achieve the best results.</p>
+            <p className="text-gray-700">While my current focus is on building my technical and design skills in academic projects, I'm passionate about traditional art forms like drawing and sketching. I'm excited to continue bridging these analog creative skills with digital design as I grow in my career.</p>
           </div>
-
-          {/* Education Timeline */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-playfair text-center text-purple-600">Education</h2>
-            <div className="relative mt-8">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-purple-200 h-full"></div>
-              <div className="space-y-16">
-                {/* NJIT */}
-                <div className="relative flex items-center">
-                  <div className="w-5 h-5 border-4 border-purple-400 bg-white rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
-                  <div className="bg-white rounded-lg shadow-lg p-6 w-[45%] mr-16 ml-4">
-                    <h3 className="text-xl font-bold font-playfair text-purple-600">New Jersey Institute of Technology</h3>
-                    <p className="text-sm font-lato text-gray-600">Newark, NJ</p>
-                    <p className="text-sm font-lato text-gray-600">Bachelor of Science in Information Technology (2024-2026)</p>
-                    <p className="text-sm font-lato text-gray-600">GPA: 3.5/4.0</p>
-                  </div>
-                </div>
-                {/* PCCC */}
-                <div className="relative flex items-center">
-                  <div className="w-5 h-5 border-4 border-purple-400 bg-white rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
-                  <div className="bg-white rounded-lg shadow-lg p-6 w-[45%] mr-16 ml-4">
-                    <h3 className="text-xl font-bold font-playfair text-purple-600">Passaic County Community College</h3>
-                    <p className="text-sm font-lato text-gray-600">Paterson, NJ</p>
-                    <p className="text-sm font-lato text-gray-600">Completed 60 credit hours towards an AAS (2021-2023)</p>
-                    <p className="text-sm font-lato text-gray-600">GPA: 3.5/4.0</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Certifications */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-playfair text-center text-purple-600">Certifications</h2>
-            <div className="flex flex-wrap justify-center gap-8 mt-8">
-              <div className="bg-white rounded-lg shadow-lg p-4 text-center">
-                <div className="w-12 h-12 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto mb-2">RCR</div>
-                <h3 className="text-lg font-playfair text-purple-600">CITI Program RCR Course Certification</h3>
-                <p className="text-sm font-lato text-gray-600">Responsible Conduct of Research (RCR) - Basic Course Completion (2025)</p>
-              </div>
-              <div className="bg-white rounded-lg shadow-lg p-4 text-center">
-                <div className="w-12 h-12 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto mb-2">MMT</div>
-                <h3 className="text-lg font-playfair text-purple-600">Makerspace Mechatronics Training Program Certificate</h3>
-                <p className="text-sm font-lato text-gray-600">2021-22</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Skills Section */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-playfair text-center text-purple-600">Skills</h2>
-            <div className="flex flex-wrap justify-center gap-8 mt-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">HTML</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">CSS</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">Python/C++/Swift</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">Git/GitHub</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">Figma</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">MySQL</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto"></div>
-                <p className="text-sm font-lato text-gray-600 mt-2">Adobe DreamWeaver</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Languages */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-playfair text-center text-purple-600">Languages</h2>
-            <div className="flex flex-wrap justify-center gap-8 mt-8">
-              <div className="bg-white rounded-lg shadow-lg p-4 text-center">
-                <div className="w-12 h-12 bg-purple-400 text-white rounded-full flex items-center justify-center mx-auto mb-2">ES</div>
-                <p className="text-sm font-lato text-gray-600">Spanish - Native</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
       </main>
     </div>
   );

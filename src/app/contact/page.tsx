@@ -48,7 +48,7 @@ export default function ContactPage() {
         )}
       </header>
       <main className="container mx-auto px-4 py-24 space-y-16">
-        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center">
           Contact Me
         </h1>
         <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto">
@@ -83,7 +83,7 @@ export default function ContactPage() {
           </section>
 
           <section className="space-y-8">
-            <h2 className="text-3xl font-serif text-center bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+            <h2 className="text-3xl font-heading text-center bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
               Connect with Me
             </h2>
             <div className="flex justify-center gap-6">
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6 text-purple-600">
                   <path d="M12 12.713l11.985-8.713h-23.97l11.985 8.713zm0 2.574l-12-8.713v12.426h24v-12.426l-12 8.713z" />
                 </svg>
-                <span>Email: <a href="mailto:valeriahcrespo@gmail.com" className="text-purple-600 hover:underline">valeria@example.com</a></span>
+                <span>Email: <a href="mailto:valeriahcrespo@gmail.com" className="text-purple-600 no-underline hover:no-underline">valeriahcrespo@gmail.com</a></span>
               </span>
             </p>
           </section>

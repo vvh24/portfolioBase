@@ -71,8 +71,9 @@ export default function Home() {
         {/* Values/Mission Section */}
         <section className="bg-purple-100 py-12 md:py-24">
           <div className="container mx-auto px-4 space-y-8">
-            <h2 className="text-3xl md:text-4xl font-heading text-center text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-heading text-center text-gray-900 relative">
               My Creative Philosophy
+              <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
             </h2>
             <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto">
               I believe in creating technology that is both beautiful and functional, empowering users to achieve their goals.
@@ -108,15 +109,16 @@ export default function Home() {
         </section>
 
         {/* Featured Projects Section */}
-        <section className="bg-gray-100 py-12 md:py-24">
-          <div className="container mx-auto px-4 space-y-8">
-            <h2 className="text-3xl md:text-4xl font-heading text-center font-bold text-black-800">
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-heading text-gray-900 text-center mb-8 relative">
               From the Creative Lab
+              <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
             </h2>
-            <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-8">
               Welcome to my Creative Lab, where I experiment with emerging technologies and design concepts. These projects represent my curiosity and continuous learning journey as I explore new tools and approaches in web development and information visualization.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   title: "Data Visualization",
@@ -143,16 +145,12 @@ export default function Home() {
                   githubLink: "https://github.com/yourusername/recallify-ux-ui-design"
                 },
               ].map((project, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 space-y-4 transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
-                  <div className="w-full aspect-w-5 aspect-h-3 bg-gray-200 rounded-lg">
-                    {project.imgSrc ? (
-                      <img src={project.imgSrc} alt={project.title} className="w-full h-full object-cover rounded-lg" />
-                    ) : (
-                      <span className="text-gray-500">Image Placeholder</span>
-                    )}
+                <div key={index} className="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform">
+                  <div className="w-full aspect-w-5 aspect-h-3 bg-gray-100 rounded-lg overflow-hidden">
+                    <img src={project.imgSrc} alt={project.title} className="w-full h-full object-cover rounded-lg scale-90" />
                   </div>
-                  <h3 className="text-xl font-heading text-purple-700 text-left">{project.title}</h3>
-                  <p className="text-gray-700 text-left">{project.description}</p>
+                  <h3 className="text-2xl font-heading text-gray-900 mb-4">{project.title}</h3>
+                  <p className="text-gray-700">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span key={tagIndex} className="bg-purple-100 text-purple-700 text-sm px-2 py-1 rounded-full">

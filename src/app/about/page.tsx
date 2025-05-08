@@ -9,7 +9,7 @@ export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
@@ -60,12 +60,12 @@ export default function AboutPage() {
         <section className="bg-purple-100 rounded-lg p-8 shadow-md flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
           <img src="/images/valeria_cartoon.png" alt="Your Profile" className="w-32 h-32 rounded-full object-cover" />
           <div className="flex-1">
-            <h2 className="text-3xl font-heading text-gray-900">Blending Technology & Creativity</h2>
+            <h2 className="text-3xl font-heading text-black-900">Blending Technology & Creativity</h2>
             <p className="text-gray-700 mt-4">I'm Valeria, a Web & Information Systems student at NJIT with a passion for creating intuitive digital solutions. I approach each project with both analytical precision and creative vision, seeking to transform complex information into accessible, engaging experiences.</p>
             <div className="flex flex-wrap gap-2 mt-4">
-              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium">Bilingual Communicator</span>
-              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium">Detail-oriented</span>
-              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium">Creative Thinker</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Bilingual Communicator</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Detail-oriented</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Creative Thinker</span>
             </div>
           </div>
         </section>
@@ -77,8 +77,8 @@ export default function AboutPage() {
             <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
           </h2>
           <div className="bg-white border border-purple-200 rounded-lg p-8 shadow-md mt-8">
-            <p className="text-gray-700 mb-4">Web and Information Systems emerged as the perfect intersection of these interests, allowing me to combine technical problem-solving with creative design. I discovered that my analytical mindset, attention to detail, and organizational skills complemented my creative side perfectly when building digital experiences.</p>
-            <p className="text-gray-700">What excites me most about this field is the opportunity to create and improve digital solutions that make a real difference in how people interact with information. My journey has evolved from exploration to a focused pursuit of creating technology that's both functional and beautiful.</p>
+            <p className="text-black-700 mb-4">Web and Information Systems emerged as the perfect intersection of these interests, allowing me to combine technical problem-solving with creative design. I discovered that my analytical mindset, attention to detail, and organizational skills complemented my creative side perfectly when building digital experiences.</p>
+            <p className="text-black-700">What excites me most about this field is the opportunity to create and improve digital solutions that make a real difference in how people interact with information. My journey has evolved from exploration to a focused pursuit of creating technology that's both functional and beautiful.</p>
           </div>
         </section>
 
@@ -91,12 +91,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             {/* Technical Skills */}
             <div className="bg-purple-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-2xl font-heading text-gray-900 mb-4">Technical</h3>
+              <h3 className="text-2xl font-heading text-black-900 mb-4">Technical</h3>
               <ul className="space-y-2">
                 {['HTML/CSS', 'Python', 'C++', 'Swift', 'MySQL', 'Git/GitHub'].map(skill => (
                   <li key={skill} className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-                    <span className="text-gray-700 hover:scale-105 transition-transform">{skill}</span>
+                    <span className="text-black-700 hover:scale-105 transition-transform">{skill}</span>
                   </li>
                 ))}
               </ul>
@@ -104,12 +104,12 @@ export default function AboutPage() {
 
             {/* Design & UX Skills */}
             <div className="bg-purple-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-2xl font-heading text-gray-900 mb-4">Design & UX</h3>
+              <h3 className="text-2xl font-heading text-black-900 mb-4">Design & UX</h3>
               <ul className="space-y-2">
                 {['User Experience', 'Wireframing', 'Figma', 'DreamWeaver', 'Information Architecture'].map(skill => (
                   <li key={skill} className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-                    <span className="text-gray-700 hover:scale-105 transition-transform">{skill}</span>
+                    <span className="text-black-700 hover:scale-105 transition-transform">{skill}</span>
                   </li>
                 ))}
               </ul>
@@ -117,12 +117,12 @@ export default function AboutPage() {
 
             {/* Soft Skills */}
             <div className="bg-purple-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-2xl font-heading text-gray-900 mb-4">Soft Skills</h3>
+              <h3 className="text-2xl font-heading text-black-900 mb-4">Soft Skills</h3>
               <ul className="space-y-2">
                 {['Bilingual (Eng/Spa)', 'Problem-Solving', 'Attention to Detail', 'Time Management', 'Works Well Under Pressure'].map(skill => (
                   <li key={skill} className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-                    <span className="text-gray-700 hover:scale-105 transition-transform">{skill}</span>
+                    <span className="text-black-700 hover:scale-105 transition-transform">{skill}</span>
                   </li>
                 ))}
               </ul>
@@ -132,7 +132,7 @@ export default function AboutPage() {
 
         {/* Education & Certifications Section */}
         <section>
-          <h2 className="text-4xl font-heading text-gray-900 text-center relative">
+          <h2 className="text-4xl font-heading text-black-900 text-center relative">
             Education & Certifications
             <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
           </h2>
@@ -140,15 +140,31 @@ export default function AboutPage() {
             <div className="flex items-center space-x-4">
               <img src="/images/njit_logo.png" alt="NJIT Logo" className="w-12 h-12 object-contain rounded-full" />
               <div>
-                <h3 className="text-lg font-bold text-gray-900">NJIT</h3>
-                <p className="text-gray-700">Bachelor of Science in Web & Information Systems (2024-26), GPA: 3.6/4.0</p>
+                <h3 className="text-lg font-bold text-black-900">NJIT - Newark, NJ</h3>
+                <p className="text-black-700">Bachelor of Science in Web & Information Systems (2024-26), GPA: 3.6/4.0</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <img src="/images/pccc_logo.gif" alt="PCCC Logo" className="w-12 h-12 object-contain rounded-full" />
               <div>
-                <h3 className="text-lg font-bold text-gray-900">Passaic County Community College</h3>
-                <p className="text-gray-700">Associate of Applied Science in CIS Web Technology (2021-23), GPA: 3.5/4.0</p>
+                <h3 className="text-lg font-bold text-black-900">Passaic County Community College - Paterson, NJ</h3>
+                <p className="text-black-700">Associate of Applied Science in CIS Web Technology (2021-23), GPA: 3.5/4.0</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white border border-purple-200 rounded-lg p-8 shadow-md mt-8 space-y-6">
+            <div className="flex items-center space-x-4">
+              <img src="/images/citi_logo.jpg" alt="CITI Program Logo" className="w-12 h-12 object-contain rounded-full" />
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">CITI Program</h3>
+                <p className="text-black-700">Responsible Conduct of Research (RCR) - Basic Course (2025)</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <img src="/images/njit_logo2.0.jpg" alt="Makerspace Logo" className="w-12 h-12 object-contain rounded-full" />
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">NJIT Makerspace Mechatronics Training Program</h3>
+                <p className="text-black-700">Mechatronics Training Program Certificate (2021-22)</p>
               </div>
             </div>
           </div>
@@ -156,13 +172,13 @@ export default function AboutPage() {
 
         {/* My Approach & Values Section */}
         <section>
-          <h2 className="text-4xl font-heading text-gray-900 text-center relative">
+          <h2 className="text-4xl font-heading text-black-900 text-center relative">
             My Approach & Values
             <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
           </h2>
           <div className="bg-purple-50 rounded-lg p-8 shadow-md mt-8">
-            <p className="text-gray-700 mb-4">My work style combines methodical planning with creative problem-solving, and I thrive under pressure. I'm open to new challenges and willing to take calculated risks to achieve the best results.</p>
-            <p className="text-gray-700">While my current focus is on building my technical and design skills in academic projects, I'm passionate about traditional art forms like drawing and sketching. I'm excited to continue bridging these analog creative skills with digital design as I grow in my career.</p>
+            <p className="text-black-700 mb-4">My work style combines methodical planning with creative problem-solving, and I thrive under pressure. I'm open to new challenges and willing to take calculated risks to achieve the best results.</p>
+            <p className="text-black-700">While my current focus is on building my technical and design skills in academic projects, I'm passionate about traditional art forms like drawing and sketching. I'm excited to continue bridging these analog creative skills with digital design as I grow in my career.</p>
           </div>
         </section>
       </main>

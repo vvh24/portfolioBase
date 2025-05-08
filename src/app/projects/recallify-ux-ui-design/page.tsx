@@ -50,87 +50,291 @@ export default function RecallifyUXUIDesignPage() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-24 space-y-16">
-        {/* Project Title Section */}
-        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
-          Recallify UX/UI Design
-        </h1>
+        {/* Hero Section */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Hero Image */}
+          <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+            <img
+              src="/images/recallify_visualization.png"
+              alt="Recallify UX/UI Design Preview"
+              className="rounded-lg object-cover w-full h-full"
+            />
+          </div>
 
-        {/* Project Preview Image */}
-        <div className="flex justify-center">
-          <img src="/path-to-recallify-project-image.jpg" alt="Recallify UX/UI Design Preview" className="rounded-lg shadow-md border border-gray-200" />
-        </div>
-
-        {/* Brief Description */}
-        <p className="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
-          A UX/UI design project focused on enhancing user experience and interface design for a web application, utilizing Figma and Adobe XD.
-        </p>
-
-        {/* What was the assignment about? */}
-        <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
-          <div className="w-2 bg-purple-600"></div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>What was the assignment about?</h2>
-            <p className="text-gray-700 leading-relaxed mt-4" style={{ fontFamily: 'Lato, sans-serif' }}>
-              The assignment involved designing an intuitive and visually appealing interface for a web application. The focus was on user research, wireframing, and prototyping.
+          {/* Right Column: Project Details */}
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl font-heading text-gray-900 font-semibold">
+              Recallify UX/UI Design
+            </h1>
+            <p className="text-lg text-gray-700">
+              A UX/UI design project focused on enhancing user experience and interface design for a web application, utilizing Figma and Adobe XD.
             </p>
-            <div className="bg-purple-100 p-4 rounded-lg mt-4">
-              <ul className="list-disc list-inside text-purple-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                <li>Conduct user research</li>
-                <li>Create wireframes and prototypes</li>
-                <li>Iterate based on user feedback</li>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold"
+              >
+                View Demo
+              </a>
+              <a
+                href="#"
+                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold"
+              >
+                GitHub Repo
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-4">
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Figma</span>
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Adobe XD</span>
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Miro</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Project Overview Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Project Overview
+          </h2>
+          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
+            Recallify is an intelligent note-taking app designed for life science students struggling with information retention. It automates lecture summarization, provides timestamped highlights, and features 'Rico,' an AI study buddy that helps students quiz themselves on complex concepts, ultimately streamlining the study process and improving academic performance.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <h3 className="text-xl font-semibold text-gray-900">UX/UI Design Project</h3>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <h3 className="text-xl font-semibold text-gray-900">Jan-Mar 2025 Timeline</h3>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <h3 className="text-xl font-semibold text-gray-900">Educational Technology Category</h3>
+            </div>
+          </div>
+        </section>
+
+        {/* Problem Statement Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Problem Statement
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Target Users Card */}
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Target Users</h3>
+              <p className="text-gray-700 mt-2">
+                Undergraduate life science students at NJIT, primarily ages 18-20, who are full-time students (12+ credits) majoring in Biology, Biostatistics, Biochemistry, and Biomedical Engineering.
+              </p>
+            </div>
+
+            {/* Core Problem Card */}
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Core Problem</h3>
+              <p className="text-gray-700 mt-2">
+                Students struggle to retain information from their lectures due to the overwhelming amount of material (often exceeding 9 hours of lectures per day) and limited time for review.
+              </p>
+            </div>
+
+            {/* Key Pain Points Card */}
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Key Pain Points</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2">
+                <li>Difficulty keeping up with instructor's pace (84.6% of surveyed students)</li>
+                <li>Inability to distinguish important information (76.9%)</li>
+                <li>Too much content to cover (61.5%)</li>
+                <li>Getting distracted easily (38.5%)</li>
+                <li>Instructor speaking too fast or unclearly (30.8%)</li>
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Thought Process */}
-        <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
-          <div className="w-2 bg-purple-600"></div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Thought Process</h2>
-            <ol className="mt-4 space-y-4" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {["Conducting user interviews", "Sketching initial wireframes", "Creating high-fidelity prototypes", "Testing and iterating designs"].map((step, index) => (
-                <li key={index} className="flex items-start space-x-2">
-                  <div className="w-6 h-6 flex items-center justify-center bg-purple-100 text-purple-700 rounded-full font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">{step}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-
-        {/* Implementation */}
-        <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
-          <div className="w-2 bg-purple-600"></div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Implementation</h2>
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>User Research</h3>
-              <p className="text-gray-700 leading-relaxed mt-2" style={{ fontFamily: 'Lato, sans-serif' }}>
-                Conducted interviews and surveys to understand user needs and pain points.
-              </p>
-              <h3 className="text-lg font-semibold text-purple-600 mt-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Prototyping</h3>
-              <p className="text-gray-700 leading-relaxed mt-2" style={{ fontFamily: 'Lato, sans-serif' }}>
-                Created wireframes and high-fidelity prototypes using Figma and Adobe XD.
+        {/* Research & Discovery Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Research & Discovery
+          </h2>
+          <div className="space-y-8">
+            {/* Methodology Card */}
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Methodology</h3>
+              <p className="text-gray-700 mt-2">
+                We conducted a mixed-method study using quantitative surveys and qualitative interviews with life science students at NJIT. We gathered data on their note-taking challenges, study habits, and potential solutions that would best serve their needs.
               </p>
             </div>
-          </div>
-        </div>
 
-        {/* Technologies Used */}
-        <div className="bg-white rounded-lg shadow-md flex space-x-4 p-6 mb-10">
-          <div className="w-2 bg-purple-600"></div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>Technologies Used</h2>
-            <div className="flex flex-wrap gap-2 mt-4">
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium" style={{ fontFamily: 'Lato, sans-serif' }}>Figma</span>
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium" style={{ fontFamily: 'Lato, sans-serif' }}>Adobe XD</span>
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium" style={{ fontFamily: 'Lato, sans-serif' }}>Miro</span>
+            {/* Key Insights Card */}
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Key Insights</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2">
+                <li>42.9% of respondents were Biology majors, with many pursuing medical tracks</li>
+                <li>Students were overwhelmed by content volume and felt anxious about missing key points</li>
+                <li>Students frequently needed to rewatch lectures multiple times, significantly reducing study efficiency</li>
+                <li>Many expressed desire for automated tools that could highlight important information</li>
+              </ul>
+            </div>
+
+            {/* Image Containers for Graphs */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/images/data_graph_recallify1.png"
+                  alt="Graph 1"
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/images/data_graph_recallify2.png"
+                  alt="Graph 2"
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/images/data_graph_recallify3.png"
+                  alt="Graph 3"
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Research Visualization Tools Card */}
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Research Visualization Tools</h3>
+              <div className="mt-4 flex justify-center">
+                <img
+                  src="/images/affinity_diagram_recallify.png"
+                  alt="Affinity Map Visualization"
+                  className="rounded-lg object-cover w-full h-auto"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Design Process Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Design Process
+          </h2>
+          <div className="mt-4 flex justify-center">
+            <img
+              src="/images/designproject_recallify.png"
+              alt="Design Process Timeline"
+              className="rounded-lg object-cover w-full h-auto"
+            />
+          </div>
+        </section>
+
+        {/* Key Features & Solutions Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Key Features & Solutions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Automated Note Summarization</h3>
+              <p className="text-gray-700 mt-2">Recallify processes lecture recordings to generate concise, structured notes, addressing the "overwhelming content" pain point.</p>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Timestamped Highlights</h3>
+              <p className="text-gray-700 mt-2">Students can easily navigate to key moments in lectures without rewatching entire videos, improving review efficiency.</p>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Rico AI Study Buddy</h3>
+              <p className="text-gray-700 mt-2">An intelligent assistant that quizzes students on lecture content, provides explanations, and helps reinforce learning through active recall.</p>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Seamless Integration</h3>
+              <p className="text-gray-700 mt-2">Works with popular tools like Google Docs, Notion, and Loom to fit into students' existing workflows.</p>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Organized Workflow</h3>
+              <p className="text-gray-700 mt-2">Notes are automatically categorized by course and date, with smart filtering options to quickly find relevant information.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* User Flow Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            User Flow
+          </h2>
+          <div className="mt-4 flex justify-center">
+            <img
+              src="/images/userflow_recallify.png"
+              alt="User Flow Diagram"
+              className="rounded-lg object-cover w-full h-auto"
+            />
+          </div>
+        </section>
+
+        {/* Results & Impact Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Results & Impact
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">User Testing Feedback</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2">
+                <li>85% of testers reported the interface was intuitive and easy to navigate</li>
+                <li>90% found the AI Study Buddy feature valuable for reinforcing learning</li>
+                <li>92% stated they would use the app regularly if available</li>
+              </ul>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Expected Impact</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2">
+                <li>Reduction in study time by eliminating the need to rewatch lectures multiple times</li>
+                <li>Improved information retention through organized notes and active recall quizzing</li>
+                <li>Decreased academic anxiety by providing reliable capture of lecture content</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Lessons Learned Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Lessons Learned
+          </h2>
+          <div className="space-y-8">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Key Insights</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2">
+                <li>The importance of clear navigation cannot be overstated; early testing revealed significant usability issues that were addressed in later iterations</li>
+                <li>AI features need to be perceived as helpful assistants rather than replacements for student effort</li>
+                <li>The profile creation process needs to be streamlined to prevent abandonment</li>
+              </ul>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">Design Challenges</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2">
+                <li>Finding the right balance between automation and user control</li>
+                <li>Creating an interface that remains useful during lectures without being distracting</li>
+                <li>Designing for varied user technical comfort levels</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Future Directions Section */}
+        <section>
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+            Future Directions
+          </h2>
+          <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+            <h3 className="text-xl font-semibold text-gray-900">Potential Enhancements</h3>
+            <ul className="list-disc list-inside text-gray-700 mt-2">
+              <li>Collaboration features allowing students to share and annotate notes</li>
+              <li>Integration with learning management systems used by universities</li>
+              <li>Enhanced visualization tools for complex scientific concepts</li>
+              <li>Expanded AI capabilities to generate practice problems based on lecture content</li>
+              <li>Support for additional file formats and third-party integrations</li>
+            </ul>
+          </div>
+        </section>
 
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center">

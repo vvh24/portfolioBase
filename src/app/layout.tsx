@@ -63,11 +63,11 @@ export default function RootLayout({
 
         <main className="pt-16">{children}</main>
 
-        <footer className="bg-gray-100 text-gray-800 py-12">
+        <footer className="bg-gray-100 text-black-800 py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* About Section */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Hey there! About Me</h3>
+              <h3 className="text-lg font-bold mb-4">About Me</h3>
               <p className="text-sm leading-relaxed">
                 I'm a Web & Information Systems student passionate about creating intuitive digital experiences. Let's build something amazing together!
               </p>
@@ -77,10 +77,14 @@ export default function RootLayout({
             <div>
               <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><Link href="/" className="hover:no-underline no-underline">Home</Link></li>
-                <li><Link href="/about" className="hover:no-underline no-underline">About</Link></li>
-                <li><Link href="/projects" className="hover:no-underline no-underline">Projects</Link></li>
-                <li><Link href="/contact" className="hover:no-underline no-underline">Contact</Link></li>
+                {['Home', 'About', 'Projects', 'Contact'].map((link, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+                    <Link href={`/${link.toLowerCase()}`} className="no-underline text-black hover:text-purple-600 transition-colors">
+                      {link}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 

@@ -7,7 +7,7 @@ export default function RecallifyUXUIDesignPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const moveCarousel = (direction) => {
+  const moveCarousel = (direction: number) => {
     const totalImages = 4; // Update this if the number of images changes
     setCurrentIndex((prevIndex) => (prevIndex + direction + totalImages) % totalImages);
   };

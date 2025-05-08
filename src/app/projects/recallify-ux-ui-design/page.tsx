@@ -181,25 +181,25 @@ export default function RecallifyUXUIDesignPage() {
 
             {/* Image Containers for Graphs */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden aspect-square">
                 <img
                   src="/images/data_graph_recallify1.png"
                   alt="Graph 1"
-                  className="object-cover w-full h-auto"
+                  className="object-cover w-full h-full"
                 />
               </div>
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden aspect-square">
                 <img
                   src="/images/data_graph_recallify2.png"
                   alt="Graph 2"
-                  className="object-cover w-full h-auto"
+                  className="object-cover w-full h-full"
                 />
               </div>
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden aspect-square">
                 <img
                   src="/images/data_graph_recallify3.png"
                   alt="Graph 3"
-                  className="object-cover w-full h-auto"
+                  className="object-cover w-full h-full"
                 />
               </div>
             </div>

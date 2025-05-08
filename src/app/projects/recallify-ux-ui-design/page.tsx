@@ -5,6 +5,12 @@ import { useState } from "react";
 
 export default function RecallifyUXUIDesignPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const moveCarousel = (direction) => {
+    const totalImages = 4; // Update this if the number of images changes
+    setCurrentIndex((prevIndex) => (prevIndex + direction + totalImages) % totalImages);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -198,17 +204,20 @@ export default function RecallifyUXUIDesignPage() {
               </div>
             </div>
 
-            {/* Research Visualization Tools Card */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Research Visualization Tools</h3>
+            {/* Research Visualization Tools Section */}
+            <section>
+              <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+                Research Visualization Tools
+              </h2>
               <div className="mt-4 flex justify-center">
                 <img
                   src="/images/affinity_diagram_recallify.png"
                   alt="Affinity Map Visualization"
-                  className="rounded-lg object-cover w-full h-auto"
+                  className="rounded-lg object-cover w-3/4 h-auto cursor-pointer"
+                  onClick={() => window.open('/images/affinity_diagram_recallify.png', '_blank')}
                 />
               </div>
-            </div>
+            </section>
           </div>
         </section>
 
@@ -232,40 +241,101 @@ export default function RecallifyUXUIDesignPage() {
             Key Features & Solutions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <div className="w-16 h-16 mx-auto mb-4">
+                <img src="/images/automatednote_icon.jpg" alt="Automated Note Icon" className="rounded-full object-cover w-full h-full" />
+              </div>
               <h3 className="text-xl font-semibold text-gray-900">Automated Note Summarization</h3>
               <p className="text-gray-700 mt-2">Recallify processes lecture recordings to generate concise, structured notes, addressing the "overwhelming content" pain point.</p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <div className="w-16 h-16 mx-auto mb-4">
+                <img src="/images/timestamped_icon.jpg" alt="Timestamped Highlights Icon" className="rounded-full object-cover w-full h-full" />
+              </div>
               <h3 className="text-xl font-semibold text-gray-900">Timestamped Highlights</h3>
               <p className="text-gray-700 mt-2">Students can easily navigate to key moments in lectures without rewatching entire videos, improving review efficiency.</p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <div className="w-16 h-16 mx-auto mb-4">
+                <img src="/images/AIstudybuddy_icon.jpg" alt="Rico AI Icon" className="rounded-full object-cover w-full h-full" />
+              </div>
               <h3 className="text-xl font-semibold text-gray-900">Rico AI Study Buddy</h3>
               <p className="text-gray-700 mt-2">An intelligent assistant that quizzes students on lecture content, provides explanations, and helps reinforce learning through active recall.</p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <div className="w-16 h-16 mx-auto mb-4">
+                <img src="/images/seamless_integration_icon.jpg" alt="Integration Icon" className="rounded-full object-cover w-full h-full" />
+              </div>
               <h3 className="text-xl font-semibold text-gray-900">Seamless Integration</h3>
               <p className="text-gray-700 mt-2">Works with popular tools like Google Docs, Notion, and Loom to fit into students' existing workflows.</p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
+              <div className="w-16 h-16 mx-auto mb-4">
+                <img src="/images/organized_workflow_icon.jpg" alt="Organized Workflow Icon" className="rounded-full object-cover w-full h-full" />
+              </div>
               <h3 className="text-xl font-semibold text-gray-900">Organized Workflow</h3>
               <p className="text-gray-700 mt-2">Notes are automatically categorized by course and date, with smart filtering options to quickly find relevant information.</p>
             </div>
           </div>
         </section>
 
-        {/* User Flow Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            User Flow
-          </h2>
-          <div className="mt-4 flex justify-center">
-            <img
-              src="/images/userflow_recallify.png"
-              alt="User Flow Diagram"
-              className="rounded-lg object-cover w-full h-auto"
-            />
+        {/* User Flow and Initial Prototyping Section */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* User Flow Section */}
+          <div>
+            <h2 className="text-3xl font-heading text-gray-900 mb-4">User Flow</h2>
+            <div className="mt-4 flex justify-center">
+              <img
+                src="/images/userflow_recallify.png"
+                alt="User Flow Diagram"
+                className="rounded-lg object-cover w-3/4 h-auto cursor-pointer"
+                onClick={() => window.open('/images/userflow_recallify.png', '_blank')}
+              />
+            </div>
+          </div>
+
+          {/* Initial Prototyping Section */}
+          <div>
+            <h2 className="text-3xl font-heading text-gray-900 mb-4">Initial Prototyping</h2>
+            <div className="relative w-full overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                <img
+                  src="/images/wireframe_recallify1.png"
+                  alt="Wireframe 1"
+                  className="rounded-lg object-cover w-full h-auto"
+                />
+                <img
+                  src="/images/wireframe_recallify2.0.png"
+                  alt="Wireframe 2"
+                  className="rounded-lg object-cover w-full h-auto"
+                />
+                <img
+                  src="/images/wireframe_recallify3.png"
+                  alt="Wireframe 3"
+                  className="rounded-lg object-cover w-full h-auto"
+                />
+                <img
+                  src="/images/wireframe_recallify4.png"
+                  alt="Wireframe 4"
+                  className="rounded-lg object-cover w-full h-auto"
+                />
+              </div>
+              <button
+                className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+                onClick={() => moveCarousel(-1)}
+              >
+                &#8249;
+              </button>
+              <button
+                className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+                onClick={() => moveCarousel(1)}
+              >
+                &#8250;
+              </button>
+            </div>
           </div>
         </section>
 

@@ -28,20 +28,20 @@ export default function UFODataVisualizationPage() {
             </svg>
           </button>
           <nav className="hidden md:flex items-center space-x-16">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
-            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+            <Link href="/" className="text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover no-underline">Home</Link>
+            <Link href="/about" className="text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover no-underline">About</Link>
+            <Link href="/projects" className="text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover no-underline">Projects</Link>
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-[url('/images/hover-background.png')] hover:bg-cover transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-md">
-            <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
-            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
-            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>
-            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700">
+            <Link href="/" className="block px-4 py-2 text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover">Home</Link>
+            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover">About</Link>
+            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover">Projects</Link>
+            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-[url('/images/hover-background.png')] hover:bg-cover">
               Let's Connect
             </RoundedButton>
           </div>
@@ -72,7 +72,7 @@ export default function UFODataVisualizationPage() {
             <div className="flex gap-4">
               <a
                 href="https://vvh24.github.io/UFO/"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
+                className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
               >
                 View Demo
               </a>
@@ -165,6 +165,17 @@ export default function UFODataVisualizationPage() {
               <p className="text-gray-700 mt-2">I selected React for component management and state handling, paired with D3.js for visualization capabilities. This combination offered:<br /><li>Modular, reusable visualization components</li><li>Efficient rendering through React's virtual DOM</li><li>Powerful data-binding and DOM manipulation</li></p>
             </div>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md flex items-center justify-center">
+              <img src="/images/ufo_data1.png" alt="Data Graph 1" className="rounded-lg object-cover w-full h-auto" />
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md flex items-center justify-center">
+              <img src="/images/ufo_data2.png" alt="Data Graph 2" className="rounded-lg object-cover w-full h-auto" />
+            </div>
+            <div className="bg-gray-100 rounded-lg p-6 shadow-md flex items-center justify-center">
+              <img src="/images/ufo_data3.png" alt="Data Graph 3" className="rounded-lg object-cover w-full h-auto" />
+            </div>
+          </div>
         </section>
 
         {/* Development Process Section */}
@@ -231,8 +242,8 @@ export default function UFODataVisualizationPage() {
 
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center">
-          <Link href="/projects" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
-          <Link href="https://github.com/vvh24/UFO.git" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+          <Link href="/projects" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
+          <Link href="https://github.com/vvh24/UFO.git" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             View Project
           </Link>
         </div>

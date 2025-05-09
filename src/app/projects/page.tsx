@@ -31,7 +31,7 @@ export default function ProjectsPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -49,7 +49,7 @@ export default function ProjectsPage() {
       </header>
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title Section */}
-        <h1 className="text-4xl font-serif text-center text-purple-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <h1 className="text-4xl font-serif text-center text-purple-800" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Playground
         </h1>
         <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
@@ -62,21 +62,21 @@ export default function ProjectsPage() {
             title: "UFO Data Visualization Project",
             description: "An interactive visualization using React, D3.js, and TopoJSON that displays UFO sightings across the US, military base locations, and supporting visualizations like timeline charts.",
             technologies: ["React", "D3.js", "TopoJSON"],
-            color: "text-purple-600",
+            color: "text-purple-800",
             link: "/projects/ufo-data-visualization",
             imageSrc: "/images/ufo_poster3.png",
           }, {
             title: "AI Project with RAG Implementation",
             description: "A cutting-edge AI project implementing Retrieval-Augmented Generation (RAG) to enhance information retrieval and response generation.",
             technologies: ["Python", "LangChain", "OpenAI API"],
-            color: "text-purple-600",
+            color: "text-purple-800",
             link: "/projects/ai-rag-implementation",
             imageSrc: "/images/ai_chat_poster2.png",
           }, {
             title: "Recallify UX/UI Design",
             description: "A UX/UI design project focused on enhancing user experience and interface design for a web application, utilizing Figma and Adobe XD.",
             technologies: ["Figma", "Miro", "Adobe"],
-            color: "text-purple-600",
+            color: "text-purple-800",
             link: "/projects/recallify-ux-ui-design",
             imageSrc: "/images/recallify_poster2.2.png",
           }].map((project, index) => (
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href={project.link} className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+                  <Link href={project.link} className="inline-block px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
                     View Project
                   </Link>
                 </div>
@@ -110,7 +110,7 @@ export default function ProjectsPage() {
 
         {/* Back to Home Link */}
         <div className="text-center">
-          <Link href="/" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+          <Link href="/" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             Back to Home
           </Link>
         </div>

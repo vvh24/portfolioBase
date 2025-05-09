@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+          <h1 className="text-xl font-bold text-purple-800">Valeria Heredia Crespo</h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -32,7 +32,7 @@ export default function Home() {
           <nav className="hidden md:flex items-center space-x-16">
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
-            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
+            <Link href="/projects" className="text-gray-700 hover:bg-image no-underline">Projects</Link>
             <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-800 transition-all no-underline">
               Let's Connect
             </RoundedButton>
@@ -51,10 +51,7 @@ export default function Home() {
       </header>
 
       <main className="flex-grow w-full">
-        <div className="bg-gradient-purple-teal flex items-center justify-center min-h-[90vh] py-20 relative overflow-hidden">
-          {/* Geometric Lines */}
-          <div className="absolute inset-0 bg-[url('/images/geometric_lines.svg')] opacity-10 pointer-events-none"></div>
-
+        <div className="bg-purple-800 flex items-center justify-center min-h-[90vh] py-20 relative overflow-hidden">
           <section className="text-center space-y-5 px-10 relative z-10">
             {/* Headline */}
             <div className="flex justify-center">
@@ -80,16 +77,14 @@ export default function Home() {
             <div>
               <RoundedButton
                 href="/projects"
-                className="bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-lg border border-white hover:animate-pulse-border no-underline"
+                className="bg-white text-[purple-800] font-bold text-lg px-6 py-3 rounded-lg border border-white hover:animate-pulse-border no-underline"
               >
                 View My Work
               </RoundedButton>
             </div>
           </section>
 
-          {/* Abstract Element */}
-          <div className="absolute bottom-0 right-0 w-40 h-40 bg-[url('/images/abstract_design_code.svg')] bg-contain bg-no-repeat opacity-50 pointer-events-none"></div>
-
+          
           {/* Scroll Arrow */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
             <div className="w-6 h-6 border-b-2 border-r-2 border-white transform rotate-45 animate-bounce"></div>
@@ -148,6 +143,12 @@ export default function Home() {
                 transform: translateY(-10px);
               }
             }
+
+            .hover\:bg-image:hover {
+              background-image: url('/images/hover_pic.png');
+              background-size: cover;
+              background-position: center;
+            }
           `}</style>
         </div>
 
@@ -163,13 +164,13 @@ export default function Home() {
                 Combining my technical foundation with a passion for visual design, I create digital experiences that make complex information accessible and engaging.
               </p>
               <div className="flex flex-wrap gap-4">
-                <RoundedButton className="bg-purple-500 text-white hover:bg-purple-600">
+                <RoundedButton className="bg-purple-800 text-white hover:bg-purple-600">
                   Problem Solver
                 </RoundedButton>
-                <RoundedButton className="bg-purple-500 text-white hover:bg-purple-600">
+                <RoundedButton className="bg-purple-800 text-white hover:bg-purple-600">
                   Information Visualization
                 </RoundedButton>
-                <RoundedButton className="bg-purple-500 text-white hover:bg-purple-600">
+                <RoundedButton className="bg-purple-800 text-white hover:bg-purple-600">
                   UI/UX Enthusiast
                 </RoundedButton>
               </div>

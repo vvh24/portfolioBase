@@ -182,8 +182,7 @@ export default {
         'gradient-coral-gold': 'linear-gradient(to bottom right, #FF6F61, #FFD700)',
         'gradient-deepviolet-aqua': 'linear-gradient(to top, #5A189A, #4FD1C5)',
         'gradient-softlavender-pale': 'linear-gradient(to right, #EADCF8, #F3E8FF)',
-        'diagonal-lines': 'repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 10px, transparent 10px, transparent 20px)',
-        'subtle-dots': 'radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+        'hover-pic': "url('/images/hover_pic.png')", // Added custom background image
       },
       backgroundSize: {
         'dot-pattern': '20px 20px',

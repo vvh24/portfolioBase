@@ -32,7 +32,7 @@ export default function AboutPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -63,9 +63,9 @@ export default function AboutPage() {
             <h2 className="text-3xl font-heading text-black-900">Blending Technology & Creativity</h2>
             <p className="text-gray-700 mt-4">I'm Valeria, a Web & Information Systems student at NJIT with a passion for creating intuitive digital solutions. I approach each project with both analytical precision and creative vision, seeking to transform complex information into accessible, engaging experiences.</p>
             <div className="flex flex-wrap gap-2 mt-4">
-              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Bilingual Communicator</span>
-              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Detail-oriented</span>
-              <span className="px-3 py-1 bg-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Creative Thinker</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Bilingual Communicator</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Detail-oriented</span>
+              <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Creative Thinker</span>
             </div>
           </div>
         </section>
@@ -181,12 +181,12 @@ export default function AboutPage() {
             <p className="text-black-700">While my current focus is on building my technical and design skills in academic projects, I'm passionate about traditional art forms like drawing and sketching. I'm excited to continue bridging these analog creative skills with digital design as I grow in my career.</p>
           </div>
           {/* Back to Projects Button */}
-          <div className="flex justify-center mt-30">
+          <div className="flex justify-center mt-8">
             <Link 
-              href="/projects"
-              className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline"
+              href="/"
+              className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline"
             >
-              Back to Projects
+              Back to Homr
             </Link>
           </div>
         </section>

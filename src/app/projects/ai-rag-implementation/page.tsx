@@ -32,7 +32,7 @@ export default function AIRAGImplementationPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
+            <RoundedButton href="/contact" className="bg-purple-800 text-white hover:bg-purple-700 no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -72,7 +72,7 @@ export default function AIRAGImplementationPage() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
+                className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
               >
                 View Demo
               </a>
@@ -364,8 +364,8 @@ export default function AIRAGImplementationPage() {
 
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center">
-          <Link href="/projects" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
-          <Link href="https://github.com/vvh24/websocket-chat.git" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+          <Link href="/projects" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
+          <Link href="https://github.com/vvh24/websocket-chat.git" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             View Project
           </Link>
         </div>

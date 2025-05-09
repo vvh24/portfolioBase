@@ -37,7 +37,7 @@ export default function RecallifyUXUIDesignPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -61,7 +61,7 @@ export default function RecallifyUXUIDesignPage() {
           {/* Left Column: Hero Image */}
           <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
             <img
-              src="/images/recallify_poster1.1.png"
+              src="/images/recallify_poster_page2.1.png"
               alt="Recallify UX/UI Design Preview"
               className="rounded-lg object-cover w-full h-full"
             />
@@ -78,7 +78,7 @@ export default function RecallifyUXUIDesignPage() {
             <div className="flex gap-4">
               <a
                 href="https://www.figma.com/proto/YYpXyKDCzmkR922cxfYnMR/Recallify?node-id=3337-803&t=XDnW4Njn0cz7UAdz-1&scaling=scale-down&content-scaling=fixed&page-id=3314%3A2&starting-point-node-id=3337%3A803"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
+                className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
               >
                 View Demo
               </a>
@@ -408,8 +408,8 @@ export default function RecallifyUXUIDesignPage() {
 
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center">
-          <Link href="/projects" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
-          <Link href="https://github.com/your-repo-link" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+          <Link href="/projects" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
+          <Link href="https://github.com/your-repo-link" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             View Project
           </Link>
         </div>

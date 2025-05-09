@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: 'Inter, sans-serif' }}>
-      <header className="bg-white shadow-md w-full fixed top-0 z-10">
+      <header className="bg-white shadow-md w-full fixed top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
             Valeria Heredia Crespo
@@ -57,7 +57,7 @@ export default function Home() {
         )}
       </header>
 
-      <main className="flex-grow w-full">
+      <main className="flex-grow w-full pt-1">
         <div className="bg-purple-800 flex items-center justify-center min-h-[90vh] py-20 relative overflow-hidden">
           <section className="text-center space-y-5 px-10 relative z-10">
             {/* Headline */}

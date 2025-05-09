@@ -123,7 +123,7 @@ export default function ContactPage() {
                   </svg>
                 </a>
                 <a
-                  href="https://twitter.com/valeriaheredia"
+                  href="https://x.com/valerixch?s=21&t=G9AO291usgwbc4gp0ozLAQ"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-purple-800 text-white rounded-full flex items-center justify-center hover:bg-purple-700 transition-all"
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/valeriaheredia/"
+                  href="https://www.instagram.com/val_hcrespo/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-purple-800 text-white rounded-full flex items-center justify-center hover:bg-purple-700 transition-all"

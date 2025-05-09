@@ -98,10 +98,10 @@ export default function RootLayout({
                 <a href="https://www.linkedin.com/in/valeria-heredia-101452326/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
                   <FaLinkedin className="w-6 h-6" />
                 </a>
-                <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
+                <a href="https://www.instagram.com/val_hcrespo/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
                   <FaInstagram className="w-6 h-6" />
                 </a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
+                <a href="https://x.com/valerixch?s=21&t=G9AO291usgwbc4gp0ozLAQ" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
                   <FaTwitter className="w-6 h-6" />
                 </a>
               </div>

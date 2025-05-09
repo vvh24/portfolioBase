@@ -10,10 +10,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Outfit Variable"', ...fontFamily.sans],
+        sans: ['Inter', ...fontFamily.sans],
         display: ['"Manrope Variable"', ...fontFamily.sans],
-        heading: ['"Playfair Display"', 'serif'],
-        body: ['"Roboto"', 'sans-serif'],
+        heading: ['Lora', 'serif'],
+        subheading: ['Poppins', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],

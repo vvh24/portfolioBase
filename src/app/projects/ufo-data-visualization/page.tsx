@@ -3,15 +3,22 @@ import React, { useState } from "react";
 import Link from "next/link";
 import RoundedButton from "@/components/ui/rounded-button";
 
+// Importing Google Fonts
+import "@fontsource/lora"; // Lora for headings
+import "@fontsource/poppins/500.css"; // Poppins medium for subheadings
+import "@fontsource/inter"; // Inter for body
+
 export default function UFODataVisualizationPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Lato, sans-serif' }}>
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Navigation Bar */}
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+        <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+            Valeria Heredia Crespo
+        </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -28,20 +35,20 @@ export default function UFODataVisualizationPage() {
             </svg>
           </button>
           <nav className="hidden md:flex items-center space-x-16">
-            <Link href="/" className="text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover no-underline">Home</Link>
-            <Link href="/about" className="text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover no-underline">About</Link>
-            <Link href="/projects" className="text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-[url('/images/hover-background.png')] hover:bg-cover transition-all no-underline">
+            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
+            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-md">
-            <Link href="/" className="block px-4 py-2 text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover">Home</Link>
-            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover">About</Link>
-            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:bg-[url('/images/hover-background.png')] hover:bg-cover">Projects</Link>
-            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-[url('/images/hover-background.png')] hover:bg-cover">
+            <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
+            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
+            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>
+            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700">
               Let's Connect
             </RoundedButton>
           </div>
@@ -63,10 +70,10 @@ export default function UFODataVisualizationPage() {
 
           {/* Right Column: Project Details */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-heading text-gray-900 font-semibold">
+            <h1 className="text-4xl md:text-5xl font-heading text-gray-900 font-semibold" style={{ fontFamily: 'Lora, serif' }}>
               UFO Sightings Interactive Data Visualization
             </h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
               Explore UFO sightings data through an interactive and visually engaging map.
             </p>
             <div className="flex gap-4">
@@ -94,50 +101,50 @@ export default function UFODataVisualizationPage() {
 
         {/* Project Overview Section */}
         <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8" style={{ fontFamily: 'Lora, serif' }}>
             Project Overview
           </h2>
-          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12" style={{ fontFamily: 'Inter, sans-serif' }}>
            Create interactive data visualizations using React to explore real-world datasets of personal interest, implement front-end best practices, and tell a compelling story through visualization.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h3 className="text-xl font-semibold text-gray-900">NJIT IS219 Academic Project</h3>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>NJIT IS219 Academic Project</h3>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h3 className="text-xl font-semibold text-gray-900">Mar-May 2025 Timeline</h3>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Mar-May 2025 Timeline</h3>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h3 className="text-xl font-semibold text-gray-900">Data Visualization Category</h3>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Data Visualization Category</h3>
             </div>
           </div>
         </section>
 
         {/* Problem Statement Section */}
         <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8" style={{ fontFamily: 'Lora, serif' }}>
             Problem Statement
           </h2>
           <div className="space-y-8">
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Assignment Requirements</h3>
-              <ul className="list-disc list-inside text-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Assignment Requirements</h3>
+              <ul className="list-disc list-inside text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <li>Create interactive visulizations with React </li>
                 <li>Use real-world datasets</li>
                 <li>Implement front-end best practices</li>
               </ul>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Challenges</h3>
-              <ul className="list-disc list-inside text-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Challenges</h3>
+              <ul className="list-disc list-inside text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <li>Working with messy geospatial data</li>
                 <li>Visualizing thousand of data points efficiently</li>
                 <li>Creating intuative UI that allows non-technical users to explore the data</li>
               </ul>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Objectives</h3>
-              <ul className="list-disc list-inside text-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Objectives</h3>
+              <ul className="list-disc list-inside text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <li>Demonstrate proficiency in React and D3.js integration</li>
                 <li>Develop containerization skills using Docker for consistent development environments</li>
                 <li>Create a publicly accessible web application using GitHub Pages deployment</li>
@@ -148,21 +155,21 @@ export default function UFODataVisualizationPage() {
 
         {/* Planning & Research Section */}
         <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8" style={{ fontFamily: 'Lora, serif' }}>
             Planning & Research
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">User Analysis</h3>
-              <p className="text-gray-700 mt-2">The project aimed to address three key questions: <br />1. Are there geographical patterns in UFO sighting reports across the United States?<br />2. Do UFO sightings correlate with the locations of military installations?<br />3. Is there any relationship between UFO sightings and nuclear facilities?</p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>User Analysis</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>The project aimed to address three key questions: <br />1. Are there geographical patterns in UFO sighting reports across the United States?<br />2. Do UFO sightings correlate with the locations of military installations?<br />3. Is there any relationship between UFO sightings and nuclear facilities?</p>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Market Research</h3>
-              <p className="text-gray-700 mt-2">I examined several existing visualizations, including:<br /><li>NUFORC's basic statistical reports and maps</li><li>Dataset of military bases across the country, including Army, Navy, Air Force, and Marine Corps facilities</li><li>Nuclear Reactor dataset bases across the state</li></p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Market Research</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>I examined several existing visualizations, including:<br /><li>NUFORC's basic statistical reports and maps</li><li>Dataset of military bases across the country, including Army, Navy, Air Force, and Marine Corps facilities</li><li>Nuclear Reactor dataset bases across the state</li></p>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Technical Approach</h3>
-              <p className="text-gray-700 mt-2">I selected React for component management and state handling, paired with D3.js for visualization capabilities. This combination offered:<br /><li>Modular, reusable visualization components</li><li>Efficient rendering through React's virtual DOM</li><li>Powerful data-binding and DOM manipulation</li></p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Technical Approach</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>I selected React for component management and state handling, paired with D3.js for visualization capabilities. This combination offered:<br /><li>Modular, reusable visualization components</li><li>Efficient rendering through React's virtual DOM</li><li>Powerful data-binding and DOM manipulation</li></p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -180,33 +187,33 @@ export default function UFODataVisualizationPage() {
 
         {/* Development Process Section */}
         <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8" style={{ fontFamily: 'Lora, serif' }}>
             Development Process
           </h2>
           <div className="space-y-8">
             {/* Architecture/Structure Card */}
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Architecture/Structure</h3>
-              <p className="text-gray-700 mt-2">This project follows a modular architecture:<br /><li>Core visualization components: Map, Timeline, Rankings.</li><li>Data processing utilities for CSV parsing and normalizations</li><li>Shared state management for filtering and interaction</li></p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Architecture/Structure</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>This project follows a modular architecture:<br /><li>Core visualization components: Map, Timeline, Rankings.</li><li>Data processing utilities for CSV parsing and normalizations</li><li>Shared state management for filtering and interaction</li></p>
             </div>
 
             {/* Key Technical Decisions Card */}
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Key Technical Decisions</h3>
-              <p className="text-gray-700 mt-2">The MapVisualization component integrates:<br /><li>D3's geographical projection for mapping coordinates </li><li>Color scales for representing sighting density by state</li><li>Dynamic rendering of military based and nuclear facilities</li></p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Key Technical Decisions</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>The MapVisualization component integrates:<br /><li>D3's geographical projection for mapping coordinates </li><li>Color scales for representing sighting density by state</li><li>Dynamic rendering of military based and nuclear facilities</li></p>
             </div>
           </div>
         </section>
 
         {/* Testing & Iteration Section */}
         <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8" style={{ fontFamily: 'Lora, serif' }}>
             Testing & Iteration
           </h2>
           <div className="space-y-8">
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Project Evolution Timeline</h3>
-              <p className="text-gray-700 mt-2">{/* Timeline placeholder */}</p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Project Evolution Timeline</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>{/* Timeline placeholder */}</p>
               <div className="mt-4 flex justify-center">
                 <img
                   src="/images/project_timeline_ufo.png"
@@ -220,17 +227,17 @@ export default function UFODataVisualizationPage() {
 
         {/* Conclusion & Future Work Section */}
         <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8" style={{ fontFamily: 'Lora, serif' }}>
             Conclusion & Future Work
           </h2>
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Conclusion</h3>
-              <p className="text-gray-700 mt-2">This project successfully transformed raw UFO sighting data into an interactive, exploratory visualization that reveals geographical and temporal patterns across the United States. By integrating military base and nuclear facility information, the visualization enables users to explore potential correlations between reported sightings and critical infrastructure. While not proving any definitive relationships, the project demonstrates the power of React and D3.js for handling complex datasets and creating accessible data visualizations.</p>
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Conclusion</h3>
+              <p className="text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>This project successfully transformed raw UFO sighting data into an interactive, exploratory visualization that reveals geographical and temporal patterns across the United States. By integrating military base and nuclear facility information, the visualization enables users to explore potential correlations between reported sightings and critical infrastructure. While not proving any definitive relationships, the project demonstrates the power of React and D3.js for handling complex datasets and creating accessible data visualizations.</p>
             </div>
             <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Future Enhancements</h3>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
+              <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>Future Enhancements</h3>
+              <ul className="list-disc list-inside text-gray-700 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <li>Improved data filtering options</li>
                 <li>Enhanced visualization interactivity</li>
                 <li>Integration with real-time data sources</li>

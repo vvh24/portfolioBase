@@ -3,15 +3,20 @@ import MainNav from "@/components/main-nav";
 import Link from "next/link";
 import RoundedButton from "@/components/ui/rounded-button";
 import { useState } from "react";
+import "@fontsource/lora"; // Import Lora font for headings
+import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
+import "@fontsource/inter"; // Import Inter for body text
 
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
-      <header className="bg-white shadow-md w-full fixed top-0 z-10">
+    <div className="min-h-screen bg-white font-inter">
+      <header className="bg-white shadow-md w-full fixed top-0 z-10 font-poppins">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+        <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+            Valeria Heredia Crespo
+        </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -47,11 +52,12 @@ export default function ContactPage() {
           </div>
         )}
       </header>
-      <main className="container mx-auto px-4 py-24 space-y-16">
-        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center">
+      <main className="container mx-auto px-4 py-24 space-y-16 font-inter">
+      <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative font-Lora">
           Contact Me
-        </h1>
-        <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto">
+          <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
+      </h1>
+        <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto font-inter">
           I’d love to hear from you! Whether you have a project in mind, a question, or just want to connect, feel free to reach out.
         </p>
 

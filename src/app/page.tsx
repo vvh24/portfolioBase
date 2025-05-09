@@ -6,14 +6,21 @@ import MainNav from "@/components/main-nav";
 import RoundedButton from "@/components/ui/rounded-button"; // Corrected path to match the module
 import { useState } from "react";
 
+// Importing Google Fonts
+import "@fontsource/lora"; // Lora for headings
+import "@fontsource/poppins/500.css"; // Poppins medium for subheadings
+import "@fontsource/inter"; // Inter for body
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: 'Inter, sans-serif' }}>
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-800">Valeria Heredia Crespo</h1>
+          <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+            Valeria Heredia Crespo
+          </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -57,7 +64,7 @@ export default function Home() {
             <div className="flex justify-center">
               <h1
                 className="text-6xl md:text-7xl font-heading text-white tracking-wide font-semibold relative text-center"
-                style={{ fontFamily: 'Poppins, sans-serif', textShadow: '0 0 10px rgba(255, 255, 255, 0.8)' }}
+                style={{ fontFamily: 'Lora, serif', textShadow: '0 0 10px rgba(255, 255, 255, 0.8)' }}
               >
                 <span>Creating</span>
                 <br />
@@ -69,9 +76,9 @@ export default function Home() {
             </div>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto opacity-0 animate-fade-in">
+            <h2 className="text-2xl text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Transforming ideas into elegant digital solutions.
-            </p>
+            </h2>
 
             {/* Button */}
             <div>
@@ -157,10 +164,10 @@ export default function Home() {
           <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left Column */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-heading text-gray-900 text-left">
+              <h2 className="text-3xl md:text-4xl font-heading text-gray-900 text-left" style={{ fontFamily: 'Lora, serif' }}>
                 Expertise in Web & Information Systems
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed text-left lg:text-left">
+              <p className="text-lg text-gray-700 leading-relaxed text-left lg:text-left" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Combining my technical foundation with a passion for visual design, I create digital experiences that make complex information accessible and engaging.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -249,7 +256,7 @@ export default function Home() {
                   link: "/projects/ai-rag-implementation",
                   imgSrc: "/images/ai_chat_poster2.png", // Placeholder for future image
                   tags: ["Node.js", "Express", "Socket.IO"],
-                  githubLink: "https://github.com/yourusername/ai-rag-implementation"
+                  githubLink: "https://github.com/vvh24/websocket-chat.git"
                 },
                 {
                   title: "Recallify UX/UI Design",

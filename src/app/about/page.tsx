@@ -4,15 +4,20 @@ import React, { useState } from "react";
 import Link from "next/link";
 import MainNav from "@/components/main-nav";
 import RoundedButton from "@/components/ui/rounded-button";
+import "@fontsource/lora"; // Import Lora font for headings
+import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
+import "@fontsource/inter"; // Import Inter for body text
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
-      <header className="bg-white shadow-md w-full fixed top-0 z-10">
+    <div className="min-h-screen bg-white font-inter">
+      <header className="bg-white shadow-md w-full fixed top-0 z-10 font-poppins">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+        <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+            Valeria Heredia Crespo
+        </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -49,19 +54,19 @@ export default function AboutPage() {
         )}
       </header>
 
-      <main className="container mx-auto px-4 py-24 space-y-16">
+      <main className="container mx-auto px-4 py-24 space-y-16 font-inter">
         {/* Page Title */}
-        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative">
+        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative font-Lora">
           About Me
           <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
         </h1>
 
         {/* Introduction Section */}
-        <section className="bg-purple-100 rounded-lg p-8 shadow-md flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
+        <section className="bg-purple-100 rounded-lg p-8 shadow-md flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 font-inter">
           <img src="/images/valeria_cartoon.png" alt="Your Profile" className="w-32 h-32 rounded-full object-cover" />
           <div className="flex-1">
-            <h2 className="text-3xl font-heading text-black-900">Blending Technology & Creativity</h2>
-            <p className="text-gray-700 mt-4">I'm Valeria, a Web & Information Systems student at NJIT with a passion for creating intuitive digital solutions. I approach each project with both analytical precision and creative vision, seeking to transform complex information into accessible, engaging experiences.</p>
+            <h2 className="text-3xl font-heading text-black-900 font-lora">Blending Technology & Creativity</h2>
+            <p className="text-gray-700 mt-4 font-inter">I'm Valeria, a Web & Information Systems student at NJIT with a passion for creating intuitive digital solutions. I approach each project with both analytical precision and creative vision, seeking to transform complex information into accessible, engaging experiences.</p>
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Bilingual Communicator</span>
               <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-300 hover:scale-105 transition-transform">Detail-oriented</span>
@@ -186,7 +191,7 @@ export default function AboutPage() {
               href="/"
               className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline"
             >
-              Back to Homr
+              Back to Home
             </Link>
           </div>
         </section>

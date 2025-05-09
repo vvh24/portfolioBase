@@ -4,14 +4,21 @@ import MainNav from "@/components/main-nav";
 import { useState } from "react";
 import RoundedButton from "@/components/ui/rounded-button";
 
+// Importing Google Fonts
+import "@fontsource/lora"; // Lora for headings
+import "@fontsource/poppins/500.css"; // Poppins medium for subheadings
+import "@fontsource/inter"; // Inter for body
+
 export default function ProjectsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={{ fontFamily: 'Inter, sans-serif' }}>
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+        <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+            Valeria Heredia Crespo
+        </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -49,10 +56,11 @@ export default function ProjectsPage() {
       </header>
       <main className="container mx-auto px-4 py-24 space-y-16">
         {/* Page Title Section */}
-        <h1 className="text-4xl font-serif text-center text-purple-800" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative font-Lora">
           Playground
+          <span className="block w-24 h-1 bg-purple-600 mx-auto mt-2 rounded"></span>
         </h1>
-        <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
+        <p className="text-lg leading-8 text-gray-700 text-center max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
           Each project I undertake is a testament to my dedication to innovation, craftsmanship, and self-expression. Explore my work and see how I bring ideas to life through thoughtful design and creative problem-solving.
         </p>
 
@@ -90,8 +98,8 @@ export default function ProjectsPage() {
                   />
                 </div>
                 <div className="flex-1 space-y-4">
-                  <h2 className={`text-2xl font-heading ${project.color}`} style={{ fontFamily: 'Poppins, sans-serif' }}>{project.title}</h2>
-                  <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{project.description}</p>
+                  <h2 className={`text-2xl font-heading ${project.color}`} style={{ fontFamily: 'Lora, serif' }}>{project.title}</h2>
+                  <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span key={i} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">

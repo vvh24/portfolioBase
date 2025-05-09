@@ -2,6 +2,9 @@
 import Link from "next/link";
 import RoundedButton from "@/components/ui/rounded-button";
 import { useState } from "react";
+import "@fontsource/lora"; // Import Lora font for headings
+import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
+import "@fontsource/inter"; // Import Inter for body text
 
 export default function RecallifyUXUIDesignPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,11 +16,13 @@ export default function RecallifyUXUIDesignPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-inter">
       {/* Navigation Bar */}
-      <header className="bg-white shadow-md w-full fixed top-0 z-10">
+      <header className="bg-white shadow-md w-full fixed top-0 z-10 font-poppins">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
+        <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+            Valeria Heredia Crespo
+        </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-purple-600 focus:outline-none"
@@ -55,7 +60,7 @@ export default function RecallifyUXUIDesignPage() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-24 space-y-16">
+      <main className="container mx-auto px-4 py-24 space-y-16 font-inter">
         {/* Hero Section */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Hero Image */}
@@ -69,10 +74,10 @@ export default function RecallifyUXUIDesignPage() {
 
           {/* Right Column: Project Details */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-heading text-gray-900 font-semibold">
+            <h1 className="text-4xl md:text-5xl font-heading text-gray-900 font-semibold font-lora">
               Recallify UX/UI Design
             </h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 font-inter">
               A UX/UI design project focused on enhancing user experience and interface design for a web application, utilizing Figma and Adobe XD.
             </p>
             <div className="flex gap-4">

@@ -31,7 +31,7 @@ export default function UFODataVisualizationPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -71,14 +71,14 @@ export default function UFODataVisualizationPage() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold"
+                href="https://vvh24.github.io/UFO/"
+                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
               >
                 View Demo
               </a>
               <a
-                href="#"
-                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold"
+                href="https://github.com/vvh24/UFO.git"
+                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold no-underline"
               >
                 GitHub Repo
               </a>
@@ -231,8 +231,8 @@ export default function UFODataVisualizationPage() {
 
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center">
-          <Link href="/projects" className="text-purple-600 hover:underline">Back to Projects</Link>
-          <Link href="https://github.com/your-repo-link" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all">
+          <Link href="/projects" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
+          <Link href="https://github.com/vvh24/UFO.git" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             View Project
           </Link>
         </div>

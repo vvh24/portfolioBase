@@ -79,7 +79,7 @@ export default function RootLayout({
               <ul className="space-y-2">
                 {['Home', 'About', 'Projects', 'Contact'].map((link, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+                    <span className="w-2 h-2 bg-purple-800 rounded-full"></span>
                     <Link href={`/${link.toLowerCase()}`} className="no-underline text-black hover:text-purple-600 transition-colors">
                       {link}
                     </Link>
@@ -92,10 +92,10 @@ export default function RootLayout({
             <div>
               <h3 className="text-lg font-bold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
+                <a href="https://github.com/vvh24" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
                   <FaGithub className="w-6 h-6" />
                 </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
+                <a href="https://www.linkedin.com/in/valeria-heredia-101452326/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
                   <FaLinkedin className="w-6 h-6" />
                 </a>
                 <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">

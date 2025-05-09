@@ -31,7 +31,7 @@ export default function ProjectsPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -64,39 +64,53 @@ export default function ProjectsPage() {
             technologies: ["React", "D3.js", "TopoJSON"],
             color: "text-purple-600",
             link: "/projects/ufo-data-visualization",
+            imageSrc: "/images/ufo_poster3.png",
           }, {
             title: "AI Project with RAG Implementation",
             description: "A cutting-edge AI project implementing Retrieval-Augmented Generation (RAG) to enhance information retrieval and response generation.",
             technologies: ["Python", "LangChain", "OpenAI API"],
             color: "text-purple-600",
             link: "/projects/ai-rag-implementation",
+            imageSrc: "/images/ai_chat_poster2.png",
           }, {
             title: "Recallify UX/UI Design",
             description: "A UX/UI design project focused on enhancing user experience and interface design for a web application, utilizing Figma and Adobe XD.",
             technologies: ["Figma", "Miro", "Adobe"],
             color: "text-purple-600",
             link: "/projects/recallify-ux-ui-design",
+            imageSrc: "/images/recallify_poster2.2.png",
           }].map((project, index) => (
             <div key={index} className="bg-gray-100 rounded-lg p-8 shadow-md space-y-4">
-              <h2 className={`text-2xl font-heading ${project.color}`} style={{ fontFamily: 'Poppins, sans-serif' }}>{project.title}</h2>
-              <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                    {tech}
-                  </span>
-                ))}
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="w-full md:w-1/3 aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
+                  <img
+                    src={project.imageSrc}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1 space-y-4">
+                  <h2 className={`text-2xl font-heading ${project.color}`} style={{ fontFamily: 'Poppins, sans-serif' }}>{project.title}</h2>
+                  <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <Link href={project.link} className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
+                    View Project
+                  </Link>
+                </div>
               </div>
-              <Link href={project.link} className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all">
-                View Project
-              </Link>
             </div>
           ))}
         </div>
 
         {/* Back to Home Link */}
         <div className="text-center">
-          <Link href="/" className="text-purple-600 hover:underline">
+          <Link href="/" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             Back to Home
           </Link>
         </div>

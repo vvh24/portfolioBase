@@ -32,7 +32,7 @@ export default function AboutPage() {
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
@@ -179,6 +179,15 @@ export default function AboutPage() {
           <div className="bg-purple-50 rounded-lg p-8 shadow-md mt-8">
             <p className="text-black-700 mb-4">My work style combines methodical planning with creative problem-solving, and I thrive under pressure. I'm open to new challenges and willing to take calculated risks to achieve the best results.</p>
             <p className="text-black-700">While my current focus is on building my technical and design skills in academic projects, I'm passionate about traditional art forms like drawing and sketching. I'm excited to continue bridging these analog creative skills with digital design as I grow in my career.</p>
+          </div>
+          {/* Back to Projects Button */}
+          <div className="flex justify-center mt-30">
+            <Link 
+              href="/projects"
+              className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline"
+            >
+              Back to Projects
+            </Link>
           </div>
         </section>
       </main>

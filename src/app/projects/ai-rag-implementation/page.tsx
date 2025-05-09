@@ -42,7 +42,7 @@ export default function AIRAGImplementationPage() {
             <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
             <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
             <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>
-            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </div>
@@ -72,13 +72,13 @@ export default function AIRAGImplementationPage() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold"
+                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
               >
                 View Demo
               </a>
               <a
-                href="#"
-                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold"
+                href="https://github.com/vvh24/websocket-chat.git"
+                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold no-underline"
               >
                 GitHub Repo
               </a>
@@ -364,8 +364,8 @@ export default function AIRAGImplementationPage() {
 
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center">
-          <Link href="/projects" className="text-purple-600 hover:underline">Back to Projects</Link>
-          <Link href="https://github.com/your-repo-link" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all">
+          <Link href="/projects" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
+          <Link href="https://github.com/vvh24/websocket-chat.git" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
             View Project
           </Link>
         </div>

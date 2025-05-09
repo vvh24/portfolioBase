@@ -1,40 +1,154 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import MainNav from "@/components/main-nav";
 import RoundedButton from "@/components/ui/rounded-button"; // Corrected path to match the module
+import { useState } from "react";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-white shadow-md w-full fixed top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-purple-600">Valeria Heredia Crespo</h1>
-          <nav className="flex items-center space-x-16">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-purple-600 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+          <nav className="hidden md:flex items-center space-x-16">
             <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
             <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-600 text-white hover:bg-purple-700 no-underline">
+            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-800 transition-all no-underline">
               Let's Connect
             </RoundedButton>
           </nav>
         </div>
+        {isMenuOpen && (
+          <div className="md:hidden bg-white shadow-md">
+            <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
+            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
+            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>
+            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700">
+              Let's Connect
+            </RoundedButton>
+          </div>
+        )}
       </header>
 
       <main className="flex-grow w-full">
-        <div className="bg-gradient-purple-teal flex items-center justify-center min-h-[50vh] py-20">
-          <section className="text-center space-y-5 px-10">
-            <h1 className="text-5xl md:text-6xl font-heading text-white tracking-wide font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Creating Innovative Digital Experiences
-            </h1>
-            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto">
+        <div className="bg-gradient-purple-teal flex items-center justify-center min-h-[90vh] py-20 relative overflow-hidden">
+          {/* Geometric Lines */}
+          <div className="absolute inset-0 bg-[url('/images/geometric_lines.svg')] opacity-10 pointer-events-none"></div>
+
+          <section className="text-center space-y-5 px-10 relative z-10">
+            {/* Headline */}
+            <div className="flex justify-center">
+              <h1
+                className="text-6xl md:text-7xl font-heading text-white tracking-wide font-semibold relative text-center"
+                style={{ fontFamily: 'Poppins, sans-serif', textShadow: '0 0 10px rgba(255, 255, 255, 0.8)' }}
+              >
+                <span>Creating</span>
+                <br />
+                <span>Innovative Digital</span>
+                <br />
+                <span>Experiences</span>
+                <span className="block w-0 h-1 bg-white mt-2 mx-auto animate-draw-line"></span>
+              </h1>
+            </div>
+
+            {/* Subheading */}
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto opacity-0 animate-fade-in">
               Transforming ideas into elegant digital solutions.
             </p>
+
+            {/* Button */}
             <div>
-              <RoundedButton href="/projects" className="bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-full hover:bg-gray-100 no-underline">
+              <RoundedButton
+                href="/projects"
+                className="bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-lg border border-white hover:animate-pulse-border no-underline"
+              >
                 View My Work
               </RoundedButton>
             </div>
           </section>
+
+          {/* Abstract Element */}
+          <div className="absolute bottom-0 right-0 w-40 h-40 bg-[url('/images/abstract_design_code.svg')] bg-contain bg-no-repeat opacity-50 pointer-events-none"></div>
+
+          {/* Scroll Arrow */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <div className="w-6 h-6 border-b-2 border-r-2 border-white transform rotate-45 animate-bounce"></div>
+          </div>
+
+          <style jsx>{`
+            @keyframes draw-line {
+              from {
+                width: 0;
+              }
+              to {
+                width: 100%;
+              }
+            }
+
+            @keyframes fade-in {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+
+            @keyframes pulse-border {
+              0%, 100% {
+                transform: scale(1);
+              }
+              50% {
+                transform: scale(1.05);
+              }
+            }
+
+            .animate-draw-line {
+              animation: draw-line 1s ease-out forwards;
+            }
+
+            .animate-fade-in {
+              animation: fade-in 1.5s ease-out forwards;
+              animation-delay: 1s;
+            }
+
+            .hover\:animate-pulse-border:hover {
+              animation: pulse-border 0.6s infinite;
+            }
+
+            .animate-bounce {
+              animation: bounce 1.5s infinite;
+            }
+
+            @keyframes bounce {
+              0%, 100% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-10px);
+              }
+            }
+          `}</style>
         </div>
 
         {/* Expertise Section */}
@@ -124,15 +238,15 @@ export default function Home() {
                   title: "Data Visualization",
                   description: "UFO Sightings & Military Bases Visualization is an interactive web application that examines potential correlations between reported UFO sightings and US military installations. Using React and D3.js, it features dynamic mapping, timeline analysis, and ranking visualizations that reveal fascinating patterns in sighting frequencies across different states and time periods.",
                   link: "/projects/ufo-data-visualization",
-                  imgSrc: "/images/ufo_card_visualization.png",
+                  imgSrc: "/images/ufo_poster6.png",
                   tags: ["React", "D3.js", "Data Visualization"],
-                  githubLink: "https://github.com/yourusername/ufo-data-visualization"
+                  githubLink: "https://github.com/vvh24/UFO.git"
                 },
                 {
                   title: "AI-Powered Assistant",
                   description: "Building a Real-Time WebSocket Chat is a web development project that demonstrates creating a persistent, bidirectional communication system using Node.js, Express, and Socket.IO. The application enables instant message exchange between multiple users without page refreshes, while teaching core concepts of anonymous functions, callbacks, and real-time data streaming.",
                   link: "/projects/ai-rag-implementation",
-                  imgSrc: "/images/AI_powered_assistant_visualization.png", // Placeholder for future image
+                  imgSrc: "/images/ai_chat_poster2.png", // Placeholder for future image
                   tags: ["Node.js", "Express", "Socket.IO"],
                   githubLink: "https://github.com/yourusername/ai-rag-implementation"
                 },
@@ -140,9 +254,9 @@ export default function Home() {
                   title: "Recallify UX/UI Design",
                   description: "Recallify is the planning of an intelligent note-taking app designed for life science students struggling with information retention. It automates lecture summarization, provides timestamped highlights, and features 'Rico', an AI study buddy that helps students quiz themselves on complex concepts, ultimately streamlining the study process and improving academic performance.",
                   link: "/projects/recallify-ux-ui-design",
-                  imgSrc: "/images/recallify_visualization.png",
+                  imgSrc: "/images/recallify_poster2.2.png",
                   tags: ["Figma", "Miro", "Data Analysis"],
-                  githubLink: "https://github.com/yourusername/recallify-ux-ui-design"
+                  figmaLink: "https://www.figma.com/proto/YYpXyKDCzmkR922cxfYnMR/Recallify?node-id=3337-803&t=XDnW4Njn0cz7UAdz-1&scaling=scale-down&content-scaling=fixed&page-id=3314%3A2&starting-point-node-id=3337%3A803"
                 },
               ].map((project, index) => (
                 <div key={index} className="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform">
@@ -159,20 +273,32 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="flex justify-start gap-4 mt-4">
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
-                    >
-                      GitHub
-                    </a>
+                    {project.title !== "Recallify UX/UI Design" && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
+                      >
+                        GitHub
+                      </a>
+                    )}
                     <Link
                       href={project.link}
-                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
+                      className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
                     >
                       Explore Project
                     </Link>
+                    {project.title === "Recallify UX/UI Design" && (
+                      <a
+                        href={project.figmaLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 no-underline"
+                      >
+                        Figma Prototype
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
@@ -211,7 +337,7 @@ export default function Home() {
             <div className="mt-8">
               <a
                 href="/contact"
-                className="inline-block bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-full hover:bg-gray-100 no-underline"
+                className="inline-block bg-white text-[#8A2BE2] font-bold text-lg px-6 py-3 rounded-lg hover:bg-gray-100 no-underline"
               >
                 Let's Connect
               </a>

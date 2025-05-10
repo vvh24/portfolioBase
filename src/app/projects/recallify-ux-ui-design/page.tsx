@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import RoundedButton from "@/components/ui/rounded-button";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import "@fontsource/lora"; // Import Lora font for headings
 import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
@@ -12,9 +12,58 @@ export default function RecallifyUXUIDesignPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const moveCarousel = (direction: number) => {
-    const totalImages = 4; // Update this if the number of images changes
-    setCurrentIndex((prevIndex) => (prevIndex + direction + totalImages) % totalImages);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDragging = true;
+      startX = e.pageX - (carousel?.offsetLeft || 0);
+      scrollLeft = carousel?.scrollLeft || 0;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - (carousel?.offsetLeft || 0);
+      const walk = (x - startX) * 2; // Adjust scroll speed
+      if (carousel) carousel.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUpOrLeave = () => {
+      isDragging = false;
+    };
+
+    if (carousel) {
+      carousel.addEventListener("mousedown", handleMouseDown);
+      carousel.addEventListener("mousemove", handleMouseMove);
+      carousel.addEventListener("mouseup", handleMouseUpOrLeave);
+      carousel.addEventListener("mouseleave", handleMouseUpOrLeave);
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener("mousedown", handleMouseDown);
+        carousel.removeEventListener("mousemove", handleMouseMove);
+        carousel.removeEventListener("mouseup", handleMouseUpOrLeave);
+        carousel.removeEventListener("mouseleave", handleMouseUpOrLeave);
+      }
+    };
+  }, []);
+
+  const images = [
+    "/images/wireframe_recallify1.png",
+    "/images/wireframe_recallify2.0.png",
+    "/images/wireframe_recallify3.png",
+    "/images/wireframe_recallify4.png",
+  ];
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
   };
 
   return (
@@ -353,44 +402,31 @@ export default function RecallifyUXUIDesignPage() {
           {/* Initial Prototyping Section */}
           <div>
             <h2 className="text-3xl font-heading text-gray-900 mb-4">Initial Prototyping</h2>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-hidden" ref={carouselRef}>
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
-                <img
-                  src="/images/wireframe_recallify1.png"
-                  alt="Wireframe 1"
-                  className="rounded-lg object-cover w-full h-auto"
-                />
-                <img
-                  src="/images/wireframe_recallify2.0.png"
-                  alt="Wireframe 2"
-                  className="rounded-lg object-cover w-full h-auto"
-                />
-                <img
-                  src="/images/wireframe_recallify3.png"
-                  alt="Wireframe 3"
-                  className="rounded-lg object-cover w-full h-auto"
-                />
-                <img
-                  src="/images/wireframe_recallify4.png"
-                  alt="Wireframe 4"
-                  className="rounded-lg object-cover w-full h-auto"
-                />
+                {images.map((src, index) => (
+                  <img
+                    key={index}
+                    src={src}
+                    alt={`Wireframe ${index + 1}`}
+                    className="rounded-lg object-cover w-full h-auto"
+                  />
+                ))}
               </div>
-              <button
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
-                onClick={() => moveCarousel(-1)}
-              >
-                &#8249;
-              </button>
-              <button
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
-                onClick={() => moveCarousel(1)}
-              >
-                &#8250;
-              </button>
+              <div className="flex justify-center mt-4">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-3 h-3 rounded-full mx-1 ${
+                      currentIndex === index ? "bg-purple-800" : "bg-gray-400"
+                    }`}
+                    onClick={() => handleDotClick(index)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

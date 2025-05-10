@@ -10,18 +10,49 @@ import "@fontsource/inter"; // Import Inter for body text
 export default function AIRAGImplementationPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
       {/* Navigation Bar */}
-      <header className="bg-white shadow-md w-full fixed top-0 z-10 font-poppins">
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? "backdrop-blur-md shadow-md" : ""
+        } bg-white/80`}
+      >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-purple-800" style={{ fontFamily: 'Lora, serif' }}>
+          {/* Logo */}
+          <Link href="/" className="text-lg font-bold text-purple-600 no-underline">
             Valeria Heredia Crespo
-        </h1>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-4 items-center">
+            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">
+              Home
+            </Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">
+              About
+            </Link>
+            <Link
+              href="/projects"
+              className="text-gray-700 hover:text-purple-600 no-underline"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 no-underline"
+            >
+              Contact Me
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
           <button
+            className="md:hidden text-gray-800 focus:outline-none ml-auto"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-purple-600 focus:outline-none"
+            aria-label="Toggle navigation menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -31,28 +62,50 @@ export default function AIRAGImplementationPage() {
               stroke="currentColor"
               className="w-6 h-6"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
             </svg>
           </button>
-          <nav className="hidden md:flex items-center space-x-16">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">Home</Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">About</Link>
-            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="bg-purple-800 text-white hover:bg-purple-700 no-underline">
-              Let's Connect
-            </RoundedButton>
-          </nav>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="absolute top-full left-0 w-full bg-white md:hidden">
+              <nav className="flex flex-col space-y-4 p-4">
+                <Link
+                  href="/"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/projects"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </nav>
+            </div>
+          )}
         </div>
-        {isMenuOpen && (
-          <div className={`absolute top-full left-0 w-full bg-white md:hidden z-40 ${isMenuOpen ? 'block' : 'hidden'}`}>
-            <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600 no-underline">Home</Link>
-            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600 no-underline">About</Link>
-            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-            <RoundedButton href="/contact" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 no-underline">
-              Let's Connect
-            </RoundedButton>
-          </div>
-        )}
       </header>
 
       {/* Main Content */}

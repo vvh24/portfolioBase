@@ -25,23 +25,26 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-lg font-bold text-purple-600">
-            My Portfolio
+          <Link href="/" className="text-lg font-bold text-purple-600 no-underline">
+            Valeria Heredia Crespo
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-4 items-center">
-            <Link href="/about" className="text-gray-700 hover:text-purple-600">
+            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">
+              Home
+            </Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">
               About
             </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-purple-600">
+            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">
               Projects
             </Link>
             <Link
               href="/contact"
-              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 no-underline"
             >
-              Contact
+              Contact Me
             </Link>
           </nav>
 
@@ -72,6 +75,13 @@ export default function Home() {
             <div className="absolute top-full left-0 w-full bg-white md:hidden">
               <nav className="flex flex-col space-y-4 p-4">
                 <Link
+                  href="/"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
                   href="/about"
                   className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
                   onClick={() => setIsMenuOpen(false)}
@@ -87,14 +97,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all"
+                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all no-underline"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact

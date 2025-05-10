@@ -52,7 +52,7 @@ export default function MainNav() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800 focus:outline-none"
+          className="md:hidden text-gray-800 focus:outline-none ml-auto"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -74,25 +74,25 @@ export default function MainNav() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden">
+          <div className="absolute top-full left-0 w-full bg-white md:hidden">
             <nav className="flex flex-col space-y-4 p-4">
               <Link
                 href="/about"
-                className="text-gray-800 hover:text-purple-600 transition-colors"
+                className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/projects"
-                className="text-gray-800 hover:text-purple-600 transition-colors"
+                className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projects
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-800 hover:text-purple-600 transition-colors"
+                className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

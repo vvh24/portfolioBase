@@ -23,7 +23,7 @@ export default function Home() {
           </h1>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-purple-600 focus:outline-none"
+            className="md:hidden text-purple-600 focus:outline-none ml-auto"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function Home() {
           </nav>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-md">
+          <div className="absolute top-full left-0 w-full bg-white md:hidden">
             <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
             <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
             <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>

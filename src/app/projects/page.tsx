@@ -105,7 +105,7 @@ export default function ProjectsPage() {
           )}
         </div>
       </header>
-      <main className="container mx-auto px-4 py-24 space-y-16 pt-28 sm:pt-32 md:pt-45">
+      <main className="container mx-auto px-4 py-24 space-y-16 pt-28 sm:pt-32 md:pt-36">
         {/* Page Title Section */}
         <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative font-Lora">
           Playground

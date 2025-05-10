@@ -131,7 +131,7 @@ export default function ContactPage() {
                   className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all no-underline"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contact
+                  Contact Me
                 </Link>
               </nav>
             </div>

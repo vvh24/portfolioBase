@@ -14,49 +14,96 @@ import "@fontsource/inter"; // Inter for body
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: 'Inter, sans-serif' }}>
-      <header className="bg-white shadow-md w-full fixed top-0 z-50">
-          <div className="container mx-auto px-2 py-2 flex justify-between items-center md:px-4 md:py-4">
-            <h1 className="text-lg font-bold text-purple-800 md:text-xl" style={{ fontFamily: 'Lora, serif' }}>
-              Valeria Heredia Crespo
-            </h1>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-purple-600 focus:outline-none"
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? "backdrop-blur-md shadow-md" : ""
+        } bg-white/80`}
+      >
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="text-lg font-bold text-purple-600">
+            My Portfolio
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-4 items-center">
+            <Link href="/about" className="text-gray-700 hover:text-purple-600">
+              About
+            </Link>
+            <Link href="/projects" className="text-gray-700 hover:text-purple-600">
+              Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-            <nav className="hidden md:flex items-center space-x-4 md:space-x-16">
-              <Link href="/" className="text-sm text-gray-700 hover:text-purple-600 no-underline md:text-base">Home</Link>
-              <Link href="/about" className="text-sm text-gray-700 hover:text-purple-600 no-underline md:text-base">About</Link>
-              <Link href="/projects" className="text-sm text-gray-700 hover:text-purple-600 no-underline md:text-base">Projects</Link>
-              <RoundedButton href="/contact" className="px-4 py-2 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline md:px-6 md:py-3">
-                Let's Connect
-              </RoundedButton>
-            </nav>
-          </div>
+              Contact
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-800 focus:outline-none ml-auto"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 w-full bg-white md:hidden z-40">
-              <Link href="/" className="block px-4 py-2 text-sm text-gray-700 hover:text-purple-600 no-underline">Home</Link>
-              <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:text-purple-600 no-underline">About</Link>
-              <Link href="/projects" className="block px-4 py-2 text-sm text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
-              <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700 no-underline">
-                Let's Connect
-              </RoundedButton>
+            <div className="absolute top-full left-0 w-full bg-white md:hidden">
+              <nav className="flex flex-col space-y-4 p-4">
+                <Link
+                  href="/about"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/projects"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </nav>
             </div>
           )}
-        </header>
+        </div>
+      </header>
 
       <main className="flex-grow w-full pt-1">
         <div className="bg-purple-800 flex items-center justify-center min-h-[90vh] py-20 relative overflow-hidden">

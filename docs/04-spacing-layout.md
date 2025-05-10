@@ -1,17 +1,20 @@
 # Spacing & Layout
 
-Our layout and spacing system is designed for comfort, clarity, and inclusivity. We use a simple, consistent spacing scale and a flexible grid to ensure content is easy to read and interact with for everyone.
+Our layout and spacing system is designed for creative expression, visual rhythm, and dynamic impact. We use a deliberate, asymmetrical spacing scale and a creative grid to ensure content inspires imagination while maintaining professional structure.
 
 **Spacing Scale:**
-- Uses a 4px base for consistency and comfort
+- Uses an 8px base for intentional creative tension
+- Dynamic spacing ratios inspired by the golden ratio (1:1.618)
+- Varied spacing to create visual interest and guide the eye
 - Responsive adjustments for all device sizes
 
 **Grid System:**
-- Mobile-first, single-column by default
-- Expands to multi-column layouts on larger screens
-- Generous padding and margins for a welcoming feel
+- Dynamic, asymmetrical layouts that break conventional patterns
+- Creative use of negative space to frame important elements
+- Deliberate grid-breaking elements that showcase originality
 
 **Guidelines:**
-- Avoid crowding elements
-- Use whitespace to create a relaxed, approachable interface
-- Ensure layouts adapt smoothly to all screen sizes
+- Use whitespace as a creative element, not just a separator
+- Create intentional focal points through spacing contrast
+- Allow key elements to "breathe" while creating dynamic relationships
+- Implement deliberate rhythm through spacing variation

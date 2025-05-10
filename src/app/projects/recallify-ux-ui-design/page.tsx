@@ -49,11 +49,11 @@ export default function RecallifyUXUIDesignPage() {
           </nav>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-md">
-            <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Home</Link>
-            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600">About</Link>
-            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600">Projects</Link>
-            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700">
+          <div className={`absolute top-full left-0 w-full bg-white md:hidden z-40 ${isMenuOpen ? 'block' : 'hidden'}`}>
+            <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-purple-600 no-underline">Home</Link>
+            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:text-purple-600 no-underline">About</Link>
+            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:text-purple-600 no-underline">Projects</Link>
+            <RoundedButton href="/contact" className="block px-4 py-2 bg-purple-600 text-white hover:bg-purple-700 no-underline">
               Let's Connect
             </RoundedButton>
           </div>

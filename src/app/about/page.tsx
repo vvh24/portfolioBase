@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 import MainNav from "@/components/main-nav";
 import RoundedButton from "@/components/ui/rounded-button";
 import "@fontsource/lora"; // Import Lora font for headings

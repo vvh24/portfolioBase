@@ -5,6 +5,7 @@ import Link from "next/link";
 import MainNav from "@/components/main-nav";
 import RoundedButton from "@/components/ui/rounded-button"; // Corrected path to match the module
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 // Importing Google Fonts
 import "@fontsource/lora"; // Lora for headings

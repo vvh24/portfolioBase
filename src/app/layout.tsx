@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import RoundedButton from "@/components/ui/rounded-button";
 import Head from "next/head";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,

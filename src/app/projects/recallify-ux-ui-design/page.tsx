@@ -2,6 +2,7 @@
 import Link from "next/link";
 import RoundedButton from "@/components/ui/rounded-button";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import "@fontsource/lora"; // Import Lora font for headings
 import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
 import "@fontsource/inter"; // Import Inter for body text

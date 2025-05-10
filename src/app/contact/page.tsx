@@ -1,6 +1,7 @@
 "use client";
 import MainNav from "@/components/main-nav";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 import RoundedButton from "@/components/ui/rounded-button";
 import { useState } from "react";
 import "@fontsource/lora"; // Import Lora font for headings

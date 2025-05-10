@@ -105,17 +105,10 @@ export default function AboutPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
+                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all no-underline"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contact
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
+                  Contact Me
                 </Link>
               </nav>
             </div>

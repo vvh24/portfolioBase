@@ -2,7 +2,8 @@
 
 import "./globals.css";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 import RoundedButton from "@/components/ui/rounded-button";
 import Head from "next/head";
 import { useState } from "react";
@@ -155,7 +156,7 @@ export default function RootLayout({
                   <FaInstagram className="w-6 h-6" />
                 </a>
                 <a href="https://x.com/valerixch?s=21&t=G9AO291usgwbc4gp0ozLAQ" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-                  <FaTwitter className="w-6 h-6" />
+                  <SiX className="w-6 h-6" />
                 </a>
               </div>
             </div>

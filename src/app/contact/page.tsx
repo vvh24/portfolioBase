@@ -8,6 +8,7 @@ import axios from "axios";
 import "@fontsource/lora"; // Import Lora font for headings
 import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
 import "@fontsource/inter"; // Import Inter for body text
+import { SiX } from "react-icons/si";
 
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -224,9 +225,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-purple-800 text-white rounded-full flex items-center justify-center hover:bg-purple-700 transition-all"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.723-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 .386.044.762.127 1.124-4.087-.205-7.713-2.164-10.141-5.144-.423.725-.666 1.562-.666 2.457 0 1.697.865 3.194 2.181 4.073-.803-.026-1.56-.247-2.22-.616v.062c0 2.37 1.685 4.348 3.918 4.798-.411.111-.844.171-1.292.171-.316 0-.624-.031-.927-.088.625 1.956 2.444 3.379 4.6 3.419-1.68 1.319-3.809 2.105-6.115 2.105-.398 0-.79-.023-1.175-.069 2.179 1.397 4.768 2.212 7.548 2.212 9.057 0 14.01-7.506 14.01-14.01 0-.213-.005-.425-.014-.636.961-.695 1.797-1.562 2.457-2.549z" />
-                  </svg>
+                  <SiX className="w-6 h-6" />
                 </a>
                 <a
                   href="https://www.instagram.com/val_hcrespo/"
@@ -239,14 +238,6 @@ export default function ContactPage() {
                   </svg>
                 </a>
               </div>
-              <p className="text-lg text-gray-700 text-center">
-                <span className="inline-flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6 text-purple-600">
-                    <path d="M12 12.713l11.985-8.713h-23.97l11.985 8.713zm0 2.574l-12-8.713v12.426h24v-12.426l-12 8.713z" />
-                  </svg>
-                  <span>Email: <a href="mailto:valeriahcrespo@gmail.com" className="text-purple-800 no-underline hover:no-underline">valeriahcrespo@gmail.com</a></span>
-                </span>
-              </p>
             </div>
           </section>
         </div>

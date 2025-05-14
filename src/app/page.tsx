@@ -114,8 +114,13 @@ export default function Home() {
             {/* Headline */}
             <div className="flex justify-center">
               <h1
-                className="text-6xl md:text-7xl font-heading text-white tracking-wide font-semibold relative text-center"
-                style={{ fontFamily: 'Lora, serif', textShadow: '0 0 10px rgba(255, 255, 255, 0.8)' }}
+                className="font-heading text-white tracking-wide font-semibold relative text-center"
+                style={{
+                  fontFamily: 'Lora, serif',
+                  textShadow: '0 0 10px rgba(255, 255, 255, 0.8)',
+                  fontSize: 'clamp(2.2rem, 7vw, 4.5rem)',
+                  lineHeight: 1.1
+                }}
               >
                 <span>Creating</span>
                 <br />

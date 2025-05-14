@@ -238,6 +238,11 @@ export default function ContactPage() {
                   </svg>
                 </a>
               </div>
+              <p className="text-center text-gray-700 italic mt-4 flex items-center justify-center gap-2">
+                <span className="text-purple-600 text-2xl font-bold">“</span>
+                <span>Hard-work and perseverance is what will lead me to accomplish my goals and dreams</span>
+                <span className="text-purple-600 text-2xl font-bold">”</span>
+              </p>
             </div>
           </section>
         </div>

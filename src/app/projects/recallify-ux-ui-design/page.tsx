@@ -101,24 +101,31 @@ export default function RecallifyUXUIDesignPage() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-800 focus:outline-none ml-auto"
+            className="inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation menu"
+            aria-label="Open menu"
+            aria-haspopup="menu"
+            aria-expanded={isMenuOpen}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
+            <span className="inline-block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+                className="h-6 w-6"
+              >
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+              </svg>
+            </span>
           </button>
 
           {/* Mobile Menu */}
@@ -160,7 +167,7 @@ export default function RecallifyUXUIDesignPage() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-24 space-y-16 font-inter">
+      <main className="container mx-auto px-4 py-24 space-y-16 font-inter mt-[35px]">
         {/* Hero Section */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Hero Image */}
@@ -196,8 +203,8 @@ export default function RecallifyUXUIDesignPage() {
             </div>
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Figma</span>
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Adobe XD</span>
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Miro</span>
+              <span className="px-3 py-1 bg-green-100 text-purple-700 rounded-full text-sm font-medium">Adobe XD</span>
+              <span className="px-3 py-1 bg-blue-100 text-purple-700 rounded-full text-sm font-medium">Miro</span>
             </div>
           </div>
         </section>

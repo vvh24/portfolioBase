@@ -21,7 +21,7 @@ export default function Home() {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled ? "backdrop-blur-md shadow-md" : ""
-        } bg-white/80`}
+        } bg-white/80 border-b border-purple-200`}
       >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
@@ -50,24 +50,31 @@ export default function Home() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-800 focus:outline-none ml-auto"
+            className="inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation menu"
+            aria-label="Open menu"
+            aria-haspopup="menu"
+            aria-expanded={isMenuOpen}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
+            <span className="inline-block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+                className="h-6 w-6"
+              >
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+              </svg>
+            </span>
           </button>
 
           {/* Mobile Menu */}
@@ -108,9 +115,9 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-grow w-full pt-1">
-        <div className="bg-purple-800 flex items-center justify-center min-h-[90vh] py-20 relative overflow-hidden">
-          <section className="text-center space-y-5 px-10 relative z-10">
+      <main className="flex-grow w-full pt-1 overflow-x-hidden mt-[35px]">
+        <div className="bg-purple-800 flex items-center justify-center min-h-[88vh] py-20 relative overflow-hidden w-full max-w-full">
+          <section className="text-center space-y-5 px-4 sm:px-10 relative z-10 w-full max-w-2xl mx-auto">
             {/* Headline */}
             <div className="flex justify-center">
               <h1

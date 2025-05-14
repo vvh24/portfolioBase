@@ -48,7 +48,7 @@ export default function ProjectsPage() {
 
           {/* Mobile Menu Button */}
           <button
-            className="inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
+            className="md:hidden inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Open menu"
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
           )}
         </div>
       </header>
-      <main className="container mx-auto px-4 py-24 space-y-16 pt-28 sm:pt-32 md:pt-36 mt-[35px]">
+      <main className="container mx-auto px-4 py-24 space-y-16 font-inter mt-[35px]">
         {/* Page Title Section */}
         <h1 className="text-5xl md:text-6xl font-heading text-gray-900 tracking-wide font-semibold text-center relative font-Lora">
           Playground

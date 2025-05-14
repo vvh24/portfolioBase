@@ -130,7 +130,7 @@ export default function RecallifyUXUIDesignPage() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 w-full bg-white md:hidden">
+            <div className="md:hidden absolute top-full left-0 w-full bg-white md:hidden">
               <nav className="flex flex-col space-y-4 p-4">
                 <Link
                   href="/"

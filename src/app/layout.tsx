@@ -57,7 +57,7 @@ export default function RootLayout({
 
             {/* Mobile Menu Button */}
             <button
-              className="inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
+              className="md:hidden inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Open menu"
@@ -122,7 +122,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="pt-16">{children}</main>
+        <main className="pt-16 mt-[-28px]">{children}</main>
 
         <footer className="bg-gray-100 text-black-800 py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">

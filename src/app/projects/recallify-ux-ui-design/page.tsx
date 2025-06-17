@@ -76,7 +76,7 @@ export default function RecallifyUXUIDesignPage() {
       >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-lg font-bold text-purple-600">
+          <Link href="/" className="text-lg font-bold text-purple-600 no-underline">
             Valeria Heredia Crespo
           </Link>
 
@@ -88,7 +88,10 @@ export default function RecallifyUXUIDesignPage() {
             <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">
               About
             </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">
+            <Link
+              href="/projects"
+              className="text-gray-700 hover:text-purple-600 no-underline"
+            >
               Projects
             </Link>
             <Link
@@ -101,7 +104,7 @@ export default function RecallifyUXUIDesignPage() {
 
           {/* Mobile Menu Button */}
           <button
-            className="inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
+            className="md:hidden inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Open menu"
@@ -130,7 +133,7 @@ export default function RecallifyUXUIDesignPage() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 w-full bg-white md:hidden">
+            <div className="absolute top-full left-0 w-full bg-white md:hidden">
               <nav className="flex flex-col space-y-4 p-4">
                 <Link
                   href="/"

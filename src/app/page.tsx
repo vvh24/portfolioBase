@@ -57,7 +57,7 @@ export default function Home() {
 
               <div className="mt-6 flex items-center justify-center gap-3">
                 <a href="/projects" className="inline-flex items-center justify-center px-5 py-2.5 bg-gray-900 text-white rounded-md text-sm font-medium hover:opacity-95 no-underline">View My Work</a>
-                <a href="/contact" className="inline-flex items-center justify-center px-5 py-2.5 border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-100 no-underline">Let's Connect</a>
+                <a href="/contact" className="inline-flex items-center justify-center px-5 py-2.5 border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-100 no-underline">{"Let's Connect"}</a>
               </div>
             </div>
           </div>

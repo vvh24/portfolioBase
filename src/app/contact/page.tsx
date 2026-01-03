@@ -38,7 +38,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Inter, sans-serif' }}>
       <main className="container mx-auto px-6 py-24 max-w-3xl">
         <div className="bg-white rounded-2xl shadow-lg p-10">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: 'Lora, serif' }}>Let's work together</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: 'Lora, serif' }}>{"Let's work together"}</h1>
           <p className="text-gray-600 mb-6">Short, direct copy inviting people to reach out. Tell me about your project, timeline, or role.</p>
 
           <form className="space-y-4" onSubmit={handleSubmit}>

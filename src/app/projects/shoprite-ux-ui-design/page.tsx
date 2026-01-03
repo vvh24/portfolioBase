@@ -7,7 +7,7 @@ import "@fontsource/lora"; // Import Lora font for headings
 import "@fontsource/poppins/500.css"; // Import Poppins Medium for subheadings
 import "@fontsource/inter"; // Import Inter for body text
 
-export default function shopriteUXUIDesignPage() {
+export default function ShopriteUXUIDesignPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -128,7 +128,7 @@ export default function shopriteUXUIDesignPage() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-heading text-gray-900 mb-4">Context & Why It Matters</h2>
-              <p className="text-gray-700 mb-6">As a Customer Service Representative at ShopRite, I witness daily struggles with our digital coupon system that prevent customers from accessing savings they're entitled to. Digital coupons function as manufacturer discounts that stack with existing sales, providing significant value to cost-conscious shoppers. However, the current system creates barriers that often result in customer frustration and lost savings opportunities.</p>
+              <p className="text-gray-700 mb-6">{"As a Customer Service Representative at ShopRite, I witness daily struggles with our digital coupon system that prevent customers from accessing savings they're entitled to. Digital coupons function as manufacturer discounts that stack with existing sales, providing significant value to cost-conscious shoppers. However, the current system creates barriers that often result in customer frustration and lost savings opportunities."}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white rounded-lg border border-gray-100 p-4 shadow-sm">
@@ -649,7 +649,7 @@ export default function shopriteUXUIDesignPage() {
             </div>
           </div>
         </section>
-        
+
         {/* Navigation Button */}
          <div className="flex justify-between items-center">
             <Link href="/projects" className="px-5 py-3 border border-gray-200 rounded-lg text-gray-900 hover:bg-gray-100 transition-colors no-underline">Back to Projects</Link>

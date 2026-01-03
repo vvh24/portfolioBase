@@ -255,7 +255,7 @@ export default function Home() {
                     link: "/projects/mern-project",
                     imgSrc: "/images/merncover2.png",
                     tags: ["MERN", "Axios", "CRUD"],
-                    github: "#"
+                    github: "https://github.com/vvh24/IT302-vvh-Project"
                   },
                 ].map((project, i) => (
                   <article key={i} className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 flex flex-col h-full">
@@ -290,8 +290,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-  {/* Expertise Section */}
       </main>
     </div>
   );

@@ -109,14 +109,17 @@ export default function RootLayout({
             <div>
               <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>Quick Links</h3>
               <ul className="space-y-2">
-                {['Home', 'About', 'Projects', 'Contact'].map((link, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-gray-300 rounded-full" aria-hidden></span>
-                    <Link href={`/${link.toLowerCase()}`} className="no-underline text-gray-700 hover:text-gray-900 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
-                      {link}
-                    </Link>
-                  </li>
-                ))}
+                {['Home', 'About', 'Projects', 'Contact'].map((link, index) => {
+                  const href = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
+                  return (
+                    <li key={index} className="flex items-center gap-3">
+                      <span className="w-2 h-2 bg-gray-300 rounded-full" aria-hidden></span>
+                      <Link href={href} className="no-underline text-gray-700 hover:text-gray-900 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        {link}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 

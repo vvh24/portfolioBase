@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-2xl p-6 shadow-lg ring-1 ring-gray-100">
               <div className="flex items-center gap-4">
                 <div className="w-20 h-20 rounded-full overflow-hidden bg-gray-100">
-                  <Image src="/images/avatarpic.PNG" alt="Valeria" width={80} height={80} className="object-cover" />
+                  <Image src="/images/avatarpic.png" alt="Valeria" width={80} height={80} className="object-cover" />
                 </div>
                 <div>
                   <div className="text-base font-semibold text-gray-900" style={{ fontFamily: 'Lora, serif' }}>Valeria Heredia Crespo</div>

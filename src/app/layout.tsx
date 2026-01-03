@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import RoundedButton from "@/components/ui/rounded-button";
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
@@ -17,6 +17,28 @@ export default function RootLayout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setIsMenuOpen(false);
+    };
+
+    window.addEventListener('keydown', handleKey);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <html lang="en">
       <Head>
@@ -26,122 +48,71 @@ export default function RootLayout({
       </Head>
       <body>
         <header
-          className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-            isScrolled ? "backdrop-blur-md shadow-md" : ""
-          } bg-white/80`}
+          className={`fixed top-0 left-0 w-full z-50 transition-colors duration-200 ${isScrolled ? "shadow-sm" : ""} bg-gray-50`}
         >
-          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            {/* Logo */}
-            <Link href="/" className="text-lg font-bold text-purple-600 no-underline">
-              Valeria Heredia Crespo
-            </Link>
+          <div className="container mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+            {/* Minimal text logo */}
+            <div>
+              <Link href="/" className="no-underline">
+                <span className="text-lg font-medium text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Valeria Heredia Crespo
+                </span>
+              </Link>
+            </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-4 items-center">
-              <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">
-                Home
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">
-                About
-              </Link>
-              <Link href="/projects" className="text-gray-700 hover:text-purple-600 no-underline">
-                Projects
-              </Link>
-              <Link
-                href="/contact"
-                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 no-underline"
-              >
-                Contact Me
-              </Link>
-            </nav>
+            {/* Nav */}
+            <div className="hidden md:flex items-center space-x-10">
+              <Link href="/" className="text-gray-700 transition-colors no-underline px-3 py-2 rounded-md hover:bg-black hover:text-white">Home</Link>
+              <Link href="/about" className="text-gray-700 transition-colors no-underline px-3 py-2 rounded-md hover:bg-black hover:text-white">About</Link>
+              <Link href="/projects" className="text-gray-700 transition-colors no-underline px-3 py-2 rounded-md hover:bg-black hover:text-white">Projects</Link>
+              <Link href="/contact" className="ml-6 inline-flex items-center justify-center px-4 py-2 bg-black text-white rounded-md hover:opacity-95 no-underline">Contact Me</Link>
+            </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
-              type="button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Open menu"
-              aria-haspopup="menu"
-              aria-expanded={isMenuOpen}
-            >
-              <span className="inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6"
-                >
-                  <line x1="4" x2="20" y1="12" y2="12"></line>
-                  <line x1="4" x2="20" y1="6" y2="6"></line>
-                  <line x1="4" x2="20" y1="18" y2="18"></line>
+            {/* Mobile toggle */}
+            <div className="md:hidden">
+              <button aria-controls="mobile-menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-              </span>
-            </button>
+              </button>
+            </div>
 
-            {/* Mobile Menu */}
             {isMenuOpen && (
-              <div className="absolute top-full left-0 w-full bg-white md:hidden">
-                <nav className="flex flex-col space-y-4 p-4">
-                  <Link
-                    href="/"
-                    className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    About
-                  </Link>
-                  <Link
-                    href="/projects"
-                    className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Projects
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all no-underline"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Contact
-                  </Link>
+              <div id="mobile-menu" role="dialog" aria-modal="false" className="absolute top-full left-0 w-full bg-gray-50 md:hidden border-t border-gray-200">
+                <nav className="flex flex-col p-4 space-y-2" aria-label="Mobile navigation">
+                  <Link href="/" className="text-gray-800 no-underline px-4 py-2 rounded-md hover:bg-black hover:text-white" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                  <Link href="/about" className="text-gray-800 no-underline px-4 py-2 rounded-md hover:bg-black hover:text-white" onClick={() => setIsMenuOpen(false)}>About</Link>
+                  <Link href="/projects" className="text-gray-800 no-underline px-4 py-2 rounded-md hover:bg-black hover:text-white" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+                  <Link href="/contact" className="mt-2 inline-block bg-black text-white rounded-md px-4 py-2 text-center no-underline" onClick={() => setIsMenuOpen(false)}>Contact Me</Link>
                 </nav>
               </div>
             )}
           </div>
         </header>
 
-        <main className="pt-16 mt-[-28px]">{children}</main>
+        {/* Ensure main content clears the fixed header; use padding-top matching header height */}
+        <main className="pt-20">{children}</main>
 
-        <footer className="bg-gray-100 text-black-800 py-12">
-          <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <footer className="bg-white text-gray-700 py-12">
+          <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* About Section */}
             <div>
-              <h3 className="text-lg font-bold mb-4">About Me</h3>
-              <p className="text-sm leading-relaxed">
-                I'm a Web & Information Systems student passionate about creating intuitive digital experiences. Let's build something amazing together!
+              <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>About Me</h3>
+              <p className="text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Hi! I’m Valeria, a Web & Information Systems graduate with a passion for
+                building thoughtful web applications, data visualizations, and
+                user-centered digital experiences.
               </p>
             </div>
 
             {/* Quick Links Section */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+              <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>Quick Links</h3>
               <ul className="space-y-2">
                 {['Home', 'About', 'Projects', 'Contact'].map((link, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-purple-800 rounded-full"></span>
-                    <Link href={`/${link.toLowerCase()}`} className="no-underline text-black hover:text-purple-600 transition-colors">
+                  <li key={index} className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-gray-300 rounded-full" aria-hidden></span>
+                    <Link href={`/${link.toLowerCase()}`} className="no-underline text-gray-700 hover:text-gray-900 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {link}
                     </Link>
                   </li>
@@ -149,21 +120,21 @@ export default function RootLayout({
               </ul>
             </div>
 
-            {/* Social Media Section */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">Follow Me</h3>
-              <div className="flex space-x-4">
-                <a href="https://github.com/vvh24" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-                  <FaGithub className="w-6 h-6" />
+            {/* Contact + Social */}
+            <div className="flex flex-col items-start md:items-end">
+              <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>Get in touch</h3>
+              <p className="text-sm text-gray-700 mb-4 max-w-sm" style={{ fontFamily: 'Inter, sans-serif' }}>Interested in collaborating? I’m available for new projects and internships.</p>
+              <Link href="/contact" className="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-md text-sm no-underline" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact Me</Link>
+
+              <div className="mt-4 flex items-center gap-4 text-gray-600">
+                <a href="https://github.com/vvh24" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-gray-900 text-gray-600">
+                  <FaGithub className="w-6 h-6 md:w-7 md:h-7" />
                 </a>
-                <a href="https://www.linkedin.com/in/valeria-heredia-101452326/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-                  <FaLinkedin className="w-6 h-6" />
+                <a href="https://www.linkedin.com/in/valeria-heredia-101452326/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-gray-900 text-gray-600">
+                  <FaLinkedin className="w-6 h-6 md:w-7 md:h-7" />
                 </a>
-                <a href="https://www.instagram.com/val_hcrespo/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-                  <FaInstagram className="w-6 h-6" />
-                </a>
-                <a href="https://x.com/valerixch?s=21&t=G9AO291usgwbc4gp0ozLAQ" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-                  <SiX className="w-6 h-6" />
+                <a href="https://www.instagram.com/val_hcrespo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-gray-900 text-gray-600">
+                  <FaInstagram className="w-6 h-6 md:w-7 md:h-7" />
                 </a>
               </div>
             </div>

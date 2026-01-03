@@ -9,7 +9,7 @@ type RoundedButtonProps = {
 };
 
 const RoundedButton: React.FC<RoundedButtonProps> = ({ href, className, children }) => {
-  const baseStyles = "inline-block px-6 py-2 rounded-full text-center font-medium transition-all";
+  const baseStyles = "inline-flex items-center justify-center px-4 py-2 rounded-md no-underline text-center font-medium transition-all";
 
   if (href) {
     return (

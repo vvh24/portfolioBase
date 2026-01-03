@@ -44,7 +44,7 @@ export default function MainNav() {
           </Link>
           <Link
             href="/contact"
-            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+            className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 no-underline"
           >
             Contact
           </Link>
@@ -99,7 +99,7 @@ export default function MainNav() {
               </Link>
               <Link
                 href="/contact"
-                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all"
+                className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-md hover:brightness-110 transition-all no-underline"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

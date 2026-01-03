@@ -14,118 +14,19 @@ export default function AIRAGImplementationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
-      {/* Navigation Bar */}
-      <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "backdrop-blur-md shadow-md" : ""
-        } bg-white/80`}
-      >
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="text-lg font-bold text-purple-600 no-underline">
-            Valeria Heredia Crespo
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4 items-center">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 no-underline">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 no-underline">
-              About
-            </Link>
-            <Link
-              href="/projects"
-              className="text-gray-700 hover:text-purple-600 no-underline"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/contact"
-              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 no-underline"
-            >
-              Contact Me
-            </Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden inline-flex items-center justify-center font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-gray-800 hover:bg-gray-100 focus:ring-gray-500 border border-transparent px-2 w-10 h-10"
-            type="button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Open menu"
-            aria-haspopup="menu"
-            aria-expanded={isMenuOpen}
-          >
-            <span className="inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6"
-              >
-                <line x1="4" x2="20" y1="12" y2="12"></line>
-                <line x1="4" x2="20" y1="6" y2="6"></line>
-                <line x1="4" x2="20" y1="18" y2="18"></line>
-              </svg>
-            </span>
-          </button>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="absolute top-full left-0 w-full bg-white md:hidden">
-              <nav className="flex flex-col space-y-4 p-4">
-                <Link
-                  href="/"
-                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  href="/projects"
-                  className="text-gray-800 hover:text-purple-600 transition-colors no-underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Projects
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:brightness-110 transition-all no-underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
+  {/* rely on global header in layout.tsx */}
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-24 space-y-16 font-inter mt-[35px]">
+  <main className="container mx-auto px-4 py-24 space-y-16 font-inter">
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Hero Image */}
-          <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+          <figure className="rounded-lg overflow-hidden bg-gray-100 border border-gray-200 aspect-video">
             <img
               src="/images/ragimplementation_hover3.png"
               alt="AI RAG Implementation Preview"
-              className="rounded-lg object-cover w-full h-full"
+              className="w-full h-full object-cover"
             />
-          </div>
+          </figure>
 
           {/* Right Column: Project Details */}
           <div className="space-y-6">
@@ -135,306 +36,154 @@ export default function AIRAGImplementationPage() {
             <p className="text-lg text-gray-700 font-inter">
               A cutting-edge AI project implementing Retrieval-Augmented Generation (RAG) to enhance information retrieval and response generation.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3 mt-4">
               <a
                 href="https://websocket-chat-kk14.onrender.com"
-                className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold no-underline"
+                className="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-md text-sm font-medium no-underline"
               >
                 View Demo
               </a>
               <a
                 href="https://github.com/vvh24/websocket-chat.git"
-                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all font-semibold no-underline"
+                className="inline-flex items-center px-4 py-2 border border-gray-200 text-gray-800 rounded-md text-sm no-underline"
               >
                 GitHub Repo
               </a>
             </div>
             <div className="flex flex-wrap gap-2 mt-4">
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">AI</span>
-              <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">RAG</span>
-              <span className="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm font-medium">Machine Learning</span>
-              <span className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm font-medium">Information Retrieval</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">AI</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">RAG</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Machine Learning</span>
+              <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Information Retrieval</span>
             </div>
           </div>
         </section>
 
-        {/* Project Overview Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            Project Overview
-          </h2>
-          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
-            This project implements a streaming chat application with an AI character persona using Server-Sent Events and the OpenAI API. The application features real-time text streaming, creating a dynamic and engaging conversational experience with an AI character whose personality, background, and responses are fully customizable.
-          </p>
-          <h3 className="text-2xl font-heading text-gray-900 text-center mb-4">Key Features</h3>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h4 className="text-lg font-semibold text-gray-900">Real-time Text Streaming</h4>
-              <p className="text-gray-700 mt-2">Using Server-Sent Events (SSE) for seamless real-time updates.</p>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h4 className="text-lg font-semibold text-gray-900">Custom AI Character Persona</h4>
-              <p className="text-gray-700 mt-2">Loaded from JSON configuration for tailored interactions.</p>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h4 className="text-lg font-semibold text-gray-900">Integration with OpenAI</h4>
-              <p className="text-gray-700 mt-2">Utilizing LangChain for advanced language model capabilities.</p>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h4 className="text-lg font-semibold text-gray-900">Dynamic Response Generation</h4>
-              <p className="text-gray-700 mt-2">Adapts to character traits and situational contexts.</p>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md text-center">
-              <h4 className="text-lg font-semibold text-gray-900">Clean, Responsive UI</h4>
-              <p className="text-gray-700 mt-2">Designed for seamless and engaging chat interactions.</p>
-            </div>
+        {/* Project Overview → Results rewritten with a more technical, modern feel */}
+        <section className="space-y-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Lora, serif' }}>Project Overview</h2>
+            <p className="text-gray-700 max-w-3xl mx-auto">A streaming chat application demonstrating Retrieval-Augmented Generation (RAG) with customizable AI personas, low-latency Server-Sent Events, and a performance-minded frontend.</p>
           </div>
-        </section>
 
-        {/* Technologies Used Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            Technologies Used
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Frontend</h3>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript (Vanilla)</li>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {title: 'Real-time Text Streaming', body: 'Server-Sent Events for seamless, low-latency updates.'},
+              {title: 'Custom AI Personas', body: 'Persona-driven responses loaded from JSON configurations.'},
+              {title: 'LangChain Integration', body: 'Advanced prompt handling and context management.'},
+              {title: 'Dynamic Responses', body: 'Context-aware replies that adapt to conversation state.'},
+              {title: 'Responsive UI', body: 'Clean, accessible chat interface optimized for devices.'},
+            ].map((f, idx) => (
+              <div key={idx} className="bg-white rounded-xl p-5 border-l-4 border-indigo-600 shadow-sm hover:shadow-lg transition-all">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h4>
+                <p className="text-sm text-gray-700">{f.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Frontend</h3>
+              <ul className="text-gray-700 list-disc list-inside">
+                <li>HTML5, CSS3, Vanilla JS</li>
                 <li>Server-Sent Events (SSE)</li>
-                <li>Responsive design with flexbox</li>
+                <li>Responsive UI & accessibility</li>
               </ul>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Backend</h3>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Node.js with Express.js</li>
-                <li>LangChain for AI model integration</li>
-                <li>OpenAI API (GPT-3.5 Turbo)</li>
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Backend</h3>
+              <ul className="text-gray-700 list-disc list-inside">
+                <li>Node.js + Express</li>
+                <li>LangChain + OpenAI API</li>
+                <li>Environment-based API & secrets</li>
               </ul>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Development Tools</h3>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Git/GitHub</li>
-                <li>npm</li>
-                <li>Environment variables for secure API key management</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Development Process Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            Development Process
-          </h2>
-          <div className="space-y-8">
-            {/* Research & Planning Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Research & Planning</h3>
-              <p className="text-gray-700 mt-2">The project began with extensive research into the capabilities of Server-Sent Events (SSE) and the OpenAI API. I analyzed existing chat applications to identify gaps and opportunities for improvement. Planning involved creating a detailed roadmap and defining the scope of the project to ensure timely delivery.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Explored use cases for real-time text streaming</li>
-                <li>Defined character persona requirements</li>
-                <li>Outlined integration points for LangChain and OpenAI API</li>
-              </ul>
-            </div>
-
-            {/* Architecture Design Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Architecture Design</h3>
-              <p className="text-gray-700 mt-2">The architecture was designed to ensure scalability and maintainability. The backend was built using Node.js and Express.js, while the frontend utilized vanilla JavaScript for simplicity and responsiveness.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Modular backend with separate routes for SSE and API integration</li>
-                <li>Frontend designed with a focus on user experience and accessibility</li>
-                <li>Secure API key management using environment variables</li>
-              </ul>
-            </div>
-
-            {/* Implementation Challenges & Solutions Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Implementation Challenges & Solutions</h3>
-              <p className="text-gray-700 mt-2">Several challenges were encountered during development, including handling real-time data streams and ensuring seamless integration with the OpenAI API. These were addressed through iterative testing and optimization.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Optimized SSE implementation to handle high-frequency updates</li>
-                <li>Resolved latency issues by fine-tuning API requests</li>
-                <li>Enhanced error handling for robust performance</li>
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Tools</h3>
+              <ul className="text-gray-700 list-disc list-inside">
+                <li>Git, GitHub</li>
+                <li>npm, build scripts</li>
+                <li>Testing & iterative debugging</li>
               </ul>
             </div>
           </div>
-        </section>
 
-        {/* Key Features Deep Dive Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            Key Features Deep Dive
-          </h2>
-          <div className="space-y-8">
-            {/* Character Personality System Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Character Personality System</h3>
-              <p className="text-gray-700 mt-2">The character personality system allows users to define unique traits and backgrounds for their AI personas. This feature enhances engagement by tailoring responses to the character's personality.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Customizable JSON configuration for character traits</li>
-                <li>Dynamic response generation based on predefined attributes</li>
-                <li>Support for multiple personas within a single application</li>
-              </ul>
+          <div className="space-y-6">
+            <div className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-gray-900">Development Process</h3>
+              <p className="text-gray-700 mt-2">Research, architecture, and iterative implementation focused on reliability and maintainability. Key steps included persona design, SSE optimization, and LangChain integration testing.</p>
             </div>
 
-            {/* Server-Sent Events Implementation Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Server-Sent Events Implementation</h3>
-              <p className="text-gray-700 mt-2">SSE was implemented to enable real-time text streaming, providing a seamless and interactive user experience. This approach ensures low latency and efficient data delivery.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Established persistent connections for continuous updates</li>
-                <li>Optimized data flow to minimize bandwidth usage</li>
-                <li>Implemented reconnection logic for improved reliability</li>
-              </ul>
-            </div>
-
-            {/* Dynamic Response Generation Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Dynamic Response Generation</h3>
-              <p className="text-gray-700 mt-2">Dynamic response generation leverages LangChain and the OpenAI API to produce context-aware replies. This feature adapts to situational contexts and user inputs for a more natural conversation flow.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Integrated LangChain for advanced prompt engineering</li>
-                <li>Utilized OpenAI API for high-quality language generation</li>
-                <li>Enhanced adaptability through real-time context updates</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Code Showcase Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            Code Showcase
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Server-Side Streaming Example */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md flex flex-col items-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Server-Side Streaming</h3>
-              <div className="w-full h-48 rounded-lg overflow-hidden cursor-pointer" onClick={() => setEnlargedImage('/images/codeshowcase.png')}>
-                <img
-                  src="/images/codeshowcase.png"
-                  alt="Server-Side Streaming Code"
-                  className="object-cover w-full h-full"
-                />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h4 className="font-semibold">Implementation Challenges</h4>
+                <ul className="text-gray-700 list-disc list-inside mt-2">
+                  <li>Managing streaming state</li>
+                  <li>Latency and reconnection strategies</li>
+                </ul>
               </div>
-            </div>
-
-            {/* Character Prompt Engineering Example */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md flex flex-col items-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Character Prompt Engineering</h3>
-              <div className="w-full h-48 rounded-lg overflow-hidden cursor-pointer" onClick={() => setEnlargedImage('/images/characterpromptengineering1.png')}>
-                <img
-                  src="/images/characterpromptengineering1.png"
-                  alt="Character Prompt Engineering Code"
-                  className="object-cover w-full h-full"
-                />
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h4 className="font-semibold">Outcomes</h4>
+                <ul className="text-gray-700 list-disc list-inside mt-2">
+                  <li>Low-latency interactive chat</li>
+                  <li>Extensible persona configuration</li>
+                </ul>
               </div>
-            </div>
-
-            {/* Client-Side Streaming Handler Example */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md flex flex-col items-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Client-Side Streaming Handler</h3>
-              <div className="w-full h-48 rounded-lg overflow-hidden cursor-pointer" onClick={() => setEnlargedImage('/images/clientstreaminghandler1.png')}>
-                <img
-                  src="/images/clientstreaminghandler1.png"
-                  alt="Client-Side Streaming Handler Code"
-                  className="object-cover w-full h-full"
-                />
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h4 className="font-semibold">Future Work</h4>
+                <ul className="text-gray-700 list-disc list-inside mt-2">
+                  <li>Support additional models/APIs</li>
+                  <li>Enhanced UI customizations</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          {/* Enlarged Image Modal */}
-          {enlargedImage && (
-            <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={() => setEnlargedImage(null)}>
-              <img
-                src={enlargedImage}
-                alt="Enlarged Code"
-                className="max-w-full max-h-full rounded-lg"
-              />
-            </div>
-          )}
-        </section>
-
-        {/* Responsive Layout Enhancements */}
-        <style jsx>{`
-          section {
-            animation: fadeIn 0.5s ease-in-out;
-          }
-
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-
-          h2 {
-            font-family: 'Poppins', sans-serif;
-          }
-
-          pre {
-            font-family: 'Courier New', monospace;
-          }
-        `}</style>
-
-        {/* Results & Reflection Section */}
-        <section>
-          <h2 className="text-3xl font-heading text-gray-900 text-center mb-8">
-            Results & Reflection
-          </h2>
-          <div className="space-y-8">
-            {/* Final Product Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Final Product</h3>
-              <p className="text-gray-700 mt-2">The final product is a fully functional streaming chat application that combines real-time interaction with customizable AI personas. It demonstrates the potential of RAG in creating engaging conversational experiences.</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Real-time text streaming with minimal latency</li>
-                <li>Customizable character personas for diverse use cases</li>
-                <li>Responsive design for accessibility across devices</li>
-              </ul>
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">Code & Artifacts</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[{
+                img: '/images/codeshowcase.png',
+                title: 'Server Streaming'
+              },{
+                img: '/images/characterpromptengineering1.png',
+                title: 'Prompt Engineering'
+              },{
+                img: '/images/clientstreaminghandler1.png',
+                title: 'Client Handler'
+              }].map((c, i) => (
+                <div key={i} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-lg transition-all">
+                  <div className="text-sm text-gray-600 mb-3">{c.title}</div>
+                  <div className="w-full h-40 rounded-md overflow-hidden cursor-pointer" onClick={() => setEnlargedImage(c.img)}>
+                    <img src={c.img} alt={c.title} className="object-cover w-full h-full" />
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* What I Learned Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">What I Learned</h3>
-              <p className="text-gray-700 mt-2">This project provided valuable insights into real-time data handling, API integration, and user-centric design. Key takeaways include:</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Importance of efficient data streaming for real-time applications</li>
-                <li>Challenges of integrating third-party APIs with custom logic</li>
-                <li>Significance of user feedback in refining features</li>
-              </ul>
-            </div>
+            {enlargedImage && (
+              <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={() => setEnlargedImage(null)}>
+                <img src={enlargedImage} alt="Enlarged" className="max-w-full max-h-full rounded-lg" />
+              </div>
+            )}
+          </div>
 
-            {/* Future Improvements Subsection */}
-            <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Future Improvements</h3>
-              <p className="text-gray-700 mt-2">Future iterations of the project could include:</p>
-              <ul className="list-disc list-inside text-gray-700 mt-2">
-                <li>Support for additional AI models and APIs</li>
-                <li>Enhanced UI/UX with advanced customization options</li>
-                <li>Integration with external knowledge bases for enriched responses</li>
-              </ul>
+          <div className="space-y-6">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-gray-900">Results & Reflection</h3>
+              <p className="text-gray-700 mt-2">Delivered a responsive streaming chat that balances realtime performance with configurable AI personas. The project highlighted trade-offs in latency, API usage, and UX design for streaming interfaces.</p>
             </div>
           </div>
-        </section>
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-between items-center">
-          <Link href="/projects" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">Back to Projects</Link>
-          <Link href="https://github.com/vvh24/websocket-chat.git" className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-700 transition-all no-underline">
-            View Project
-          </Link>
-        </div>
+           <div className="flex justify-between items-center">
+            <Link href="/projects" className="px-5 py-3 border border-gray-200 rounded-lg text-gray-900 hover:bg-gray-100 transition-colors no-underline">Back to Projects</Link>
+            <div className="flex items-center gap-3">
+              <a href="https://websocket-chat-kk14.onrender.com" className="px-5 py-3 bg-black text-white rounded-lg hover:opacity-95 no-underline">Open Demo</a>
+              <a href="https://github.com/vvh24/websocket-chat.git" className="px-5 py-3 border border-gray-200 rounded-lg text-gray-900 hover:text-[#0b3d91] transition-colors no-underline">View Code</a>
+            </div>
+          </div>
+
+        </section>
       </main>
     </div>
   );
